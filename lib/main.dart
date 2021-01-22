@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/screens/Home.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:muslim_guide/screens/HomeScreen.dart';
+import 'package:muslim_guide/screens/quran_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      /*   localizationsDelegates: [
+      localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         const Locale('en', ''), // English, no country code
         const Locale('ar', ''), // Arabic, no country code
       ],
-      locale: Locale('ar', 'ar'),*/
+      locale: Locale('ar', 'ar'),
       title: 'Muslim Guide',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -30,7 +31,11 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(),
+      initialRoute: HomeScreen.id,
+      routes: {
+        HomeScreen.id: (context) => HomeScreen(),
+        QuranScreen.id: (context) => QuranScreen(),
+      },
     );
   }
 }
