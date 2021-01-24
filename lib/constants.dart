@@ -10,11 +10,12 @@ const TextStyle kScreenTitleStyle = TextStyle(
 const BoxDecoration kBackgroundBoxDecoration = BoxDecoration(
   gradient: LinearGradient(
       colors: [
-        const Color(0xFFDCF1F6),
-        const Color(0xFFCDF2FA),
+        const Color(0xFFE4F1F5),
+        const Color(0xFFEFF8FA),
       ],
       begin: const FractionalOffset(0.0, 0.0),
       end: const FractionalOffset(1.0, 0.0),
-      stops: [0.0, 1.0],
-      tileMode: TileMode.clamp),
+      // stops: [0.0, 1.0],
+      stops: [0.0, 0.1],
+      tileMode: TileMode.mirror),
 );

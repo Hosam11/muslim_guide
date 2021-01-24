@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:muslim_guide/screens/quran_screen.dart';
-import 'package:muslim_guide/widgets/GridItem.dart';
+import 'package:muslim_guide/widgets/custom_appbar.dart';
+import 'package:muslim_guide/widgets/grid_item.dart';
 
 import '../constants.dart';
 
@@ -55,17 +56,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0.0,
-        flexibleSpace: Container(
-          decoration: kBackgroundBoxDecoration,
-        ),
-        title: Text(
-          screenTitle,
-          style: kScreenTitleStyle,
-        ),
-      ),
+      appBar: CustomAppBar(title: screenTitle, centerTitle: true),
       body: Container(
         decoration: kBackgroundBoxDecoration,
         child: Column(
