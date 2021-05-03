@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_guide/constants/dimens.dart';
 
 class GridItem extends StatelessWidget {
   final String icon;
@@ -10,25 +11,34 @@ class GridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTapped,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        elevation: 3.0,
-        color: Color(0xFF5AADBF),
+    return Card(
+      color: const Color(0xFF5AADBF),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      elevation: 3.0,
+      child: InkWell(
+        // I typed like this to make the ripple effect show on click on item
+        onTap: () {
+          if (onTapped != null) {
+            onTapped();
+          }
+        },
+        highlightColor: Colors.red,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               flex: 2,
               child: Padding(
-                padding:
-                    const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+                padding: const EdgeInsets.only(
+                  top: mediumPadding,
+                  left: mediumPadding,
+                  right: mediumPadding,
+                ),
                 child: Image.asset(
                   icon,
-                  color: Color(0xFFC5E1D1),
+                  color: const Color(0xFFC5E1D1),
                 ),
               ),
             ),
@@ -39,7 +49,7 @@ class GridItem extends StatelessWidget {
                   title,
                   overflow: TextOverflow.visible,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 22.0,
                   ),

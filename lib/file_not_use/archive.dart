@@ -121,3 +121,31 @@ class GridItem extends StatelessWidget {
 
 
  */
+
+// QuranPage parser for json
+/*
+class QuranPage {
+  final int pageNumber;
+  final Map<String, String> ayahNumberMap;
+
+  QuranPage({this.pageNumber, this.ayahNumberMap});
+
+  @override
+  String toString() {
+    return 'pageNumber= $pageNumber\n'
+        'ayahNumberMaps = $ayahNumberMap';
+  }
+
+  factory QuranPage.fromJson(Map<String, dynamic> json) => QuranPage(
+    pageNumber: json["pageNumber"],
+    ayahNumberMap: Map.from(json["ayahNumberMap"])
+        .map((k, v) => MapEntry<String, String>(k, v)),
+  );
+
+  Map<String, dynamic> toJson() => {
+    "pageNumber": pageNumber,
+    "ayahNumberMap": Map.from(ayahNumberMap)
+        .map((k, v) => MapEntry<String, dynamic>(k, v)),
+  };
+}
+*/

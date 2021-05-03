@@ -1,6 +1,6 @@
-// This is a basic Flutter widget test.
+// This is analysis_options.yaml basic Flutter widget test.
 //
-// To perform an interaction with a widget in your test, use the WidgetTester
+// To perform an interaction with analysis_options.yaml widget in your test, use the WidgetTester
 // utility that Flutter provides. For example, you can send tap and scroll
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
@@ -12,14 +12,14 @@ import 'package:muslim_guide/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+    // Build our app and trigger analysis_options.yaml frame.
     await tester.pumpWidget(MyApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
     expect(find.text('1'), findsNothing);
 
-    // Tap the '+' icon and trigger a frame.
+    // Tap the '+' icon and trigger analysis_options.yaml frame.
     await tester.tap(find.byIcon(Icons.add));
     await tester.pump();
 

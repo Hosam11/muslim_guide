@@ -1,47 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants.dart';
+import 'package:muslim_guide/constants/dimens.dart';
+import 'package:muslim_guide/constants/strings.dart';
+import 'package:muslim_guide/constants/styles.dart';
 import 'package:muslim_guide/widgets/custom_appbar.dart';
 import 'package:muslim_guide/widgets/surah_item.dart';
 
 final List<SurahItem> surahs = [
   SurahItem(
     name: 'الفاتحة',
-    surahNumber: 01,
-    numberOfAyahs: 7,
-    revelationType: 'مكية',
-  ),
-  SurahItem(
-    name: 'البقرة',
-    surahNumber: 21,
-    numberOfAyahs: 286,
-    revelationType: 'مدنية',
-  ),
-  SurahItem(
-    name: 'البقرة',
-    surahNumber: 2,
-    numberOfAyahs: 286,
-    revelationType: 'مدنية',
-  ),
-  SurahItem(
-    name: 'الفاتحة',
-    surahNumber: 1,
-    numberOfAyahs: 7,
-    revelationType: 'مكية',
-  ),
-  SurahItem(
-    name: 'البقرة',
-    surahNumber: 22,
-    numberOfAyahs: 286,
-    revelationType: 'مدنية',
-  ),
-  SurahItem(
-    name: 'البقرة',
-    surahNumber: 2,
-    numberOfAyahs: 286,
-    revelationType: 'مدنية',
-  ),
-  SurahItem(
-    name: 'الفاتحة',
     surahNumber: 1,
     numberOfAyahs: 7,
     revelationType: 'مكية',
@@ -54,39 +20,71 @@ final List<SurahItem> surahs = [
   ),
   SurahItem(
     name: 'البقرة',
-    surahNumber: 2,
+    surahNumber: 3,
     numberOfAyahs: 286,
     revelationType: 'مدنية',
   ),
   SurahItem(
     name: 'الفاتحة',
-    surahNumber: 1,
+    surahNumber: 4,
     numberOfAyahs: 7,
     revelationType: 'مكية',
   ),
   SurahItem(
     name: 'البقرة',
-    surahNumber: 2,
+    surahNumber: 5,
     numberOfAyahs: 286,
     revelationType: 'مدنية',
   ),
   SurahItem(
     name: 'البقرة',
-    surahNumber: 2,
+    surahNumber: 6,
+    numberOfAyahs: 286,
+    revelationType: 'مدنية',
+  ),
+  SurahItem(
+    name: 'الفاتحة',
+    surahNumber: 7,
+    numberOfAyahs: 7,
+    revelationType: 'مكية',
+  ),
+  SurahItem(
+    name: 'البقرة',
+    surahNumber: 8,
+    numberOfAyahs: 286,
+    revelationType: 'مدنية',
+  ),
+  SurahItem(
+    name: 'البقرة',
+    surahNumber: 9,
+    numberOfAyahs: 286,
+    revelationType: 'مدنية',
+  ),
+  SurahItem(
+    name: 'الفاتحة',
+    surahNumber: 10,
+    numberOfAyahs: 7,
+    revelationType: 'مكية',
+  ),
+  SurahItem(
+    name: 'البقرة',
+    surahNumber: 11,
+    numberOfAyahs: 286,
+    revelationType: 'مدنية',
+  ),
+  SurahItem(
+    name: 'البقرة',
+    surahNumber: 12,
     numberOfAyahs: 286,
     revelationType: 'مدنية',
   ),
 ];
 
-const String screenTitle = 'سور القرآن';
-
 class QuranScreen extends StatelessWidget {
-  static const String id = 'quran_screen';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: screenTitle),
+      appBar: CustomAppBar(title: quranScreenTitle),
       body: SurahsList(),
     );
   }
@@ -102,9 +100,9 @@ class SurahsList extends StatelessWidget {
           return surahs[index];
         },
         itemCount: surahs.length,
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(smallPadding),
         shrinkWrap: true,
-        separatorBuilder: (BuildContext context, int index) => Divider(),
+        separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
     );
   }
