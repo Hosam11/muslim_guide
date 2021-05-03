@@ -23,7 +23,7 @@ class SurahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.popAndPushNamed(context, routes.surahScreen),
+      onTap: () => Navigator.pushNamed(context, routes.surahScreen),
       child: Row(
         children: [
           // surah number

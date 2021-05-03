@@ -1,3 +1,4 @@
+import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
@@ -93,6 +94,8 @@ class QuranScreen extends StatelessWidget {
 class SurahsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Fimber.i('build()');
+
     return Container(
       decoration: kBackgroundBoxDecoration,
       child: ListView.separated(

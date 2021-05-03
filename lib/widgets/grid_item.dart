@@ -7,7 +7,7 @@ class GridItem extends StatelessWidget {
   final String title;
   final Function onTapped;
 
-  GridItem({@required this.icon, @required this.title, this.onTapped});
+  const GridItem({@required this.icon, @required this.title, this.onTapped});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,6 @@ class GridItem extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
               child: Center(
                 child: Text(
                   title,

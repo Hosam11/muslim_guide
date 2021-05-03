@@ -1,9 +1,14 @@
+import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/constants/app_theme.dart';
 import 'package:muslim_guide/routes.dart' as routes;
 
+import 'constants/strings.dart';
+
 void main() {
+  Fimber.plantTree(DebugTree.elapsed());
+
   runApp(MyApp());
 }
 
@@ -24,22 +29,24 @@ class MyApp extends StatelessWidget {
         Locale('ar', ''), // Arabic, no country code
       ],
       locale: const Locale('ar', 'ar'),
-      title: 'Muslim Guide',
+      title: appTitle,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+      theme:
+          appThemeData /*ThemeData(
         primaryColor: kPrimaryColor,
-        fontFamily: 'Amiri Bold',
+        fontFamily: amiriBold,
         dividerTheme: const DividerThemeData(
           space: 0,
           thickness: 1.0,
-          /* endIndent: dividerIntent,
-              indent: dividerIntent, */
+          */ /* endIndent: dividerIntent,
+              indent: dividerIntent, */ /*
         ),
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      )*/
+      ,
       initialRoute: routes.homeScreen,
       routes: routes.routes,
     );
