@@ -2,12 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 
-class GridItem extends StatelessWidget {
+class CategoryCardItem extends StatelessWidget {
   final String icon;
   final String title;
   final Function onTapped;
 
-  const GridItem({@required this.icon, @required this.title, this.onTapped});
+  const CategoryCardItem({
+    @required this.icon,
+    @required this.title,
+    this.onTapped,
+  });
 
   @override
   Widget build(BuildContext context) {

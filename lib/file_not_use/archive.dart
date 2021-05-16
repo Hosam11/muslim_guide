@@ -149,3 +149,108 @@ class QuranPage {
   };
 }
 */
+
+// surah screen
+/*
+         AutoSizeText(
+                        pageAyahs,
+                        textAlign: TextAlign.justify,
+                        /*   minFontSize: ,
+                        maxFontSize: ,*/
+                        style: TextStyle(
+                          fontSize: 25.0,
+                        ),
+                      ),
+         */
+/*Container(
+          decoration: kBackgroundBoxDecoration,
+          child: Column(
+            children: [
+              // juz and suruh name
+              Container(
+                color: kPrimaryColor,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: smallestPadding),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const <Widget>[
+                    Text(
+                      'الجزء الاول',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'الفاتحة',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // header of page
+              Container(
+                color: const Color(0xFFCEEFF9),
+                margin: const EdgeInsets.all(smallestPadding),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    const Text(
+                      '\uFD3F',
+                      style: headerTextStyle,
+                    ),
+                    Text(
+                      'الفاتحة',
+                      style: headerTextStyle.copyWith(color: kSecondaryColor),
+                    ),
+                    const Text(
+                      '\uFD3E',
+                      style: headerTextStyle,
+                    ),
+                  ],
+                ),
+              ),
+              // body of page
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      'بسم الله الرحمن الرحيم',
+                      textAlign: TextAlign.justify,
+                    ),
+                    Text(
+                      '\u202E$pageAyahs',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 25,
+                      ),
+                    ),
+
+                    */
+/*   Text(
+                      pageAyahs,
+                      style: const TextStyle(fontSize: 25.0),
+                      maxLines: 10,
+                      textAlign: TextAlign.justify,
+                    ),*/
+/*
+                    */
+/* SelectableText(
+                      pageAyahs,
+                      cursorColor: kPrimaryColor,
+                      toolbarOptions: const ToolbarOptions(
+                        copy: true,
+                        selectAll: true,
+                      ),
+                      textAlign: TextAlign.justify,
+                      style: const TextStyle(fontSize: 25.0),
+                    ),*/
+/*
+                  ],
+                ),
+              )
+            ],
+          ),
+        )*/

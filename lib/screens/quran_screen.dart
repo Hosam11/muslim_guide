@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/constants/styles.dart';
-import 'package:muslim_guide/widgets/custom_appbar.dart';
+import 'package:muslim_guide/shared/custom_appbar.dart';
 import 'package:muslim_guide/widgets/surah_item.dart';
 
 final List<SurahItem> surahs = [

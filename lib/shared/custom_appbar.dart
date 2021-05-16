@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../constants/styles.dart';
+import 'package:muslim_guide/constants/styles.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
@@ -11,7 +10,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: centerTitle,
-      iconTheme: const IconThemeData(color: kPrimaryColor),
+      iconTheme:  IconThemeData(color: Theme.of(context).primaryColor),
       elevation: 0.0,
       flexibleSpace: Container(
         decoration: kBackgroundBoxDecoration,

@@ -1,8 +1,7 @@
-/// class responsible for display desired data
-/// visit quran_pages.json to see json respond for that
-
 import 'dart:convert';
 
+/// class responsible for display desired data
+/// visit quran_pages.json to see json respond for that
 List<QuranPage> quranPageFromJson(String str) =>
     List<QuranPage>.from(json.decode(str).map((x) => QuranPage.fromJson(x)));
 

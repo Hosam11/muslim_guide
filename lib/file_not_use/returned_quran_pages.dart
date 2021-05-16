@@ -1,14 +1,14 @@
+import 'dart:convert';
+
 // To parse this JSON data, do
 //
 //     final quranPages = quranPagesFromJson(jsonString);
 
-import 'dart:convert';
-
 /// class responsible for getting original data from api
 OriginalQuranPages quranPagesFromJson(String str) =>
-    OriginalQuranPages.fromJson(json.decode(str));
+    OriginalQuranPages.fromJson(jsonDecode(str));
 
-String quranPagesToJson(OriginalQuranPages data) => json.encode(data.toJson());
+String quranPagesToJson(OriginalQuranPages data) => jsonEncode(data.toJson());
 
 class OriginalQuranPages {
   OriginalQuranPages({this.data});

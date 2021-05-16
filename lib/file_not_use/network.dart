@@ -1,5 +1,6 @@
 import 'dart:convert' as convert;
 
+import 'package:fimber/fimber.dart';
 import 'package:http/http.dart' as http;
 import 'package:muslim_guide/data/models/quran_page.dart';
 
@@ -9,8 +10,8 @@ class Network {}
 
 // take page number and return data from api
 Future<Data> getData(int page) async {
-  final dataResponse =
-      await http.get('http://api.alquran.cloud/v1/page/$page/ar.asad');
+  final dataResponse = await http
+      .get(Uri.parse('http://api.alquran.cloud/v1/page/$page/ar.asad'));
 
   final decodeData =
       convert.jsonDecode(dataResponse.body) as Map<String, dynamic>;
@@ -22,7 +23,7 @@ Future<Data> getData(int page) async {
 Future<void> storeData() async {
   final List<QuranPage> quranPages = <QuranPage>[];
 
-  for (int i = 1; i <= 3; i++) {
+  for (int i = 1; i <= 4; i++) {
     final data = await getData(i);
     // print('$i');
     // create pageNumber and ayahs map to create object from result
@@ -33,7 +34,7 @@ Future<void> storeData() async {
       ayahs[a.numberInSurah.toString()] = a.text;
     }
 
-    QuranPage q = QuranPage(
+    final QuranPage q = QuranPage(
       pageNumber: pageNumber,
       ayahNumberMap: ayahs,
     );
@@ -42,7 +43,7 @@ Future<void> storeData() async {
   }
   print('first element= ## ${quranPages[0]} ##');
 
-  var x = convert.jsonEncode(quranPages);
+  final x = convert.jsonEncode(quranPages);
   print('-----------------------------------------------------------------');
   print(x);
 }

@@ -1,9 +1,10 @@
-import 'package:arabic_numbers/arabic_numbers.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/helpers/arabic_numbers.dart';
 import 'package:muslim_guide/routes.dart' as routes;
-import 'package:muslim_guide/util.dart';
+import 'package:muslim_guide/helpers/numbers_helper.dart';
 
 class SurahItem extends StatelessWidget {
   final int surahNumber;
@@ -11,7 +12,7 @@ class SurahItem extends StatelessWidget {
   final int numberOfAyahs;
   final String revelationType;
 
-  final ArabicNumbers _arabicNumbers = Util.arabicNumber;
+  final ArabicNumbers _arabicNumbers = ArabicHelper.arabicNumber;
 
   SurahItem({
     this.surahNumber,

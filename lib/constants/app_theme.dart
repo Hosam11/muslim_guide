@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/fonts.dart';
 import 'package:muslim_guide/constants/styles.dart';
 
 final ThemeData appThemeData = ThemeData(
   primaryColor: kPrimaryColor,
-  fontFamily: amiriBold,
+  fontFamily: amiriBoldFont,
   dividerTheme: const DividerThemeData(
     space: 0,
     thickness: 1.0,

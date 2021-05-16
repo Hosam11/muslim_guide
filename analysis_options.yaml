@@ -1,6 +1,9 @@
 include: package:lint/analysis_options.yaml
 
 analyzer:
+
+  errors:
+    prefer_const_constructors: ignore
   exclude:
     - 'lib/data/models/quran_page.dart'
     - 'lib/file_not_use/returned_quran_pages.dart'
