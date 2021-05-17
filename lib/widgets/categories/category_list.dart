@@ -1,36 +1,36 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/assets.dart';
-import 'package:muslim_guide/constants/dimens.dart';
-import 'package:muslim_guide/constants/strings.dart';
-import 'package:muslim_guide/routes.dart';
+import 'package:muslim_guide/constants/assets.dart' as assets;
+import 'package:muslim_guide/constants/dimens.dart' as dimens;
+import 'package:muslim_guide/constants/strings.dart' as strings;
+import 'package:muslim_guide/routes.dart' as routes;
 import 'package:muslim_guide/widgets/categories/category_card_item.dart';
 
 List<CategoryCardItem> _getGridItems(BuildContext context) => [
       CategoryCardItem(
-        title: quranTitle,
-        icon: quranImg,
-        onTapped: () => Navigator.pushNamed(context, quranScreen),
+        title: strings.quranTitle,
+        icon: assets.quranImg,
+        onTapped: () => Navigator.pushNamed(context, routes.quranScreen),
       ),
       CategoryCardItem(
-        title: allahNamesTitle,
-        icon: allahNamesImg,
+        title: strings.allahNamesTitle,
+        icon: assets.allahNamesImg,
       ),
       CategoryCardItem(
-        title: azkarMorningTitle,
-        icon: azkarMorningImg,
+        title: strings.azkarMorningTitle,
+        icon: assets.azkarMorningImg,
       ),
       CategoryCardItem(
-        title: azkarNightTitle,
-        icon: azkarNigthImg,
+        title: strings.azkarNightTitle,
+        icon: assets.azkarNigthImg,
       ),
       CategoryCardItem(
-        title: prayerTimesTitle,
-        icon: prayerTimesImg,
+        title: strings.prayerTimesTitle,
+        icon: assets.prayerTimesImg,
       ),
       CategoryCardItem(
-        title: rosaryTitle,
-        icon: rosaryImg,
+        title: strings.rosaryTitle,
+        icon: assets.rosaryImg,
       ),
     ];
 
@@ -48,7 +48,7 @@ class CategoryList extends StatelessWidget {
         MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Padding(
-      padding: const EdgeInsets.all(smallPadding),
+      padding: const EdgeInsets.all(dimens.smallPadding),
       child: GridView.count(
         childAspectRatio: _isPortrait ? 4 / 3 : 3 / 2,
         crossAxisCount: _isPortrait ? 2 : 3,

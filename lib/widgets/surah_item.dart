@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/dimens.dart';
-import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
-import 'package:muslim_guide/routes.dart' as routes;
 import 'package:muslim_guide/helpers/numbers_helper.dart';
+import 'package:muslim_guide/routes.dart' as routes;
 
 class SurahItem extends StatelessWidget {
   final int surahNumber;
@@ -33,16 +32,8 @@ class SurahItem extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(smallPadding),
               child: Center(
-                child: Text(
-                  _arabicNumbers.convert(surahNumber),
-                  /*surahNumber > 9
-                      ? _arabicNumbers.convert(surahNumber)
-                      : '${_arabicNumbers.convert(0)}${_arabicNumbers.convert(surahNumber)}',*/
-                  style: TextStyle(
-                    color: kSecondaryColor,
-                    fontSize: Theme.of(context).textTheme.headline6.fontSize,
-                  ),
-                ),
+                child: Text(_arabicNumbers.convert(surahNumber),
+                    style: Theme.of(context).textTheme.headline6),
               ),
             ),
           ),
@@ -51,12 +42,7 @@ class SurahItem extends StatelessWidget {
             flex: 9,
             child: Padding(
               padding: const EdgeInsets.only(top: smallestPadding),
-              child: Text(
-                name,
-                style: TextStyle(
-                    color: kSecondaryColor,
-                    fontSize: Theme.of(context).textTheme.headline5.fontSize),
-              ),
+              child: Text(name, style: Theme.of(context).textTheme.headline6),
             ),
           ),
           // surah ayat & numberOfAyahs
@@ -67,18 +53,10 @@ class SurahItem extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
-                    'آياتها',
-                    style: TextStyle(
-                      // fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
-                  ),
+                  Text(ayahs, style: Theme.of(context).textTheme.subtitle1),
                   Text(
                     numberOfAyahs.toString(),
-                    style: const TextStyle(
-                      fontSize: 18.0,
-                    ),
+                    style: Theme.of(context).textTheme.subtitle1,
                   ),
                 ],
               ),
@@ -89,10 +67,7 @@ class SurahItem extends StatelessWidget {
             padding: const EdgeInsets.only(left: 12.0),
             child: Text(
               revelationType,
-              style: const TextStyle(
-                fontSize: 18.0,
-                color: kPrimaryColor,
-              ),
+              style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
         ],

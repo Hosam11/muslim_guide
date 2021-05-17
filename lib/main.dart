@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: supportedLocals,
       locale: curLocal,
       title: appTitle,
+
       // fixme: put that inside it's file leave it for now to avoid hot restart
       // when changing those values
       theme: ThemeData(
@@ -35,11 +36,10 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(color: kTextColor),
         ),
         dividerTheme: const DividerThemeData(
-          space: 0,
-          thickness: 1.0,
-          /* endIndent: dividerIntent,
+            space: 0, thickness: 1.0, color: kTextColor
+            /* endIndent: dividerIntent,
               indent: dividerIntent, */
-        ),
+            ),
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.

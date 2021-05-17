@@ -5,6 +5,4 @@ class ArabicHelper {
 
   ArabicHelper._privateConstructor();
   static final ArabicHelper instance = ArabicHelper._privateConstructor();
-
-  //static Util get instance => _instance;
 }

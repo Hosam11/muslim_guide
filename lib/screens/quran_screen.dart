@@ -1,8 +1,8 @@
-import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/dimens.dart';
-import 'package:muslim_guide/constants/strings.dart';
-import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/constants/app_colors.dart' as colors;
+import 'package:muslim_guide/constants/dimens.dart' as dimens;
+import 'package:muslim_guide/constants/strings.dart' as strings;
+import 'package:muslim_guide/constants/styles.dart' as styles;
 import 'package:muslim_guide/shared/custom_appbar.dart';
 import 'package:muslim_guide/widgets/surah_item.dart';
 
@@ -85,27 +85,33 @@ class QuranScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: quranScreenTitle),
-      body: SurahsList(),
-    );
-  }
-}
-
-class SurahsList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    Fimber.i('build()');
-
-    return Container(
-      decoration: kSecondaryBackgroundBoxDecoration,
-      child: ListView.separated(
-        itemBuilder: (context, index) {
-          return surahs[index];
-        },
-        itemCount: surahs.length,
-        padding: const EdgeInsets.all(smallPadding),
-        shrinkWrap: true,
-        separatorBuilder: (BuildContext context, int index) => const Divider(),
+      appBar: CustomAppBar(title: strings.quranScreenTitle),
+      body: Container(
+        decoration: styles.kSecondaryBackgroundBoxDecoration,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: dimens.mediumPadding,
+            right: dimens.mediumPadding,
+            top: dimens.mediumPadding,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              color: colors.kPrimaryColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(dimens.smallPadding),
+                topRight: Radius.circular(dimens.smallPadding),
+              ),
+            ),
+            child: ListView.separated(
+              itemBuilder: (context, index) => surahs[index],
+              itemCount: surahs.length,
+              padding: const EdgeInsets.all(dimens.smallPadding),
+              shrinkWrap: true,
+              separatorBuilder: (BuildContext context, int index) =>
+                  const Divider(),
+            ),
+          ),
+        ),
       ),
     );
   }

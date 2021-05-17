@@ -10,7 +10,7 @@ import 'package:muslim_guide/constants/dimens.dart';
 
 final BorderRadius kSmallBorderRadius = BorderRadius.circular(smallPadding);
 
-final kWhiteBorder = Border.all(color: kTextColor, width: 1);
+final kWhiteBorder = Border.all(color: kTextColor);
 final BoxDecoration kPrimaryBackgroundBoxDecoration = BoxDecoration(
   gradient: createLinearGradient(
     kPrimaryColor,

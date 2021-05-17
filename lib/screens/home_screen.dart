@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/dimens.dart';
-import 'package:muslim_guide/constants/strings.dart';
-import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/constants/dimens.dart' as dimens;
+import 'package:muslim_guide/constants/strings.dart' as strings;
+import 'package:muslim_guide/constants/styles.dart' as styles;
 import 'package:muslim_guide/shared/custom_appbar.dart';
 import 'package:muslim_guide/widgets/categories/category_list.dart';
 import 'package:muslim_guide/widgets/random_ayah.dart';
@@ -12,17 +12,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: homeScreenTitle, centerTitle: true),
+      appBar: CustomAppBar(title: strings.homeScreenTitle, centerTitle: true),
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: kSecondaryBackgroundBoxDecoration,
+        decoration: styles.kSecondaryBackgroundBoxDecoration,
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: mediumPadding,
-                vertical: smallPadding,
+                horizontal: dimens.mediumPadding,
+                vertical: dimens.smallPadding,
               ),
               child: RandomAyah(ayah: ayah),
             ),

@@ -10,3 +10,5 @@ const String azkarMorningTitle = 'اذكار الصباح';
 const String azkarNightTitle = 'اذكار المساء';
 const String prayerTimesTitle = 'مواقيت الصلاة';
 const String rosaryTitle = 'السبحة';
+
+const String ayahs = 'آياتها';

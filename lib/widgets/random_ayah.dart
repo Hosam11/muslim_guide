@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/dimens.dart';
-import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/constants/dimens.dart' as dimens;
+import 'package:muslim_guide/constants/styles.dart' as styles;
 
 class RandomAyah extends StatelessWidget {
   const RandomAyah({@required this.ayah});
@@ -10,16 +10,16 @@ class RandomAyah extends StatelessWidget {
   Widget build(BuildContext context) {
     return DecoratedBox(
       // decoration: ,
-      decoration: kPrimaryBackgroundBoxDecoration.copyWith(
-        borderRadius: kSmallBorderRadius,
-        border: kWhiteBorder,
+      decoration: styles.kPrimaryBackgroundBoxDecoration.copyWith(
+        borderRadius: styles.kSmallBorderRadius,
+        border: styles.kWhiteBorder,
       ),
       child: Padding(
         padding: const EdgeInsets.only(
-          top: mediumPadding,
-          right: mediumPadding,
-          left: mediumPadding,
-          bottom: smallPadding,
+          top: dimens.mediumPadding,
+          right: dimens.mediumPadding,
+          left: dimens.mediumPadding,
+          bottom: dimens.smallPadding,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
