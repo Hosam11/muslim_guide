@@ -97,7 +97,7 @@ class SurahsList extends StatelessWidget {
     Fimber.i('build()');
 
     return Container(
-      decoration: kBackgroundBoxDecoration,
+      decoration: kSecondaryBackgroundBoxDecoration,
       child: ListView.separated(
         itemBuilder: (context, index) {
           return surahs[index];

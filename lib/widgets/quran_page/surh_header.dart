@@ -11,7 +11,7 @@ class PageHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: kBackgroundBoxDecoration,
+        decoration: kPrimaryBackgroundBoxDecoration,
         child: Column(
           children: [
             // juz and surah name

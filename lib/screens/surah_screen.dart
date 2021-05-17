@@ -5,11 +5,8 @@ import 'package:flutter/rendering.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/fonts.dart';
-import 'package:muslim_guide/constants/styles.dart';
 import 'package:muslim_guide/data/repository/quran_repo.dart';
 import 'package:muslim_guide/widgets/quran_page/surh_header.dart';
-
-import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 
 /*
 '\uFD3F1\uFD3E \n'

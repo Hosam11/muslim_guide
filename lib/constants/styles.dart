@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
+import 'package:muslim_guide/constants/dimens.dart';
 
-const TextStyle kScreenTitleStyle = TextStyle(
-  color: kPrimaryColor,
+/*const TextStyle kScreenTitleStyle = TextStyle(
+  color: kTextColor,
   fontWeight: FontWeight.bold,
   fontSize: 25.0,
-);
+);*/
 
-const BoxDecoration kBackgroundBoxDecoration = BoxDecoration(
-  gradient: LinearGradient(
-    colors: [
-      kFirstGradientColor,
-      kSecondGradientColor,
-    ],
-    begin: FractionalOffset(0.0, 0.0),
-    end: FractionalOffset(1.0, 0.0),
-    // stops: [0.0, 1.0],
-    stops: [0.0, 0.1],
-    tileMode: TileMode.mirror,
+final BorderRadius kSmallBorderRadius = BorderRadius.circular(smallPadding);
+
+final kWhiteBorder = Border.all(color: kTextColor, width: 1);
+final BoxDecoration kPrimaryBackgroundBoxDecoration = BoxDecoration(
+  gradient: createLinearGradient(
+    kPrimaryColor,
+    kSecPrimaryGradientColor,
   ),
 );
+
+final BoxDecoration kSecondaryBackgroundBoxDecoration = BoxDecoration(
+  gradient: createLinearGradient(
+    kSecondaryColor,
+    kSecSecondaryGradientColor,
+  ),
+);
+
+BoxDecoration createGradientBackground(Color firColor, Color secColor) =>
+    BoxDecoration(
+      gradient: createLinearGradient(firColor, secColor),
+    );
+
+LinearGradient createLinearGradient(Color firColor, Color secColor) =>
+    LinearGradient(
+      colors: [firColor, secColor],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      // stops: const [0.0, 0.1],
+      // tileMode: TileMode.mirror,);
+    );

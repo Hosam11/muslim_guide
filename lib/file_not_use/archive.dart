@@ -254,3 +254,17 @@ class QuranPage {
             ],
           ),
         )*/
+
+// calc width and hi of image
+/*
+Future<void> printImgDimens() async {
+  ByteData b = await rootBundle.load(icon);
+  Uint8List uu = b.buffer.asUint8List();
+  // final File image = AssetImage(icon);
+  final decodedImage = await decodeImageFromList(uu);
+*/
+/*    Fimber.i('${decodedImage.width}');
+    Fimber.i('${decodedImage.height}');*/ /*
+
+}
+*/
