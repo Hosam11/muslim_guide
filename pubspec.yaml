@@ -26,6 +26,7 @@ dependencies:
 
   assorted_layout_widgets: ^4.0.8
   splashscreen: ^1.3.5
+  google_fonts: ^2.1.0
 
 
 dev_dependencies:
@@ -98,7 +99,7 @@ flutter_native_splash:
   #       To show the notification bar, add the following code to your Flutter app:
   #       WidgetsFlutterBinding.ensureInitialized();
   #       SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom, SystemUiOverlay.top]);
-  fullscreen: true
+  android_disable_fullscreen: true
 
   # If you have changed the name(s) of your info.plist file(s), you can specify the filename(s)
   # with the info_plist_files parameter.  Remove only the # characters in the three lines below,
@@ -116,28 +117,9 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/files/
+    - google_fonts/
   fonts:
     - family: Me Quran
       fonts:
-        - asset: fonts/me_quran.ttf
-    - family: Amiri Regular
-      fonts:
-        - asset: fonts/Amiri-Regular.ttf
-    - family: Amiri Bold
-      fonts:
-        - asset: fonts/Amiri-Bold.ttf
-    - family: Qalam
-      fonts:
-        - asset: fonts/Qalam.ttf
-    - family: arabtype
-      fonts:
-        - asset: fonts/arabtype.ttf
-
-    - family: Tajawal Bold
-      fonts:
-        - asset: fonts/Tajawal-Bold.ttf
-
-    - family: Tajawal Regular
-      fonts:
-        - asset: fonts/Tajawal-Regular.ttf
+        - asset: google_fonts/me_quran.ttf
 

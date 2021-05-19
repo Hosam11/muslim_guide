@@ -25,6 +25,20 @@ final BoxDecoration kSecondaryBackgroundBoxDecoration = BoxDecoration(
   ),
 );
 
+final BoxDecoration kSurahTitleBackgroundBoxDecoration = BoxDecoration(
+  gradient: createLinearGradient(
+    kFirSurahTitleGradientColor,
+    kSecSurahTitleGradientColor,
+  ),
+);
+
+BoxShadow shadowFromColor(Color color) => BoxShadow(
+      color: color.withOpacity(0.5),
+      spreadRadius: 5,
+      blurRadius: 7,
+      offset: Offset(0, 3), // changes position of shadow
+    );
+
 BoxDecoration createGradientBackground(Color firColor, Color secColor) =>
     BoxDecoration(
       gradient: createLinearGradient(firColor, secColor),

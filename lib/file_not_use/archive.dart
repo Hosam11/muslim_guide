@@ -268,3 +268,98 @@ Future<void> printImgDimens() async {
 
 }
 */
+
+/*  CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: const SurahHeader(
+                    surahName: 'الصفحة 106',
+                    juzName: 'الحزب 13 - الربع 3',
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SurahHeader(
+                        juzName: 'الجزء الاول', surahName: 'الفاتحة'),
+                    Padding(
+                      padding: const EdgeInsets.all(dimens.smallPadding),
+                      child: SurahNameTitle(),
+                    ),
+                    Text(
+                      // 'asdads',
+                      '\u202E$pageAyahs',
+                      // pageAyahs,
+                      // presetFontSizes: [25, 34],
+                      style: Theme.of(context).textTheme.headline5,
+                      softWrap: true,
+                      // pageAyahs,
+                      textAlign: TextAlign.justify,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          */
+/*  SliverFillRemaining(
+            hasScrollBody: false,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: const SurahHeader(
+                surahName: 'الصفحة 106',
+                juzName: 'الحزب 13 - الربع 3',
+              ),
+            ),
+          ),*/
+/*
+        ],
+      )*/
+/* SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const SurahHeader(juzName: 'الجزء الاول', surahName: 'الفاتحة'),
+              Padding(
+                padding: const EdgeInsets.all(dimens.smallPadding),
+                child: SurahNameTitle(),
+              ),
+              SingleChildScrollView(
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'asdads',
+                          // '\u202E$pageAyahs',
+                          // pageAyahs,
+                          // presetFontSizes: [25, 34],
+                          style: Theme.of(context).textTheme.headline5
+                          const TextStyle(
+                                letterSpacing: 0.0,
+                                fontFamily: tajawalReg,
+                                wordSpacing: 1.0,
+                              )
+
+                          ,
+                          softWrap: true,
+                          // pageAyahs,
+                          textAlign: TextAlign.justify,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SurahHeader(
+                surahName: 'الصفحة 106',
+                juzName: 'الحزب 13 - الربع 3',
+              ),
+            ],
+          ),
+        ),*/

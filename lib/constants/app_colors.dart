@@ -13,3 +13,6 @@ const Color kAccentColor = Color(0xFF5DBB64);
 const Color kSecPrimaryGradientColor = Color(0xFF587978);
 
 const Color kSecSecondaryGradientColor = Color(0xFF587978);
+
+const Color kFirSurahTitleGradientColor = Color(0xFF00FFB9);
+const Color kSecSurahTitleGradientColor = Color(0xFF55669E);
