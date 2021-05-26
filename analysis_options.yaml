@@ -1,9 +1,21 @@
-include: package:lint/analysis_options.yaml
+include: package:pedantic/analysis_options.yaml
+
 
 analyzer:
 
   errors:
-    prefer_const_constructors: ignore
+    missing_required_param: error
   exclude:
     - 'lib/data/models/quran_page.dart'
     - 'lib/file_not_use/returned_quran_pages.dart'
+
+linter:
+  rules:
+    - avoid_redundant_argument_values
+    - curly_braces_in_flow_control_structures
+    - always_put_control_body_on_new_line
+    - provide_deprecation_message
+    - avoid_setters_without_getters
+    - join_return_with_assignment
+    - avoid_void_async
+

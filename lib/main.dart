@@ -2,16 +2,29 @@ import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
-import 'package:muslim_guide/constants/fonts.dart';
 import 'package:muslim_guide/constants/locals.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/routes.dart' as routes;
 import 'package:muslim_guide/routes.dart';
 
-void main() {
-  Fimber.plantTree(DebugTree.elapsed());
+import 'data/repository/quran_repo.dart';
 
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Fimber.plantTree(DebugTree.elapsed());
+  await getData();
   runApp(MyApp());
+}
+
+Future<void> getData() async {
+  //var x = await QuranRepo.getPages();
+  //print('##SurahScreen## getData() data= $x');
+  // MUST call it before access quranPages list in repo
+  await QuranRepo.instance.getPages();
+  //print('len= ${QuranRepo.instance.quranPages?.length}');
+
+  final x = QuranRepo.instance.getQuranPage(2);
+  // print('numberAyahMap for page1= ${x['ayahNumberMap']}');
 }
 
 class MyApp extends StatelessWidget {

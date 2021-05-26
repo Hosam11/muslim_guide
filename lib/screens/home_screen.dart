@@ -7,8 +7,8 @@ import 'package:muslim_guide/widgets/categories/category_list.dart';
 import 'package:muslim_guide/widgets/random_ayah.dart';
 
 class HomeScreen extends StatelessWidget {
-  final String ayah =
-      'وَمَنْ أَعْرَضَ عَن ذِكْرِي فَإِنَّ لَهُ مَعِيشَةً ضَنكًا وَنَحْشُرُهُ يَوْمَ الْقِيَامَةِ أَعْمَىٰ';
+  final String ayah = 'أُو۟لَـٰٓئِكَ عَلَىٰ هُدًى مِّن ربهم والئك هم المفلحون';
+  // 'وَمَنْ أَعْرَضَ عَن ذِكْرِي فَإِنَّ لَهُ مَعِيشَةً ضَنكًا وَنَحْشُرُهُ يَوْمَ الْقِيَامَةِ أَعْمَىٰ';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
