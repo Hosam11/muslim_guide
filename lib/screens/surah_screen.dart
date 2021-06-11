@@ -11,9 +11,9 @@ class SurahScreen extends StatelessWidget {
   // ignore: prefer_const_constructors
   @override
   Widget build(BuildContext context) {
-    final String pageAyahs = QuranRepo.instance.getQuranPage(3);
-    final List<String> ayahList = QuranRepo.instance.getListOfAyahs(3);
-    final Size screenSize = MediaQuery.of(context).size;
+    final pageAyahsStr = QuranRepo.instance.getQuranPage(3);
+    final ayahList = QuranRepo.instance.getListOfAyahs(3);
+    final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: colors.kSecondaryColor,
@@ -45,7 +45,7 @@ class SurahScreen extends StatelessWidget {
                           BoxDecoration(color: Theme.of(context).primaryColor),
                       margin: EdgeInsets.only(bottom: 30),
                       padding: const EdgeInsets.all(dimens.smallPadding),
-                      child: QuranTextView(quranAyahs: pageAyahs),
+                      child: QuranTextView(quranAyahs: pageAyahsStr),
                     ),
                   ),
                 ],

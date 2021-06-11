@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
-import 'package:muslim_guide/constants/dimens.dart' as dimens;
 import 'package:muslim_guide/constants/styles.dart' as styles;
 
 class SurahNameTitle extends StatelessWidget {

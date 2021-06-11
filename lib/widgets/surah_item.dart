@@ -23,7 +23,7 @@ class SurahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.pushNamed(context, routes.surahScreen),
+      onTap: () => onSurahPressed(context),
       child: Row(
         children: [
           // surah number
@@ -73,5 +73,11 @@ class SurahItem extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void onSurahPressed(BuildContext context) {
+    /// handle data need for that screen
+    /// 1- get page number
+    Navigator.pushNamed(context, routes.surahScreen);
   }
 }

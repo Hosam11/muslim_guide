@@ -23,7 +23,10 @@ Future<void> getData() async {
   await QuranRepo.instance.getPages();
   //print('len= ${QuranRepo.instance.quranPages?.length}');
 
-  final x = QuranRepo.instance.getQuranPage(2);
+  // fixme: put that inside it's file leave it for now to avoid hot restart
+  await QuranRepo.instance.getQuranPages();
+
+  // final x = QuranRepo.instance.getQuranPage(2);
   // print('numberAyahMap for page1= ${x['ayahNumberMap']}');
 }
 
@@ -46,7 +49,6 @@ class MyApp extends StatelessWidget {
       locale: curLocal,
       title: appTitle,
 
-      // fixme: put that inside it's file leave it for now to avoid hot restart
       // when changing those values
       theme: ThemeData(
         primaryColor: kPrimaryColor,

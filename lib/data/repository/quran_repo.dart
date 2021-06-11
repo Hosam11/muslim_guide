@@ -2,6 +2,8 @@ import 'dart:convert' as convert;
 import 'package:fimber/fimber.dart';
 import 'package:flutter/services.dart';
 import 'package:muslim_guide/constants/assets.dart';
+import 'package:muslim_guide/data/models/quran_page/quran_page.dart';
+import 'package:muslim_guide/helpers/app_helper.dart';
 import 'package:muslim_guide/helpers/numbers_helper.dart';
 
 // ignore: prefer_const_constructors
@@ -18,13 +20,32 @@ class QuranRepo {
      pagesList is NOT analysis_options.yaml string it's List<dynamic> "List of [QuranPage]"
      to access element in it you can type pagesList[0]['pageNumber']
      */
-    final List<dynamic> pagesList =
-        await convert.jsonDecode(pagesRes) as List<dynamic>;
+    final pagesList = await convert.jsonDecode(pagesRes) as List<dynamic>;
 
     QuranRepo.instance.quranPages = pagesList;
 
     // print('pagesList=  $pagesList');
     // print('pagesList[0]=  ${pagesList[0]['ayahNumberMap']}');
+  }
+
+  Future<List<QuranPage>> getQuranPages() async {
+    var h = '@@ $runtimeType @@ getQuranPages() >>';
+    final quranPagesRes = await rootBundle.loadString(quranPagesFile);
+
+    final quranData = quranDataFromJson(quranPagesRes);
+    mLog('$h quranData= ${convert.jsonEncode(quranData)}');
+
+    return quranData;
+  }
+
+  Future<List<QuranPage>> getNewQuranPages() async {
+    var h = '@@ $runtimeType @@ getQuranPages() >>';
+    final quranPagesRes = await rootBundle.loadString(quranPagesFile);
+
+    final quranData = quranDataFromJson(quranPagesRes);
+    // mLog('$h quranData= ${convert.jsonEncode(quranData)}');
+
+    return quranData;
   }
 
   String getQuranPage(int page) {
@@ -39,7 +60,7 @@ class QuranRepo {
         ayahs.add(
             '$ayahText \uFD3F${ArabicHelper.arabicNumber.convert(ayahNumber)}\uFD3E ');
       });
-      final String pageString = ayahs.join();
+      final pageString = ayahs.join();
       Fimber.i('pageString= $pageString');
       return pageString;
     } else {

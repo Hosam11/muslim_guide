@@ -1,10 +1,8 @@
-import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/assets.dart' as assets;
 import 'package:muslim_guide/constants/dimens.dart' as dimens;
 import 'package:muslim_guide/constants/strings.dart' as strings;
 import 'package:muslim_guide/routes.dart' as routes;
-import 'package:muslim_guide/screens/surah_screen.dart';
 import 'package:muslim_guide/widgets/categories/category_card_item.dart';
 
 List<CategoryCardItem> _getGridItems(BuildContext context) => [
@@ -38,7 +36,7 @@ List<CategoryCardItem> _getGridItems(BuildContext context) => [
 class CategoryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bool _isPortrait =
+    final _isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Padding(
