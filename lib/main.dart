@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/locals.dart';
 import 'package:muslim_guide/constants/strings.dart';
+import 'package:muslim_guide/helpers/app_helper.dart';
+import 'package:muslim_guide/helpers/quran_helper.dart';
 import 'package:muslim_guide/routes.dart' as routes;
 import 'package:muslim_guide/routes.dart';
 
@@ -20,11 +22,15 @@ Future<void> getData() async {
   //var x = await QuranRepo.getPages();
   //print('##SurahScreen## getData() data= $x');
   // MUST call it before access quranPages list in repo
-  await QuranRepo.instance.getPages();
+  // await QuranRepo.instance.getPages();
   //print('len= ${QuranRepo.instance.quranPages?.length}');
 
-  // fixme: put that inside it's file leave it for now to avoid hot restart
+  // fixme: put the below lines inside [splash screen ]
+  ///
+  await AppHelper.instance.prepareSurahItemsList();
+
   await QuranRepo.instance.getQuranPages();
+  // await QuranHelper.instance.testPrepareQuranPageContents(113);
 
   // final x = QuranRepo.instance.getQuranPage(2);
   // print('numberAyahMap for page1= ${x['ayahNumberMap']}');

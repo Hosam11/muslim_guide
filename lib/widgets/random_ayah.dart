@@ -25,11 +25,7 @@ class RandomAyah extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             /// todo: check in ayahLength to avoid ugly view in design
-            QuranTextView(quranAyahs: ayah),
-            /*Text(
-              '$ayah',
-              style: TextStyle(fontFamily: fonts.meQuranFont, fontSize: 25.0),
-            ),*/
+            QuranTextView(quranAyahs: ayah, ayahWithStyle: false),
             Text(
               '"طة"',
               style: Theme.of(context).textTheme.subtitle1,

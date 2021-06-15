@@ -11,4 +11,7 @@ const String azkarNightTitle = 'اذكار المساء';
 const String prayerTimesTitle = 'مواقيت الصلاة';
 const String rosaryTitle = 'السبحة';
 
+// SurahListScreen
 const String ayahs = 'آياتها';
+const String meccan = 'مكية';
+const String median = 'مدنية';

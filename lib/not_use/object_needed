@@ -1,0 +1,26 @@
+
+
+
+// PageContentModel
+juzNumber, int
+pageNumber int
+surahName, string
+quraterNumber, // get with this the  >> huzb number and rub3 number by divide on 4
+ayahModel, // object
+
+
+// AyaModel
+ayahNumber: 1,
+ayahText: "الم",
+surahName: "النساء",
+surahId: 4,
+
+
+
+// screen takes
+{
+    "text": "الم",
+    "header": "النساء",
+    "text": "الم"
+}
+listOfMap<String,String>

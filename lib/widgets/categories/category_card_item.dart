@@ -7,7 +7,7 @@ import 'package:muslim_guide/constants/styles.dart' as styles;
 class CategoryCardItem extends StatelessWidget {
   final String icon;
   final String title;
-  final Function onTapped;
+  final void Function() onTapped;
 
   const CategoryCardItem({
     @required this.icon,
@@ -29,11 +29,7 @@ class CategoryCardItem extends StatelessWidget {
             border: styles.kWhiteBorder,
           ),
           child: InkWell(
-            onTap: () {
-              if (onTapped != null) {
-                onTapped();
-              }
-            },
+            onTap: onTapped,
             child: Column(
               // crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.min,
@@ -66,6 +62,5 @@ class CategoryCardItem extends StatelessWidget {
         ),
       ),
     );
-    // return car();
   }
 }

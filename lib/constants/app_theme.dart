@@ -28,7 +28,7 @@ final ThemeData appThemeData = ThemeData(
 );
 */
 
-// bot used only for practicing
+// not used only for practicing
 const _lightFillColor = Colors.black;
 final ColorScheme lightColorScheme = ColorScheme(
   primary: Color(0xFFB93C5D),

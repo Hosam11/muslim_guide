@@ -1,7 +1,8 @@
+// files
 const String quranPagesFile = 'assets/files/quran_pages.json';
+const String quranPagesContentFile = 'assets/files/quran_page_content.json';
 const String surahsList = 'assets/files/surahs_list.json';
-// const String finalQuranPagesFile = 'assets/files/final_quran_pages.json';
-
+// images
 const String prayerTimesImg = 'assets/icons/pray_time.png';
 const String quranImg = 'assets/icons/quran.png';
 const String azkarMorningImg = 'assets/icons/azkar_morning.png';
