@@ -4,10 +4,11 @@ import 'dart:io';
 
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
-import 'package:muslim_guide/data/models/quran_page/quran_page.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
+import 'package:muslim_guide/not_use/model/old_quran_page/quran_page.dart';
 import 'package:muslim_guide/not_use/network.dart';
 
+/// responsible for create json object andsave it in file [quranPagesContentFile]
 Future<void> main() async {
   final pageContent = await singleQuranPageContent(206);
   var x = jsonEncode(pageContent);
@@ -21,7 +22,7 @@ Future<void> main() async {
   await writeToFile(jsonEncode(_quranContent), quranPagesContentFile);
 }
 
-Future<List<QuranPage>> testGetQuranPages() async {
+Future<List<OldQuranPage>> testGetQuranPages() async {
   var h = '@@ estGetQuranPages @@ getQuranPages() >>';
   final quranPagesRes = await File(quranPagesFile).readAsString();
 
@@ -43,7 +44,7 @@ Future<void> getQuranContent() async {
   }
 }
 
-Future<List<Map<String, String>>> getQuranPageContent(QuranPage page) async {
+Future<List<Map<String, String>>> getQuranPageContent(OldQuranPage page) async {
   final h = 'getQuranPageContent() >> ';
   final pageContent = <Map<String, String>>[];
 
@@ -186,7 +187,7 @@ void saveAyahInfo({
   ayahBuffer.write(createAyahText(ayah));
 }
 
-enum QuranContentType { surahHeader, ayah }
+enum ContentType { surahHeader, ayah }
 
 String createAyahText(Ayah ayah) {
   final h = 'addAyahToBuffer() >> ';
@@ -202,7 +203,7 @@ void addAyahToMap(
   String ayah,
 ) {
   final h = 'addAyahToMap() >> ';
-  var ayahMap = {contentType[QuranContentType.ayah]: ayah};
+  var ayahMap = {contentType[ContentType.ayah]: ayah};
   print('$h ayahMap= $ayahMap ');
   pageContent.add(ayahMap);
 }
@@ -213,7 +214,7 @@ void addHeaderToMap(
 ) {
   final h = 'addHeaderToMap() >> ';
   if (!headers.contains(ayah.surahName)) {
-    var header = {contentType[QuranContentType.surahHeader]: ayah.surahName};
+    var header = {contentType[ContentType.surahHeader]: ayah.surahName};
     print('$h header= $header');
     print('$h headers= ${headers.join(',')}');
     pageContent.add(header);
@@ -235,8 +236,8 @@ void printContentMap(List<Map<String, String>> pageContent) {
 }
 
 const contentType = {
-  QuranContentType.surahHeader: 'header',
-  QuranContentType.ayah: 'ayah'
+  ContentType.surahHeader: 'header',
+  ContentType.ayah: 'ayah'
 };
 
 void printSampleQuranContent(int start, int end) {

@@ -5,16 +5,16 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'quran_page.g.dart';
 
-List<QuranPage> quranDataFromJson(String str) =>
-    List<QuranPage>.from(jsonDecode(str).map((x) => QuranPage.fromJson(x)));
+List<OldQuranPage> quranDataFromJson(String str) => List<OldQuranPage>.from(
+    jsonDecode(str).map((x) => OldQuranPage.fromJson(x)));
 
 @JsonSerializable()
-class QuranPage {
+class OldQuranPage {
   int pageNumber, juz, quarter, hizb;
   final String surahName;
   final List<Ayah> pageAyahs;
 
-  QuranPage({
+  OldQuranPage({
     this.pageNumber,
     this.juz,
     this.quarter,
@@ -23,7 +23,7 @@ class QuranPage {
     this.pageAyahs,
   });
 
-  factory QuranPage.fromJson(Map<String, dynamic> json) =>
+  factory OldQuranPage.fromJson(Map<String, dynamic> json) =>
       _$QuranPageFromJson(json);
 
   Map<String, dynamic> toJson() => _$QuranPageToJson(this);

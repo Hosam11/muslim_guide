@@ -29,7 +29,7 @@ Future<void> getData() async {
   ///
   await AppHelper.instance.prepareSurahItemsList();
 
-  await QuranRepo.instance.getQuranPages();
+  // await QuranRepo.instance.getQuranPages();
   // await QuranHelper.instance.testPrepareQuranPageContents(113);
 
   // final x = QuranRepo.instance.getQuranPage(2);

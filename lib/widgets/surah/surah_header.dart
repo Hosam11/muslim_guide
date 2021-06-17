@@ -4,7 +4,9 @@ import 'package:muslim_guide/constants/styles.dart' as styles;
 
 class SurahHeader extends StatelessWidget {
   final String surahName;
-  final String juzName;
+
+  // support string and integer
+  final dynamic juzName;
 
   const SurahHeader({
     Key key,
@@ -27,7 +29,7 @@ class SurahHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
-            juzName,
+            juzName is num ? juzName.toString() : juzName,
             style: Theme.of(context).textTheme.bodyText2,
           ),
           Text(

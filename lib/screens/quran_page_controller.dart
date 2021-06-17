@@ -10,13 +10,28 @@ class QuranPageController extends StatelessWidget {
       'لِّلَّهِ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ۗ وَإِن تُبْدُوا۟ مَا فِىٓ أَنفُسِكُمْ أَوْ تُخْفُوهُ يُحَاسِبْكُم بِهِ ٱللَّهُ ۖ فَيَغْفِرُ لِمَن يَشَآءُ';
   final ayahList = [];
 
+  final widgets = [
+    Center(
+      child: Text('1', style: TextStyle(color: Colors.red, fontSize: 40)),
+    ),
+    Center(
+      child: Text('2', style: TextStyle(color: Colors.red, fontSize: 40)),
+    ),
+    Center(
+      child: Text('3', style: TextStyle(color: Colors.red, fontSize: 40)),
+    )
+  ];
+
   @override
   Widget build(BuildContext context) {
-    var x = QuranPageScreen(ayah: ayah, key: UniqueKey());
+    final quranPageController = PageController();
 
+    // var x = QuranPageScreen(ayah: ayah, key: UniqueKey());
+    // we need list of quranPageScreen
     return Scaffold(
       body: PageView(
-        children: [],
+        controller: quranPageController,
+        children: widgets,
       ),
     );
   }
