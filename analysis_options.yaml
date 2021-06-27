@@ -6,9 +6,7 @@ analyzer:
   errors:
     missing_required_param: error
   exclude:
-    - lib/data/models/quran_page.dart
     - lib/file_not_use/returned_quran_pages.dart
-#    - lib/not_use/
 
 linter:
   rules:

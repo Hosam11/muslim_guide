@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/dimens.dart';
+import 'package:muslim_guide/constants/fonts.dart';
 
 /*const TextStyle kScreenTitleStyle = TextStyle(
   color: kTextColor,
@@ -11,6 +12,7 @@ import 'package:muslim_guide/constants/dimens.dart';
 final BorderRadius kSmallBorderRadius = BorderRadius.circular(smallPadding);
 
 final kWhiteBorder = Border.all(color: kTextColor);
+
 final BoxDecoration kPrimaryBackgroundBoxDecoration = BoxDecoration(
   gradient: createLinearGradient(
     kPrimaryColor,
@@ -31,6 +33,13 @@ final BoxDecoration kSurahTitleBackgroundBoxDecoration = BoxDecoration(
     kSecSurahTitleGradientColor,
   ),
 );
+
+TextStyle ayahTextStyle(context) =>
+    Theme.of(context).textTheme.headline5.copyWith(
+          fontFamily: meQuranFont,
+          fontWeight: FontWeight.normal,
+          letterSpacing: 0.5,
+        );
 
 BoxShadow shadowFromColor(Color color) => BoxShadow(
       color: color.withOpacity(0.5),

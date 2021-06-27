@@ -5,9 +5,9 @@ import 'package:http/http.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
-import 'package:muslim_guide/not_use/model/old_quran_page/quran_page.dart';
-import 'package:muslim_guide/not_use/model/quran_me.dart';
-import 'package:muslim_guide/not_use/model/returned_quran_pages.dart';
+import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
+import 'package:muslim_guide/z_not_use/model/quran_me.dart';
+import 'package:muslim_guide/z_not_use/model/returned_quran_pages.dart';
 
 Future<void> main() async {
   /*var finalObj = await surahWithPageNumber();
@@ -21,6 +21,9 @@ Future<void> main() async {
       'last= ${jsonEncode(finalSurahList.last)}');
 */
 }
+
+const String oldQuranPagesFile =
+    'lib/z_not_use/archive_json/old_quran_pages.json';
 
 Future<List<Surah>> setupSurahsWithPageNumber(
   List<Map<int, int>> surahPageNumber,
@@ -82,7 +85,7 @@ Future<Set<Map<int, int>>> surahWithPageNumber() async {
 }
 
 Future<List<OldQuranPage>> getNewQuranPages() async {
-  final quranPagesRes = await File(quranPagesFile).readAsString();
+  final quranPagesRes = await File(oldQuranPagesFile).readAsString();
   final quranData = quranDataFromJson(quranPagesRes);
   // mLog('$h quranData= ${convert.jsonEncode(quranData)}');
   print('quranDataLen= ${quranData.length}');

@@ -27,7 +27,7 @@ Future<void> getData() async {
 
   // fixme: put the below lines inside [splash screen ]
   ///
-  await AppHelper.instance.prepareSurahItemsList();
+  await AppHelper.instance.prepareDataNeeded();
 
   // await QuranRepo.instance.getQuranPages();
   // await QuranHelper.instance.testPrepareQuranPageContents(113);

@@ -5,12 +5,12 @@ import 'dart:io';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
-import 'package:muslim_guide/not_use/model/old_quran_page/quran_page.dart';
-import 'package:muslim_guide/not_use/network.dart';
+import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
+import 'package:muslim_guide/z_not_use/network.dart';
 
 /// responsible for create json object andsave it in file [quranPagesContentFile]
 Future<void> main() async {
-  final pageContent = await singleQuranPageContent(206);
+/*  final pageContent = await singleQuranPageContent(206);
   var x = jsonEncode(pageContent);
   print('x= $x');
   await getQuranContent();
@@ -19,12 +19,12 @@ Future<void> main() async {
   final pages = jsonEncode(_quranContent.sublist(600));
   print('pages= $pages');
 
-  await writeToFile(jsonEncode(_quranContent), quranPagesContentFile);
+  await writeToFile(jsonEncode(_quranContent), quranPagesContentFile);*/
 }
 
 Future<List<OldQuranPage>> testGetQuranPages() async {
   var h = '@@ estGetQuranPages @@ getQuranPages() >>';
-  final quranPagesRes = await File(quranPagesFile).readAsString();
+  final quranPagesRes = await File(oldQuranPagesFile).readAsString();
 
   final quranData = quranDataFromJson(quranPagesRes);
   // log('$h quranData= ${jsonEncode(quranData)}');
@@ -192,11 +192,19 @@ enum ContentType { surahHeader, ayah }
 String createAyahText(Ayah ayah) {
   final h = 'addAyahToBuffer() >> ';
 
-  final ayahStr =
-      '${ayah.ayahText} \uFD3F${convertToArabic(ayah.ayahNumber)}\uFD3E ';
+  var ayahNumber = convertToArabic(ayah.ayahNumber);
+
+  if (ayah.ayahNumber > 9) {
+    ayahNumber = reversInt(ayahNumber);
+  }
+  print('ayahNumber= $ayahNumber');
+
+  final ayahStr = '${ayah.ayahText} \uFD3F$ayahNumber\uFD3E ';
   print('$h ayahStr= $ayahStr');
   return ayahStr;
 }
+
+String reversInt(String s) => s.split('').reversed.join();
 
 void addAyahToMap(
   List<Map<String, String>> pageContent,

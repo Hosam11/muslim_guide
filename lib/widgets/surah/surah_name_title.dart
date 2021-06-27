@@ -6,7 +6,9 @@ import 'package:muslim_guide/constants/dimens.dart';
 class SurahNameTitle extends StatelessWidget {
   const SurahNameTitle({
     Key key,
+    @required this.name,
   }) : super(key: key);
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +30,10 @@ class SurahNameTitle extends StatelessWidget {
               style: Theme.of(context).textTheme.headline5,
             ),
             Center(
-              child: Text('الفاتحة2',
-                  style: Theme.of(context).textTheme.headline5),
+              child: Text(
+                name,
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
             Text(
               '',

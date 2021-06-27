@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/dimens.dart' as dimens;
 import 'package:muslim_guide/constants/styles.dart' as styles;
-import 'package:muslim_guide/widgets/quran_text_view.dart';
+import 'package:muslim_guide/widgets/quran/quran_text_view.dart';
 
 class RandomAyah extends StatelessWidget {
   const RandomAyah({@required this.ayah});

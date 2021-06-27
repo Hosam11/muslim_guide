@@ -1,37 +1,32 @@
+import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/screens/quran_page_screen.dart';
+import 'package:muslim_guide/args/quran_args.dart';
+import 'package:muslim_guide/helpers/app_helper.dart';
+import 'package:muslim_guide/providers/quran_providder.dart';
+import 'package:provider/provider.dart';
 
 class QuranPageController extends StatelessWidget {
-  final ayah =
-      'يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا تَدَايَنتُم بِدَيْنٍ إِلَىٰٓ أَجَلٍۢ مُّسَمًّۭى فَٱكْتُبُوهُ ۚ وَلْيَكْتُب بَّيْنَكُمْ كَاتِبٌۢ بِٱلْعَدْلِ ۚ وَلَا يَأْبَ كَاتِبٌ أَن يَكْتُبَ كَمَا عَلَّمَهُ ٱللَّهُ ۚ فَلْيَكْتُبْ وَلْيُمْلِلِ ٱلَّذِى عَلَيْهِ ٱلْحَقُّ وَلْيَتَّقِ ٱللَّهَ رَبَّهُۥ وَلَا يَبْخَسْ مِنْهُ شَيْـًۭٔا ۚ فَإِن كَانَ ٱلَّذِى عَلَيْهِ ٱلْحَقُّ سَفِيهًا أَوْ ضَعِيفًا أَوْ لَا يَسْتَطِيعُ أَن يُمِلَّ هُوَ فَلْيُمْلِلْ وَلِيُّهُۥ بِٱلْعَدْلِ ۚ وَٱسْتَشْهِدُوا۟ شَهِيدَيْنِ مِن رِّجَالِكُمْ ۖ فَإِن لَّمْ يَكُونَا رَجُلَيْنِ فَرَجُلٌۭ وَٱمْرَأَتَانِ مِمَّن تَرْضَوْنَ مِنَ ٱلشُّهَدَآءِ أَن تَضِلَّ إِحْدَىٰهُمَا فَتُذَكِّرَ إِحْدَىٰهُمَا ٱلْأُخْرَىٰ ۚ وَلَا يَأْبَ ٱلشُّهَدَآءُ إِذَا مَا دُعُوا۟ ۚ وَلَا تَسْـَٔمُوٓا۟ أَن تَكْتُبُوهُ صَغِيرًا أَوْ كَبِيرًا إِلَىٰٓ أَجَلِهِۦ ۚ ذَٰلِكُمْ أَقْسَطُ عِندَ ٱللَّهِ وَأَقْوَمُ لِلشَّهَٰدَةِ وَأَدْنَىٰٓ أَلَّا تَرْتَابُوٓا۟ ۖ إِلَّآ أَن تَكُونَ تِجَٰرَةً حَاضِرَةًۭ تُدِيرُونَهَا بَيْنَكُمْ فَلَيْسَ عَلَيْكُمْ جُنَاحٌ أَلَّا تَكْتُبُوهَا ۗ وَأَشْهِدُوٓا۟ إِذَا تَبَايَعْتُمْ ۚ وَلَا يُضَآرَّ كَاتِبٌۭ وَلَا شَهِيدٌۭ ۚ وَإِن تَفْعَلُوا۟ فَإِنَّهُۥ فُسُوقٌۢ بِكُمْ ۗ وَٱتَّقُوا۟ ٱللَّهَ ۖ ';
-  final ayah2 =
-      '۞ وَإِن كُنتُمْ عَلَىٰ سَفَرٍۢ وَلَمْ تَجِدُوا۟ كَاتِبًۭا فَرِهَٰنٌۭ مَّقْبُوضَةٌۭ ۖ فَإِنْ أَمِنَ بَعْضُكُم بَعْضًۭا فَلْيُؤَدِّ ٱلَّذِى ٱؤْتُمِنَ أَمَٰنَتَهُۥ وَلْيَتَّقِ ٱللَّهَ رَبَّهُۥ ۗ وَلَا تَكْتُمُوا۟ ٱلشَّهَٰدَةَ ۚ وَمَن ';
-  final ayah3 =
-      'لِّلَّهِ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ۗ وَإِن تُبْدُوا۟ مَا فِىٓ أَنفُسِكُمْ أَوْ تُخْفُوهُ يُحَاسِبْكُم بِهِ ٱللَّهُ ۖ فَيَغْفِرُ لِمَن يَشَآءُ';
-  final ayahList = [];
+  final AppHelper _appHelper = AppHelper.instance;
+  final QuranArgs quranArgs;
 
-  final widgets = [
-    Center(
-      child: Text('1', style: TextStyle(color: Colors.red, fontSize: 40)),
-    ),
-    Center(
-      child: Text('2', style: TextStyle(color: Colors.red, fontSize: 40)),
-    ),
-    Center(
-      child: Text('3', style: TextStyle(color: Colors.red, fontSize: 40)),
-    )
-  ];
+  QuranPageController({Key key, @required this.quranArgs}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final quranPageController = PageController();
-
+    final quranPageController =
+        PageController(initialPage: quranArgs.quranProvider.quranPageNumber);
     // var x = QuranPageScreen(ayah: ayah, key: UniqueKey());
     // we need list of quranPageScreen
     return Scaffold(
-      body: PageView(
-        controller: quranPageController,
-        children: widgets,
+      body: ChangeNotifierProvider(
+        create: (BuildContext context) => QuranProvider(),
+        child: SafeArea(
+          child: PageView(
+            controller: quranPageController,
+            onPageChanged: (pageNumber) => Fimber.i('pageNumber= $pageNumber'),
+            children: _appHelper.quranPageScreen,
+          ),
+        ),
       ),
     );
   }

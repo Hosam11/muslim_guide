@@ -1,31 +1,27 @@
+import 'package:fimber/fimber.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_guide/args/quran_args.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
-import 'package:muslim_guide/not_use/model/quran_me.dart';
+import 'package:muslim_guide/providers/quran_providder.dart';
 import 'package:muslim_guide/routes.dart' as routes;
+import 'package:provider/provider.dart';
 
 class SurahItem extends StatelessWidget {
-/*  final int surahNumber;
-  final String name;
-  final int numberOfAyahs;
-  final String revelationType;*/
-
-  // final ArabicNumbers _arabicNumbers = ArabicHelper.arabicNumber;
-
   final Surah surah;
+
   SurahItem({
-/*    this.surahNumber,
-    this.name,
-    this.numberOfAyahs,
-    this.revelationType, */
     this.surah,
   });
 
+  QuranProvider updatedQuranProvider;
   @override
   Widget build(BuildContext context) {
+    updatedQuranProvider = Provider.of<QuranProvider>(context);
+
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return InkWell(
@@ -85,6 +81,13 @@ class SurahItem extends StatelessWidget {
   void onSurahPressed(BuildContext context) {
     /// handle data need for that screen
     /// 1- get page number
-    Navigator.pushNamed(context, routes.quranPageController);
+    Navigator.pushNamed(
+      context,
+      routes.quranPageController,
+      arguments: QuranArgs(updatedQuranProvider),
+    );
+    final quranProvider = Provider.of<QuranProvider>(context, listen: false);
+    quranProvider.quranPageNumber = surah.surahPageNumber - 1;
+    Fimber.i('surahPageNumber=  ${surah.surahPageNumber - 1}');
   }
 }

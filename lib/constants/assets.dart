@@ -1,6 +1,6 @@
 // files
-const String quranPagesFile = 'assets/files/old_quran_pages.json';
 const String newQuranPagesFile = 'assets/files/new_quran_pages.json';
+const String customPageContentFile = 'assets/files/custom_pages_content.json';
 const String quranPagesContentFile = 'assets/files/quran_page_content.json';
 const String surahsList = 'assets/files/surahs_list.json';
 // images

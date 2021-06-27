@@ -20,3 +20,4 @@ const String median = 'مدنية';
 const String hizbLabel = 'الحزب';
 const String quarterLabel = 'الربع';
 const String pageLabel = 'الصفحة';
+const String juzLabel = 'الجزء';

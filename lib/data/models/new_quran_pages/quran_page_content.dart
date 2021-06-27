@@ -23,6 +23,7 @@ class QuranPageContent {
 
   @JsonKey(includeIfNull: false)
   final String header;
+
   @JsonKey(includeIfNull: false)
   final String ayah;
 

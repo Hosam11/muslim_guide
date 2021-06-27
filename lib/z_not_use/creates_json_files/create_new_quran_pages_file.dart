@@ -6,14 +6,15 @@ import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
 import 'package:muslim_guide/data/models/new_quran_pages/new_quran_page.dart';
 import 'package:muslim_guide/data/models/new_quran_pages/quran_page_content.dart';
-import 'package:muslim_guide/not_use/creates_json_files/create_quran_page_contents_file.dart';
-import 'package:muslim_guide/not_use/creates_json_files/create_quran_pages_file.dart';
-import 'package:muslim_guide/not_use/model/old_quran_page/quran_page.dart';
-import 'package:muslim_guide/not_use/model/returned_quran_pages.dart';
+import 'package:muslim_guide/z_not_use/creates_json_files/create_quran_page_contents_file.dart';
+import 'package:muslim_guide/z_not_use/creates_json_files/create_quran_pages_file.dart';
+import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
+import 'package:muslim_guide/z_not_use/model/returned_quran_pages.dart';
 
 /// responsible for create json object and save it in file [newQuranPagesFile]
 Future<void> main() async {
   var x = await _getNewQuranPage();
+  // await _writeToFile(jsonEncode(x), 'test_file.json');
   await _writeToFile(jsonEncode(x), newQuranPagesFile);
 }
 
@@ -22,6 +23,7 @@ Future<Data> _getData(int page) async {
       Uri.parse('http://api.alquran.cloud/v1/page/$page/quran-uthmani'));
 
   final decodeData = jsonDecode(dataResponse.body) as Map<String, dynamic>;
+
   final pages = OriginalQuranPages.fromJson(decodeData);
 
   return pages.data;
@@ -33,6 +35,7 @@ Future<List<NewQuranPage>> _getNewQuranPage() async {
   final newQuranPages = <NewQuranPage>[];
 
   for (var i = 1; i <= 604; i++) {
+    // for (var i = 1; i <= 3; i++) {
     print('i= $i');
 
     var data = await _getData(i);
@@ -59,16 +62,41 @@ Future<List<NewQuranPage>> _getNewQuranPage() async {
     final quranPageContentsStr = jsonEncode(quranPageContents);
     var pageContentList = quranPageContentFromJson(quranPageContentsStr);
 
-    /*  fixme: reomve in order to make this method work
-    final newQuranPage = NewQuranPage.fromQuranPage(
+    // fixme: reomve in order to make this method work
+    final newQuranPage = NewQuranPage().fromQuranPage(
       quranPage: quranPage,
       quranPageContents: pageContentList,
     );
 
     newQuranPages.add(newQuranPage);
-    */
   }
   return newQuranPages;
+}
+
+extension on NewQuranPage {
+  NewQuranPage fromQuranPage({
+    OldQuranPage quranPage,
+    List<QuranPageContent> quranPageContents,
+  }) {
+    return NewQuranPage(
+      pageNumber: quranPage.pageNumber,
+      juz: quranPage.juz,
+      quarter: quranPage.quarter,
+      hizb: quranPage.hizb,
+      surahName: quranPage.surahName,
+      quranPageContents: quranPageContents,
+    );
+  }
+/*  My.fromQuranPage(
+      {QuranPage quranPage, List<QuranPageContent> quranPageContents})
+      : this(
+    pageNumber: quranPage.pageNumber,
+    juz: quranPage.juz,
+    quarter: quranPage.quarter,
+    hizb: quranPage.hizb,
+    surahName: quranPage.surahName,
+    quranPageContents: quranPageContents,
+  );*/
 }
 
 Future<void> _writeToFile(object, String fileName) async =>
@@ -92,7 +120,7 @@ Map<String, int> _hizbQuarterMap(int num) {
     case 25:
       quarterRes = 1;
       break;
-    case 50:
+    case 5:
       quarterRes = 2;
       break;
     case 75:

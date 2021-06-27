@@ -9,7 +9,7 @@
       {
         "ayahNumber": 1,
         "surahNumber": 1,
-        "ayahText": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+        "ayahText": "﻿بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
         "surahName": "سُورَةُ ٱلْفَاتِحَةِ"
       },
       {
@@ -224,7 +224,7 @@
   {
     "pageNumber": 5,
     "juz": 1,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 1,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -263,7 +263,7 @@
   {
     "pageNumber": 6,
     "juz": 1,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 1,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -689,7 +689,7 @@
   {
     "pageNumber": 14,
     "juz": 1,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 2,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -728,7 +728,7 @@
   {
     "pageNumber": 15,
     "juz": 1,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 2,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -785,7 +785,7 @@
   {
     "pageNumber": 16,
     "juz": 1,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 2,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -1169,7 +1169,7 @@
   {
     "pageNumber": 24,
     "juz": 2,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 3,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -1238,7 +1238,7 @@
   {
     "pageNumber": 25,
     "juz": 2,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 3,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -1283,7 +1283,7 @@
   {
     "pageNumber": 26,
     "juz": 2,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 3,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -1631,7 +1631,7 @@
   {
     "pageNumber": 34,
     "juz": 2,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 4,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -1664,7 +1664,7 @@
   {
     "pageNumber": 35,
     "juz": 2,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 4,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -1703,7 +1703,7 @@
   {
     "pageNumber": 36,
     "juz": 2,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 4,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -1985,7 +1985,7 @@
   {
     "pageNumber": 44,
     "juz": 3,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 5,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -2024,7 +2024,7 @@
   {
     "pageNumber": 45,
     "juz": 3,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 5,
     "surahName": "سُورَةُ البَقَرَةِ",
     "pageAyahs": [
@@ -2411,7 +2411,7 @@
   {
     "pageNumber": 54,
     "juz": 3,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 6,
     "surahName": "سُورَةُ آلِ عِمۡرَانَ",
     "pageAyahs": [
@@ -2468,7 +2468,7 @@
   {
     "pageNumber": 55,
     "juz": 3,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 6,
     "surahName": "سُورَةُ آلِ عِمۡرَانَ",
     "pageAyahs": [
@@ -2975,7 +2975,7 @@
   {
     "pageNumber": 64,
     "juz": 4,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 7,
     "surahName": "سُورَةُ آلِ عِمۡرَانَ",
     "pageAyahs": [
@@ -3026,7 +3026,7 @@
   {
     "pageNumber": 65,
     "juz": 4,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 7,
     "surahName": "سُورَةُ آلِ عِمۡرَانَ",
     "pageAyahs": [
@@ -3071,7 +3071,7 @@
   {
     "pageNumber": 66,
     "juz": 4,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 7,
     "surahName": "سُورَةُ آلِ عِمۡرَانَ",
     "pageAyahs": [
@@ -3497,7 +3497,7 @@
   {
     "pageNumber": 74,
     "juz": 4,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 8,
     "surahName": "سُورَةُ آلِ عِمۡرَانَ",
     "pageAyahs": [
@@ -3542,7 +3542,7 @@
   {
     "pageNumber": 75,
     "juz": 4,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 8,
     "surahName": "سُورَةُ آلِ عِمۡرَانَ",
     "pageAyahs": [
@@ -3599,7 +3599,7 @@
   {
     "pageNumber": 76,
     "juz": 4,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 8,
     "surahName": "سُورَةُ آلِ عِمۡرَانَ",
     "pageAyahs": [
@@ -3905,7 +3905,7 @@
   {
     "pageNumber": 84,
     "juz": 5,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 9,
     "surahName": "سُورَةُ النِّسَاءِ",
     "pageAyahs": [
@@ -3938,7 +3938,7 @@
   {
     "pageNumber": 85,
     "juz": 5,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 9,
     "surahName": "سُورَةُ النِّسَاءِ",
     "pageAyahs": [
@@ -3989,7 +3989,7 @@
   {
     "pageNumber": 86,
     "juz": 5,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 9,
     "surahName": "سُورَةُ النِّسَاءِ",
     "pageAyahs": [
@@ -4361,7 +4361,7 @@
   {
     "pageNumber": 94,
     "juz": 5,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 10,
     "surahName": "سُورَةُ النِّسَاءِ",
     "pageAyahs": [
@@ -4412,7 +4412,7 @@
   {
     "pageNumber": 95,
     "juz": 5,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 10,
     "surahName": "سُورَةُ النِّسَاءِ",
     "pageAyahs": [
@@ -4445,7 +4445,7 @@
   {
     "pageNumber": 96,
     "juz": 5,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 10,
     "surahName": "سُورَةُ النِّسَاءِ",
     "pageAyahs": [
@@ -4859,7 +4859,7 @@
   {
     "pageNumber": 104,
     "juz": 6,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 11,
     "surahName": "سُورَةُ النِّسَاءِ",
     "pageAyahs": [
@@ -4916,7 +4916,7 @@
   {
     "pageNumber": 105,
     "juz": 6,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 11,
     "surahName": "سُورَةُ النِّسَاءِ",
     "pageAyahs": [
@@ -5249,7 +5249,7 @@
   {
     "pageNumber": 114,
     "juz": 6,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 12,
     "surahName": "سُورَةُ المَائـِدَةِ",
     "pageAyahs": [
@@ -5288,7 +5288,7 @@
   {
     "pageNumber": 115,
     "juz": 6,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 12,
     "surahName": "سُورَةُ المَائـِدَةِ",
     "pageAyahs": [
@@ -5321,7 +5321,7 @@
   {
     "pageNumber": 116,
     "juz": 6,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 12,
     "surahName": "سُورَةُ المَائـِدَةِ",
     "pageAyahs": [
@@ -5693,7 +5693,7 @@
   {
     "pageNumber": 124,
     "juz": 7,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 13,
     "surahName": "سُورَةُ المَائـِدَةِ",
     "pageAyahs": [
@@ -5750,7 +5750,7 @@
   {
     "pageNumber": 125,
     "juz": 7,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 13,
     "surahName": "سُورَةُ المَائـِدَةِ",
     "pageAyahs": [
@@ -6245,7 +6245,7 @@
   {
     "pageNumber": 134,
     "juz": 7,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 14,
     "surahName": "سُورَةُ الأَنۡعَامِ",
     "pageAyahs": [
@@ -6296,7 +6296,7 @@
   {
     "pageNumber": 135,
     "juz": 7,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 14,
     "surahName": "سُورَةُ الأَنۡعَامِ",
     "pageAyahs": [
@@ -6359,7 +6359,7 @@
   {
     "pageNumber": 136,
     "juz": 7,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 14,
     "surahName": "سُورَةُ الأَنۡعَامِ",
     "pageAyahs": [
@@ -6767,7 +6767,7 @@
   {
     "pageNumber": 144,
     "juz": 8,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 15,
     "surahName": "سُورَةُ الأَنۡعَامِ",
     "pageAyahs": [
@@ -6818,7 +6818,7 @@
   {
     "pageNumber": 145,
     "juz": 8,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 15,
     "surahName": "سُورَةُ الأَنۡعَامِ",
     "pageAyahs": [
@@ -7283,7 +7283,7 @@
   {
     "pageNumber": 154,
     "juz": 8,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 16,
     "surahName": "سُورَةُ الأَعۡرَافِ",
     "pageAyahs": [
@@ -7334,7 +7334,7 @@
   {
     "pageNumber": 155,
     "juz": 8,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 16,
     "surahName": "سُورَةُ الأَعۡرَافِ",
     "pageAyahs": [
@@ -7817,7 +7817,7 @@
   {
     "pageNumber": 164,
     "juz": 9,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 17,
     "surahName": "سُورَةُ الأَعۡرَافِ",
     "pageAyahs": [
@@ -7922,7 +7922,7 @@
   {
     "pageNumber": 165,
     "juz": 9,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 17,
     "surahName": "سُورَةُ الأَعۡرَافِ",
     "pageAyahs": [
@@ -7991,7 +7991,7 @@
   {
     "pageNumber": 166,
     "juz": 9,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 17,
     "surahName": "سُورَةُ الأَعۡرَافِ",
     "pageAyahs": [
@@ -8414,7 +8414,7 @@
   {
     "pageNumber": 175,
     "juz": 9,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 18,
     "surahName": "سُورَةُ الأَعۡرَافِ",
     "pageAyahs": [
@@ -8471,7 +8471,7 @@
   {
     "pageNumber": 176,
     "juz": 9,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 18,
     "surahName": "سُورَةُ الأَعۡرَافِ",
     "pageAyahs": [
@@ -8921,7 +8921,7 @@
   {
     "pageNumber": 184,
     "juz": 10,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 19,
     "surahName": "سُورَةُ الأَنفَالِ",
     "pageAyahs": [
@@ -8984,7 +8984,7 @@
   {
     "pageNumber": 185,
     "juz": 10,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 19,
     "surahName": "سُورَةُ الأَنفَالِ",
     "pageAyahs": [
@@ -9041,7 +9041,7 @@
   {
     "pageNumber": 186,
     "juz": 10,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 19,
     "surahName": "سُورَةُ الأَنفَالِ",
     "pageAyahs": [
@@ -9389,7 +9389,7 @@
   {
     "pageNumber": 194,
     "juz": 10,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 20,
     "surahName": "سُورَةُ التَّوۡبَةِ",
     "pageAyahs": [
@@ -9440,7 +9440,7 @@
   {
     "pageNumber": 195,
     "juz": 10,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 20,
     "surahName": "سُورَةُ التَّوۡبَةِ",
     "pageAyahs": [
@@ -9875,7 +9875,7 @@
   {
     "pageNumber": 204,
     "juz": 11,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 21,
     "surahName": "سُورَةُ التَّوۡبَةِ",
     "pageAyahs": [
@@ -9914,7 +9914,7 @@
   {
     "pageNumber": 205,
     "juz": 11,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 21,
     "surahName": "سُورَةُ التَّوۡبَةِ",
     "pageAyahs": [
@@ -10355,7 +10355,7 @@
   {
     "pageNumber": 214,
     "juz": 11,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 22,
     "surahName": "سُورَةُ يُونُسَ",
     "pageAyahs": [
@@ -10430,7 +10430,7 @@
   {
     "pageNumber": 215,
     "juz": 11,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 22,
     "surahName": "سُورَةُ يُونُسَ",
     "pageAyahs": [
@@ -10487,7 +10487,7 @@
   {
     "pageNumber": 216,
     "juz": 11,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 22,
     "surahName": "سُورَةُ يُونُسَ",
     "pageAyahs": [
@@ -10961,7 +10961,7 @@
   {
     "pageNumber": 224,
     "juz": 12,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 23,
     "surahName": "سُورَةُ هُودٍ",
     "pageAyahs": [
@@ -11024,7 +11024,7 @@
   {
     "pageNumber": 225,
     "juz": 12,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 23,
     "surahName": "سُورَةُ هُودٍ",
     "pageAyahs": [
@@ -11510,7 +11510,7 @@
   {
     "pageNumber": 233,
     "juz": 12,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 24,
     "surahName": "سُورَةُ هُودٍ",
     "pageAyahs": [
@@ -11585,7 +11585,7 @@
   {
     "pageNumber": 234,
     "juz": 12,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 24,
     "surahName": "سُورَةُ هُودٍ",
     "pageAyahs": [
@@ -11648,7 +11648,7 @@
   {
     "pageNumber": 235,
     "juz": 12,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 24,
     "surahName": "سُورَةُ يُوسُفَ",
     "pageAyahs": [
@@ -12179,7 +12179,7 @@
   {
     "pageNumber": 244,
     "juz": 13,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 25,
     "surahName": "سُورَةُ يُوسُفَ",
     "pageAyahs": [
@@ -12242,7 +12242,7 @@
   {
     "pageNumber": 245,
     "juz": 13,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 25,
     "surahName": "سُورَةُ يُوسُفَ",
     "pageAyahs": [
@@ -12299,7 +12299,7 @@
   {
     "pageNumber": 246,
     "juz": 13,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 25,
     "surahName": "سُورَةُ يُوسُفَ",
     "pageAyahs": [
@@ -12725,7 +12725,7 @@
   {
     "pageNumber": 254,
     "juz": 13,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 26,
     "surahName": "سُورَةُ الرَّعۡدِ",
     "pageAyahs": [
@@ -12782,7 +12782,7 @@
   {
     "pageNumber": 255,
     "juz": 13,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 26,
     "surahName": "سُورَةُ إِبۡرَاهِيمَ",
     "pageAyahs": [
@@ -13367,7 +13367,7 @@
   {
     "pageNumber": 264,
     "juz": 14,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 27,
     "surahName": "سُورَةُ الحِجۡرِ",
     "pageAyahs": [
@@ -13496,7 +13496,7 @@
   {
     "pageNumber": 265,
     "juz": 14,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 27,
     "surahName": "سُورَةُ الحِجۡرِ",
     "pageAyahs": [
@@ -13619,7 +13619,7 @@
   {
     "pageNumber": 266,
     "juz": 14,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 27,
     "surahName": "سُورَةُ الحِجۡرِ",
     "pageAyahs": [
@@ -14306,7 +14306,7 @@
   {
     "pageNumber": 275,
     "juz": 14,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 28,
     "surahName": "سُورَةُ النَّحۡلِ",
     "pageAyahs": [
@@ -14357,7 +14357,7 @@
   {
     "pageNumber": 276,
     "juz": 14,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 28,
     "surahName": "سُورَةُ النَّحۡلِ",
     "pageAyahs": [
@@ -14825,7 +14825,7 @@
   {
     "pageNumber": 284,
     "juz": 15,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 29,
     "surahName": "سُورَةُ الإِسۡرَاءِ",
     "pageAyahs": [
@@ -14894,7 +14894,7 @@
   {
     "pageNumber": 285,
     "juz": 15,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 29,
     "surahName": "سُورَةُ الإِسۡرَاءِ",
     "pageAyahs": [
@@ -14969,7 +14969,7 @@
   {
     "pageNumber": 286,
     "juz": 15,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 29,
     "surahName": "سُورَةُ الإِسۡرَاءِ",
     "pageAyahs": [
@@ -15578,7 +15578,7 @@
   {
     "pageNumber": 295,
     "juz": 15,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 30,
     "surahName": "سُورَةُ الكَهۡفِ",
     "pageAyahs": [
@@ -15617,7 +15617,7 @@
   {
     "pageNumber": 296,
     "juz": 15,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 30,
     "surahName": "سُورَةُ الكَهۡفِ",
     "pageAyahs": [
@@ -16151,7 +16151,7 @@
   {
     "pageNumber": 304,
     "juz": 16,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 31,
     "surahName": "سُورَةُ الكَهۡفِ",
     "pageAyahs": [
@@ -16238,7 +16238,7 @@
   {
     "pageNumber": 305,
     "juz": 16,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 31,
     "surahName": "سُورَةُ مَرۡيَمَ",
     "pageAyahs": [
@@ -17222,7 +17222,7 @@
   {
     "pageNumber": 315,
     "juz": 16,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 32,
     "surahName": "سُورَةُ طه",
     "pageAyahs": [
@@ -17309,7 +17309,7 @@
   {
     "pageNumber": 316,
     "juz": 16,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 32,
     "surahName": "سُورَةُ طه",
     "pageAyahs": [
@@ -17951,7 +17951,7 @@
   {
     "pageNumber": 324,
     "juz": 17,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 33,
     "surahName": "سُورَةُ الأَنبِيَاءِ",
     "pageAyahs": [
@@ -18026,7 +18026,7 @@
   {
     "pageNumber": 325,
     "juz": 17,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 33,
     "surahName": "سُورَةُ الأَنبِيَاءِ",
     "pageAyahs": [
@@ -18659,7 +18659,7 @@
   {
     "pageNumber": 334,
     "juz": 17,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 34,
     "surahName": "سُورَةُ الحَجِّ",
     "pageAyahs": [
@@ -18716,7 +18716,7 @@
   {
     "pageNumber": 335,
     "juz": 17,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 34,
     "surahName": "سُورَةُ الحَجِّ",
     "pageAyahs": [
@@ -19289,7 +19289,7 @@
   {
     "pageNumber": 344,
     "juz": 18,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 35,
     "surahName": "سُورَةُ المُؤۡمِنُونَ",
     "pageAyahs": [
@@ -19388,7 +19388,7 @@
   {
     "pageNumber": 345,
     "juz": 18,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 35,
     "surahName": "سُورَةُ المُؤۡمِنُونَ",
     "pageAyahs": [
@@ -19499,7 +19499,7 @@
   {
     "pageNumber": 346,
     "juz": 18,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 35,
     "surahName": "سُورَةُ المُؤۡمِنُونَ",
     "pageAyahs": [
@@ -20111,7 +20111,7 @@
   {
     "pageNumber": 354,
     "juz": 18,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 36,
     "surahName": "سُورَةُ النُّورِ",
     "pageAyahs": [
@@ -20150,7 +20150,7 @@
   {
     "pageNumber": 355,
     "juz": 18,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 36,
     "surahName": "سُورَةُ النُّورِ",
     "pageAyahs": [
@@ -20657,7 +20657,7 @@
   {
     "pageNumber": 364,
     "juz": 19,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 37,
     "surahName": "سُورَةُ الفُرۡقَانِ",
     "pageAyahs": [
@@ -20738,7 +20738,7 @@
   {
     "pageNumber": 365,
     "juz": 19,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 37,
     "surahName": "سُورَةُ الفُرۡقَانِ",
     "pageAyahs": [
@@ -20819,7 +20819,7 @@
   {
     "pageNumber": 366,
     "juz": 19,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 37,
     "surahName": "سُورَةُ الفُرۡقَانِ",
     "pageAyahs": [
@@ -21905,7 +21905,7 @@
   {
     "pageNumber": 374,
     "juz": 19,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 38,
     "surahName": "سُورَةُ الشُّعَرَاءِ",
     "pageAyahs": [
@@ -22058,7 +22058,7 @@
   {
     "pageNumber": 375,
     "juz": 19,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 38,
     "surahName": "سُورَةُ الشُّعَرَاءِ",
     "pageAyahs": [
@@ -22205,7 +22205,7 @@
   {
     "pageNumber": 376,
     "juz": 19,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 38,
     "surahName": "سُورَةُ الشُّعَرَاءِ",
     "pageAyahs": [
@@ -22859,7 +22859,7 @@
   {
     "pageNumber": 384,
     "juz": 20,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 39,
     "surahName": "سُورَةُ النَّمۡلِ",
     "pageAyahs": [
@@ -22940,7 +22940,7 @@
   {
     "pageNumber": 385,
     "juz": 20,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 39,
     "surahName": "سُورَةُ القَصَصِ",
     "pageAyahs": [
@@ -23471,7 +23471,7 @@
   {
     "pageNumber": 394,
     "juz": 20,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 40,
     "surahName": "سُورَةُ القَصَصِ",
     "pageAyahs": [
@@ -23522,7 +23522,7 @@
   {
     "pageNumber": 395,
     "juz": 20,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 40,
     "surahName": "سُورَةُ القَصَصِ",
     "pageAyahs": [
@@ -24047,7 +24047,7 @@
   {
     "pageNumber": 404,
     "juz": 21,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 41,
     "surahName": "سُورَةُ الرُّومِ",
     "pageAyahs": [
@@ -24122,7 +24122,7 @@
   {
     "pageNumber": 405,
     "juz": 21,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 41,
     "surahName": "سُورَةُ الرُّومِ",
     "pageAyahs": [
@@ -24191,7 +24191,7 @@
   {
     "pageNumber": 406,
     "juz": 21,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 41,
     "surahName": "سُورَةُ الرُّومِ",
     "pageAyahs": [
@@ -24746,7 +24746,7 @@
   {
     "pageNumber": 415,
     "juz": 21,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 42,
     "surahName": "سُورَةُ السَّجۡدَةِ",
     "pageAyahs": [
@@ -24821,7 +24821,7 @@
   {
     "pageNumber": 416,
     "juz": 21,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 42,
     "surahName": "سُورَةُ السَّجۡدَةِ",
     "pageAyahs": [
@@ -24884,7 +24884,7 @@
   {
     "pageNumber": 417,
     "juz": 21,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 42,
     "surahName": "سُورَةُ السَّجۡدَةِ",
     "pageAyahs": [
@@ -25316,7 +25316,7 @@
   {
     "pageNumber": 425,
     "juz": 22,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 43,
     "surahName": "سُورَةُ الأَحۡزَابِ",
     "pageAyahs": [
@@ -25760,7 +25760,7 @@
   {
     "pageNumber": 433,
     "juz": 22,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 44,
     "surahName": "سُورَةُ سَبَإٍ",
     "pageAyahs": [
@@ -25823,7 +25823,7 @@
   {
     "pageNumber": 434,
     "juz": 22,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 44,
     "surahName": "سُورَةُ فَاطِرٍ",
     "pageAyahs": [
@@ -25886,7 +25886,7 @@
   {
     "pageNumber": 435,
     "juz": 22,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 44,
     "surahName": "سُورَةُ فَاطِرٍ",
     "pageAyahs": [
@@ -26543,7 +26543,7 @@
   {
     "pageNumber": 444,
     "juz": 23,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 45,
     "surahName": "سُورَةُ يسٓ",
     "pageAyahs": [
@@ -26648,7 +26648,7 @@
   {
     "pageNumber": 445,
     "juz": 23,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 45,
     "surahName": "سُورَةُ يسٓ",
     "pageAyahs": [
@@ -27995,7 +27995,7 @@
   {
     "pageNumber": 454,
     "juz": 23,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 46,
     "surahName": "سُورَةُ صٓ",
     "pageAyahs": [
@@ -28064,7 +28064,7 @@
   {
     "pageNumber": 455,
     "juz": 23,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 46,
     "surahName": "سُورَةُ صٓ",
     "pageAyahs": [
@@ -28799,7 +28799,7 @@
   {
     "pageNumber": 464,
     "juz": 24,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 47,
     "surahName": "سُورَةُ الزُّمَرِ",
     "pageAyahs": [
@@ -28862,7 +28862,7 @@
   {
     "pageNumber": 465,
     "juz": 24,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 47,
     "surahName": "سُورَةُ الزُّمَرِ",
     "pageAyahs": [
@@ -28937,7 +28937,7 @@
   {
     "pageNumber": 466,
     "juz": 24,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 47,
     "surahName": "سُورَةُ الزُّمَرِ",
     "pageAyahs": [
@@ -29405,7 +29405,7 @@
   {
     "pageNumber": 474,
     "juz": 24,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 48,
     "surahName": "سُورَةُ غَافِرٍ",
     "pageAyahs": [
@@ -29462,7 +29462,7 @@
   {
     "pageNumber": 475,
     "juz": 24,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 48,
     "surahName": "سُورَةُ غَافِرٍ",
     "pageAyahs": [
@@ -29537,7 +29537,7 @@
   {
     "pageNumber": 476,
     "juz": 24,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 48,
     "surahName": "سُورَةُ غَافِرٍ",
     "pageAyahs": [
@@ -30041,7 +30041,7 @@
   {
     "pageNumber": 484,
     "juz": 25,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 49,
     "surahName": "سُورَةُ الشُّورَىٰ",
     "pageAyahs": [
@@ -30080,7 +30080,7 @@
   {
     "pageNumber": 485,
     "juz": 25,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 49,
     "surahName": "سُورَةُ الشُّورَىٰ",
     "pageAyahs": [
@@ -30662,7 +30662,7 @@
   {
     "pageNumber": 493,
     "juz": 25,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 50,
     "surahName": "سُورَةُ الزُّخۡرُفِ",
     "pageAyahs": [
@@ -30749,7 +30749,7 @@
   {
     "pageNumber": 494,
     "juz": 25,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 50,
     "surahName": "سُورَةُ الزُّخۡرُفِ",
     "pageAyahs": [
@@ -30836,7 +30836,7 @@
   {
     "pageNumber": 495,
     "juz": 25,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 50,
     "surahName": "سُورَةُ الزُّخۡرُفِ",
     "pageAyahs": [
@@ -31718,7 +31718,7 @@
   {
     "pageNumber": 505,
     "juz": 26,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 51,
     "surahName": "سُورَةُ الأَحۡقَافِ",
     "pageAyahs": [
@@ -31775,7 +31775,7 @@
   {
     "pageNumber": 506,
     "juz": 26,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 51,
     "surahName": "سُورَةُ الأَحۡقَافِ",
     "pageAyahs": [
@@ -32294,7 +32294,7 @@
   {
     "pageNumber": 515,
     "juz": 26,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 52,
     "surahName": "سُورَةُ الحُجُرَاتِ",
     "pageAyahs": [
@@ -32333,7 +32333,7 @@
   {
     "pageNumber": 516,
     "juz": 26,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 52,
     "surahName": "سُورَةُ الحُجُرَاتِ",
     "pageAyahs": [
@@ -33203,7 +33203,7 @@
   {
     "pageNumber": 524,
     "juz": 27,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 53,
     "surahName": "سُورَةُ الطُّورِ",
     "pageAyahs": [
@@ -33314,7 +33314,7 @@
   {
     "pageNumber": 525,
     "juz": 27,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 53,
     "surahName": "سُورَةُ الطُّورِ",
     "pageAyahs": [
@@ -34607,7 +34607,7 @@
   {
     "pageNumber": 534,
     "juz": 27,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 54,
     "surahName": "سُورَةُ الوَاقِعَةِ",
     "pageAyahs": [
@@ -34778,7 +34778,7 @@
   {
     "pageNumber": 535,
     "juz": 27,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 54,
     "surahName": "سُورَةُ الوَاقِعَةِ",
     "pageAyahs": [
@@ -35579,7 +35579,7 @@
   {
     "pageNumber": 544,
     "juz": 28,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 55,
     "surahName": "سُورَةُ المُجَادلَةِ",
     "pageAyahs": [
@@ -35648,7 +35648,7 @@
   {
     "pageNumber": 545,
     "juz": 28,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 55,
     "surahName": "سُورَةُ الحَشۡرِ",
     "pageAyahs": [
@@ -35681,7 +35681,7 @@
   {
     "pageNumber": 546,
     "juz": 28,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 55,
     "surahName": "سُورَةُ الحَشۡرِ",
     "pageAyahs": [
@@ -36089,7 +36089,7 @@
   {
     "pageNumber": 554,
     "juz": 28,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 56,
     "surahName": "سُورَةُ المُنَافِقُونَ",
     "pageAyahs": [
@@ -36140,7 +36140,7 @@
   {
     "pageNumber": 555,
     "juz": 28,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 56,
     "surahName": "سُورَةُ المُنَافِقُونَ",
     "pageAyahs": [
@@ -36191,7 +36191,7 @@
   {
     "pageNumber": 556,
     "juz": 28,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 56,
     "surahName": "سُورَةُ التَّغَابُنِ",
     "pageAyahs": [
@@ -36254,7 +36254,7 @@
   {
     "pageNumber": 557,
     "juz": 28,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 56,
     "surahName": "سُورَةُ التَّغَابُنِ",
     "pageAyahs": [
@@ -36671,7 +36671,7 @@
   {
     "pageNumber": 564,
     "juz": 29,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 57,
     "surahName": "سُورَةُ القَلَمِ",
     "pageAyahs": [
@@ -36794,7 +36794,7 @@
   {
     "pageNumber": 565,
     "juz": 29,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 57,
     "surahName": "سُورَةُ القَلَمِ",
     "pageAyahs": [
@@ -38132,7 +38132,7 @@
   {
     "pageNumber": 575,
     "juz": 29,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 58,
     "surahName": "سُورَةُ المُدَّثِّرِ",
     "pageAyahs": [
@@ -38249,7 +38249,7 @@
   {
     "pageNumber": 576,
     "juz": 29,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 58,
     "surahName": "سُورَةُ المُدَّثِّرِ",
     "pageAyahs": [
@@ -39806,7 +39806,7 @@
   {
     "pageNumber": 585,
     "juz": 30,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 59,
     "surahName": "سُورَةُ عَبَسَ",
     "pageAyahs": [
@@ -40067,7 +40067,7 @@
   {
     "pageNumber": 586,
     "juz": 30,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 59,
     "surahName": "سُورَةُ التَّكۡوِيرِ",
     "pageAyahs": [
@@ -41435,7 +41435,7 @@
   {
     "pageNumber": 594,
     "juz": 30,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 60,
     "surahName": "سُورَةُ البَلَدِ",
     "pageAyahs": [
@@ -41606,7 +41606,7 @@
   {
     "pageNumber": 595,
     "juz": 30,
-    "quarter": null,
+    "quarter": 2,
     "hizb": 60,
     "surahName": "سُورَةُ اللَّيۡلِ",
     "pageAyahs": [
@@ -42749,105 +42749,6 @@
         "surahNumber": 111,
         "ayahText": "فِى جِيدِهَا حَبْلٌۭ مِّن مَّسَدٍۭ",
         "surahName": "سُورَةُ المَسَدِ"
-      }
-    ]
-  },
-  {
-    "pageNumber": 604,
-    "juz": 30,
-    "quarter": 4,
-    "hizb": 60,
-    "surahName": "سُورَةُ النَّاسِ",
-    "pageAyahs": [
-      {
-        "ayahNumber": 1,
-        "surahNumber": 112,
-        "ayahText": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ هُوَ ٱللَّهُ أَحَدٌ",
-        "surahName": "سُورَةُ الإِخۡلَاصِ"
-      },
-      {
-        "ayahNumber": 2,
-        "surahNumber": 112,
-        "ayahText": "ٱللَّهُ ٱلصَّمَدُ",
-        "surahName": "سُورَةُ الإِخۡلَاصِ"
-      },
-      {
-        "ayahNumber": 3,
-        "surahNumber": 112,
-        "ayahText": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
-        "surahName": "سُورَةُ الإِخۡلَاصِ"
-      },
-      {
-        "ayahNumber": 4,
-        "surahNumber": 112,
-        "ayahText": "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
-        "surahName": "سُورَةُ الإِخۡلَاصِ"
-      },
-      {
-        "ayahNumber": 1,
-        "surahNumber": 113,
-        "ayahText": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
-        "surahName": "سُورَةُ الفَلَقِ"
-      },
-      {
-        "ayahNumber": 2,
-        "surahNumber": 113,
-        "ayahText": "مِن شَرِّ مَا خَلَقَ",
-        "surahName": "سُورَةُ الفَلَقِ"
-      },
-      {
-        "ayahNumber": 3,
-        "surahNumber": 113,
-        "ayahText": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
-        "surahName": "سُورَةُ الفَلَقِ"
-      },
-      {
-        "ayahNumber": 4,
-        "surahNumber": 113,
-        "ayahText": "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ",
-        "surahName": "سُورَةُ الفَلَقِ"
-      },
-      {
-        "ayahNumber": 5,
-        "surahNumber": 113,
-        "ayahText": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
-        "surahName": "سُورَةُ الفَلَقِ"
-      },
-      {
-        "ayahNumber": 1,
-        "surahNumber": 114,
-        "ayahText": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
-        "surahName": "سُورَةُ النَّاسِ"
-      },
-      {
-        "ayahNumber": 2,
-        "surahNumber": 114,
-        "ayahText": "مَلِكِ ٱلنَّاسِ",
-        "surahName": "سُورَةُ النَّاسِ"
-      },
-      {
-        "ayahNumber": 3,
-        "surahNumber": 114,
-        "ayahText": "إِلَٰهِ ٱلنَّاسِ",
-        "surahName": "سُورَةُ النَّاسِ"
-      },
-      {
-        "ayahNumber": 4,
-        "surahNumber": 114,
-        "ayahText": "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ",
-        "surahName": "سُورَةُ النَّاسِ"
-      },
-      {
-        "ayahNumber": 5,
-        "surahNumber": 114,
-        "ayahText": "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ",
-        "surahName": "سُورَةُ النَّاسِ"
-      },
-      {
-        "ayahNumber": 6,
-        "surahNumber": 114,
-        "ayahText": "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
-        "surahName": "سُورَةُ النَّاسِ"
       }
     ]
   }

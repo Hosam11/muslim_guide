@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:muslim_guide/not_use/model/quran_me.dart';
+// import 'package:muslim_guide/not_use/model/quran_me.dart';
 
 part 'surah.g.dart';
 
-// enum RevelationType { meccan, median }
+enum RevelationType { meccan, median }
 
 List<Surah> surahListFromJson(String str) =>
     List<Surah>.from(jsonDecode(str).map((x) => Surah.fromJson(x)));

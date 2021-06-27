@@ -27,16 +27,4 @@ class NewQuranPage {
       _$NewQuranPageFromJson(json);
 
   Map<String, dynamic> toJson() => _$NewQuranPageToJson(this);
-
-/* fixme: only used in preparation of json file
- NewQuranPage.fromQuranPage(
-      {QuranPage quranPage, List<QuranPageContent> quranPageContents})
-      : this(
-          pageNumber: quranPage.pageNumber,
-          juz: quranPage.juz,
-          quarter: quranPage.quarter,
-          hizb: quranPage.hizb,
-          surahName: quranPage.surahName,
-          quranPageContents: quranPageContents,
-        );*/
 }

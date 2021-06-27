@@ -2,22 +2,20 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
-import 'package:muslim_guide/not_use/model/old_quran_page/quran_page.dart';
-import 'package:muslim_guide/not_use/model/returned_quran_pages.dart';
+import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
+import 'package:muslim_guide/z_not_use/model/returned_quran_pages.dart';
 
 /// responsible for create json object and save it in file [quranPagesFile]
 
 Future<void> main() async {
-  await _storeData();
-  // await _writeToFile(jsonEncode(_newQuranPages), 'quranPagesFile');
+/*  final oldQuranPages = await _storeData();
+  await _writeToFile(jsonEncode(oldQuranPages), 'oldQuranPagesFile.json');*/
 }
 
 Future<Data> _getData(int page) async {
   final dataResponse = await get(
       Uri.parse('http://api.alquran.cloud/v1/page/$page/quran-uthmani'));
-
   final decodeData = jsonDecode(dataResponse.body) as Map<String, dynamic>;
   final pages = OriginalQuranPages.fromJson(decodeData);
 
@@ -31,7 +29,7 @@ Future<List<OldQuranPage>> _storeData() async {
 
   var quranPages = <OldQuranPage>[];
 
-  for (var i = 1; i <= 10; i++) {
+  for (var i = 1; i <= 603; i++) {
     print('i= $i');
 
     var data = await _getData(i);
@@ -66,7 +64,7 @@ Future<List<OldQuranPage>> _storeData() async {
 
 Map<String, int> _hizbQuarterMap(int num) {
   var h = 'hizbQuarterMap() >>';
-
+  print('$h num= $num');
   // 40 / 4 >> 10.0
   // 41 / 4 >> 10.25
   // 42 / 4 >> 10.50
@@ -74,6 +72,7 @@ Map<String, int> _hizbQuarterMap(int num) {
   var quarterHizb = num / 4;
   var hizb = int.parse(quarterHizb.toString().split('.')[0]);
   var quarter = int.parse(quarterHizb.toString().split('.')[1]);
+  print('$h quarterHizb= $quarterHizb, hizb= $hizb, quarter= $quarter');
   var quarterRes;
   switch (quarter) {
     case 0:
@@ -82,7 +81,7 @@ Map<String, int> _hizbQuarterMap(int num) {
     case 25:
       quarterRes = 1;
       break;
-    case 50:
+    case 5:
       quarterRes = 2;
       break;
     case 75:
@@ -90,7 +89,7 @@ Map<String, int> _hizbQuarterMap(int num) {
       break;
   }
   hizb = (quarter > 0) ? hizb + 1 : hizb;
-
+  print('$h quarter= $quarter, hizb= $hizb, quarterRes= $quarterRes');
   return <String, int>{'hizb': hizb, 'quarter': quarterRes};
 }
 
