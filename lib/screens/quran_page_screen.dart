@@ -28,8 +28,7 @@ class QuranPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final h = '@@ $runtimeType @@ build() >> ';
-    mLog(
-        '$h quranPageContents= \n${jsonEncode(quranPageModel.quranPageContents)} ');
+    mLog('$h quranPageContents= \n${jsonEncode(quranPageModel)} ');
     var str = 'يَ͟͟سْ͟͟جُ͟͟دُ͟͟و͟نَ͟͟ ͟';
     return Scaffold(
       backgroundColor: colors.kSecondaryColor,
@@ -46,9 +45,7 @@ class QuranPageScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Column(
-                    children: [
-                      ...quranPageContent(quranPageModel.quranPageContents)
-                    ],
+                    children: [...quranPageContent(quranPageModel)],
                   ),
                 ),
               ),

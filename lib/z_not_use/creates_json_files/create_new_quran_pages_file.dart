@@ -62,7 +62,7 @@ Future<List<NewQuranPage>> _getNewQuranPage() async {
     final quranPageContentsStr = jsonEncode(quranPageContents);
     var pageContentList = quranPageContentFromJson(quranPageContentsStr);
 
-    // fixme: reomve in order to make this method work
+    // fixme: remove comment in order to make this method work
     final newQuranPage = NewQuranPage().fromQuranPage(
       quranPage: quranPage,
       quranPageContents: pageContentList,

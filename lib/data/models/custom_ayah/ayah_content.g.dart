@@ -8,15 +8,15 @@ part of 'ayah_content.dart';
 
 AyahContent _$AyahContentFromJson(Map<String, dynamic> json) {
   return AyahContent(
-    firstAyahs: json['first_ayahs'] as String,
-    sajdaWords: json['sajda_words'] as String,
-    lastAyahs: json['last_ayahs'] as String,
+    firstAyahs: json['firstAyahs'] as String,
+    sajdaWords: json['sajdaWords'] as String,
+    lastAyahs: json['lastAyahs'] as String,
   );
 }
 
 Map<String, dynamic> _$AyahContentToJson(AyahContent instance) =>
     <String, dynamic>{
-      'first_ayahs': instance.firstAyahs,
-      'sajda_words': instance.sajdaWords,
-      'last_ayahs': instance.lastAyahs,
+      'firstAyahs': instance.firstAyahs,
+      'sajdaWords': instance.sajdaWords,
+      'lastAyahs': instance.lastAyahs,
     };

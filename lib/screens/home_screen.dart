@@ -3,12 +3,15 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:muslim_guide/constants/assets.dart';
+import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart' as strings;
 import 'package:muslim_guide/constants/styles.dart' as styles;
+import 'package:muslim_guide/data/models/custom_ayah/ayah_content.dart';
 import 'package:muslim_guide/helpers/app_helper.dart';
+import 'package:muslim_guide/widgets/categories/category_list.dart';
 import 'package:muslim_guide/widgets/quran/custom_quran_textview.dart';
+import 'package:muslim_guide/widgets/quran/random_ayah.dart';
 import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
-import 'package:muslim_guide/data/models/custom_ayah/custom_ayah.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -21,10 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    prepareFile();
   }
 
-  var customPages = CustomAyah();
+  var customPages = AyahContent();
 
   @override
   Widget build(BuildContext context) {
@@ -38,25 +40,20 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             /*Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: dimens.mediumPadding,
-                vertical: dimens.smallPadding,
+                horizontal: mediumPadding,
+                vertical: smallPadding,
               ),
               child: RandomAyah(ayah: ayah),
             ),*/
-            // Expanded(child: CategoryList()),
-            CustomQuranTextView(customAyah: customPages),
+            Expanded(child: CategoryList()),
+            /*Expanded(
+              child: SingleChildScrollView(
+                child: CustomQuranTextView(customAyah: customPages),
+              ),
+            ),*/
           ],
         ),
       ),
     );
-  }
-
-  Future<void> prepareFile() async {
-    final h = '@@ $runtimeType @@ prepareFile() >>';
-    final customPageContent =
-        await rootBundle.loadString(customPageContentFile);
-    customPages = customAyahFromJson(customPageContent)[0];
-
-    mLog('$h customAyah= \n${jsonEncode(customPages)}');
   }
 }
