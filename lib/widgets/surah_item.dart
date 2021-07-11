@@ -6,7 +6,7 @@ import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
-import 'package:muslim_guide/providers/quran_providder.dart';
+import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:muslim_guide/routes.dart' as routes;
 import 'package:provider/provider.dart';
 
@@ -83,11 +83,13 @@ class SurahItem extends StatelessWidget {
     /// 1- get page number
     Navigator.pushNamed(
       context,
-      routes.quranPageController,
-      arguments: QuranArgs(updatedQuranProvider),
+      routes.quranPageControllerScreen,
+      arguments: QuranArgs(
+        surah.surahPageNumber - 1,
+      ),
     );
-    final quranProvider = Provider.of<QuranProvider>(context, listen: false);
-    quranProvider.quranPageNumber = surah.surahPageNumber - 1;
+    // final quranProvider = Provider.of<QuranProvider>(context, listen: false);
+    // quranProvider.quranPageNumber = surah.surahPageNumber - 1;
     Fimber.i('surahPageNumber=  ${surah.surahPageNumber - 1}');
   }
 }

@@ -1,9 +1,6 @@
-import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/args/quran_args.dart';
 import 'package:muslim_guide/helpers/app_helper.dart';
-import 'package:muslim_guide/providers/quran_providder.dart';
-import 'package:provider/provider.dart';
 
 class QuranPageController extends StatelessWidget {
   final AppHelper _appHelper = AppHelper.instance;
@@ -14,18 +11,14 @@ class QuranPageController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final quranPageController =
-        PageController(initialPage: quranArgs.quranProvider.quranPageNumber);
+        PageController(initialPage: quranArgs.pageNumber);
     // var x = QuranPageScreen(ayah: ayah, key: UniqueKey());
     // we need list of quranPageScreen
     return Scaffold(
-      body: ChangeNotifierProvider(
-        create: (BuildContext context) => QuranProvider(),
-        child: SafeArea(
-          child: PageView(
-            controller: quranPageController,
-            onPageChanged: (pageNumber) => Fimber.i('pageNumber= $pageNumber'),
-            children: _appHelper.quranPageScreen,
-          ),
+      body: SafeArea(
+        child: PageView(
+          controller: quranPageController,
+          children: _appHelper.quranPageScreen,
         ),
       ),
     );

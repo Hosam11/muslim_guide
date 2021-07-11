@@ -34,6 +34,15 @@ final BoxDecoration kSurahTitleBackgroundBoxDecoration = BoxDecoration(
   ),
 );
 
+BoxDecoration createGradientBackground(Color firColor, Color secColor) =>
+    BoxDecoration(
+      gradient: createLinearGradient(firColor, secColor),
+    );
+
+BoxDecoration pagePopupDecoration = BoxDecoration(
+  color: Colors.black.withOpacity(.8),
+);
+
 TextStyle ayahTextStyle(context) =>
     Theme.of(context).textTheme.headline5.copyWith(
           fontFamily: meQuranFont,
@@ -46,11 +55,6 @@ BoxShadow shadowFromColor(Color color) => BoxShadow(
       spreadRadius: 5,
       blurRadius: 7,
       offset: Offset(0, 3), // changes position of shadow
-    );
-
-BoxDecoration createGradientBackground(Color firColor, Color secColor) =>
-    BoxDecoration(
-      gradient: createLinearGradient(firColor, secColor),
     );
 
 LinearGradient createLinearGradient(Color firColor, Color secColor) =>

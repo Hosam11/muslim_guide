@@ -4,9 +4,7 @@ import 'package:muslim_guide/constants/dimens.dart' as dimens;
 import 'package:muslim_guide/constants/strings.dart' as strings;
 import 'package:muslim_guide/constants/styles.dart' as styles;
 import 'package:muslim_guide/helpers/app_helper.dart';
-import 'package:muslim_guide/providers/quran_providder.dart';
 import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
-import 'package:provider/provider.dart';
 
 class SurahsListScreen extends StatelessWidget {
   final AppHelper _appHelper = AppHelper.instance;
@@ -31,17 +29,14 @@ class SurahsListScreen extends StatelessWidget {
                 topRight: Radius.circular(dimens.smallPadding),
               ),
             ),
-            child: ChangeNotifierProvider(
-              create: (_) => QuranProvider(),
-              child: ListView.separated(
-                physics: BouncingScrollPhysics(),
-                itemBuilder: (_, index) => _appHelper.surahsItems[index],
-                itemCount: _appHelper.surahsItems.length,
-                padding: const EdgeInsets.all(dimens.smallPadding),
-                shrinkWrap: true,
-                separatorBuilder: (BuildContext context, int index) =>
-                    const Divider(),
-              ),
+            child: ListView.separated(
+              physics: BouncingScrollPhysics(),
+              itemBuilder: (_, index) => _appHelper.surahsItems[index],
+              itemCount: _appHelper.surahsItems.length,
+              padding: const EdgeInsets.all(dimens.smallPadding),
+              shrinkWrap: true,
+              separatorBuilder: (BuildContext context, int index) =>
+                  const Divider(),
             ),
           ),
         ),

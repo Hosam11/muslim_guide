@@ -9,7 +9,7 @@ List<CategoryCardItem> _getGridItems(BuildContext context) => [
       CategoryCardItem(
         title: strings.quranTitle,
         icon: assets.quranImg,
-        onTapped: () => Navigator.pushNamed(context, routes.quranScreen),
+        onTapped: () => Navigator.pushNamed(context, routes.quranScreenScreen),
       ),
       CategoryCardItem(
         title: strings.allahNamesTitle,

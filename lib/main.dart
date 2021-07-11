@@ -4,20 +4,30 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/locals.dart';
 import 'package:muslim_guide/constants/strings.dart';
+import 'package:muslim_guide/data/shared_prefs/perfs.dart' as prefs;
+import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
+import 'package:muslim_guide/helpers/after_layout.dart';
 import 'package:muslim_guide/helpers/app_helper.dart';
-import 'package:muslim_guide/helpers/quran_helper.dart';
+import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:muslim_guide/routes.dart' as routes;
 import 'package:muslim_guide/routes.dart';
-
-import 'data/repository/quran_repo.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  AppHelper.instance.runAppSpector();
+
   Fimber.plantTree(DebugTree.elapsed());
   await getData();
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (BuildContext context) => QuranProvider(),
+      child: MuslimGuideApp(),
+    ),
+  );
 }
 
+// fixme: put the below lines inside [splash screen ]
 Future<void> getData() async {
   //var x = await QuranRepo.getPages();
   //print('##SurahScreen## getData() data= $x');
@@ -25,8 +35,8 @@ Future<void> getData() async {
   // await QuranRepo.instance.getPages();
   //print('len= ${QuranRepo.instance.quranPages?.length}');
 
-  // fixme: put the below lines inside [splash screen ]
-  ///
+  await prefs.init();
+
   await AppHelper.instance.prepareDataNeeded();
 
   // await QuranRepo.instance.getQuranPages();
@@ -36,18 +46,43 @@ Future<void> getData() async {
   // print('numberAyahMap for page1= ${x['ayahNumberMap']}');
 }
 
-class MyApp extends StatelessWidget {
+class MuslimGuideApp extends StatefulWidget {
+  @override
+  _MuslimGuideAppState createState() => _MuslimGuideAppState();
+}
+
+class _MuslimGuideAppState extends State<MuslimGuideApp> with AfterLayoutMixin {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void afterFirstLayout(BuildContext context) {
+    // TODO: implement afterFirstLayout
+    final bookmarkPageNum = prefs.getInt(key: pageNumberKey, defaultValue: -1);
+    Fimber.i('bookmarkPageNum=  $bookmarkPageNum');
+    final quranProvider = Provider.of<QuranProvider>(context, listen: false);
+    Fimber.i('quranProvider ${quranProvider.hashCode}');
+
+    if (bookmarkPageNum != -1) {
+      quranProvider.isBookmark = true;
+      quranProvider.markedPageNum = bookmarkPageNum;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    Fimber.i('headline6 = ${Theme.of(context).textTheme.headline6.fontSize}');
-    Fimber.i('headline5 = ${Theme.of(context).textTheme.headline5.fontSize}');
-    Fimber.i('subtitle1 = ${Theme.of(context).textTheme.subtitle1.fontSize}');
-    Fimber.i('subtitle2 = ${Theme.of(context).textTheme.subtitle2.fontSize}');
-    Fimber.i('bodyText1 = ${Theme.of(context).textTheme.bodyText1.fontSize}');
-    Fimber.i('bodyText2 = ${Theme.of(context).textTheme.bodyText2.fontSize}');
-    Fimber.i('caption = ${Theme.of(context).textTheme.caption.fontSize}');
-    Fimber.i('overline = ${Theme.of(context).textTheme.overline.fontSize}');
-    Fimber.i('button = ${Theme.of(context).textTheme.button.fontSize}');
+    Fimber.i('headline6 = ${Theme.of(context).textTheme.headline6.fontSize}, '
+        'headline5 = ${Theme.of(context).textTheme.headline5.fontSize}, '
+        'subtitle1 = ${Theme.of(context).textTheme.subtitle1.fontSize}, '
+        'subtitle2 = ${Theme.of(context).textTheme.subtitle2.fontSize}, '
+        'bodyText1 = ${Theme.of(context).textTheme.bodyText1.fontSize}, '
+        'bodyText2 = ${Theme.of(context).textTheme.bodyText2.fontSize}, '
+        'caption = ${Theme.of(context).textTheme.caption.fontSize}, '
+        'overline = ${Theme.of(context).textTheme.overline.fontSize}, '
+        'button = ${Theme.of(context).textTheme.button.fontSize} ');
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,

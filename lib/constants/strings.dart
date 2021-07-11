@@ -21,3 +21,10 @@ const String hizbLabel = 'الحزب';
 const String quarterLabel = 'الربع';
 const String pageLabel = 'الصفحة';
 const String juzLabel = 'الجزء';
+const String addBookmark = 'حفظ علامة';
+const String restoreBookmark = 'انتقال الي العلامة';
+
+// dialogs
+const String yes = 'نعم';
+const String no = 'لا';
+const String confirmBookmark = 'هل تريد وضع علامة علي هذة الصفحة؟';

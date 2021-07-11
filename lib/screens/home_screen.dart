@@ -1,16 +1,8 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:muslim_guide/constants/assets.dart';
-import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart' as strings;
 import 'package:muslim_guide/constants/styles.dart' as styles;
 import 'package:muslim_guide/data/models/custom_ayah/ayah_content.dart';
-import 'package:muslim_guide/helpers/app_helper.dart';
 import 'package:muslim_guide/widgets/categories/category_list.dart';
-import 'package:muslim_guide/widgets/quran/custom_quran_textview.dart';
-import 'package:muslim_guide/widgets/quran/random_ayah.dart';
 import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
 
 class HomeScreen extends StatefulWidget {

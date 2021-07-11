@@ -8,8 +8,8 @@ import 'package:muslim_guide/screens/quran_page_screen.dart';
 
 const String splashScreen = 'splashScreen';
 const String homeScreen = 'homeScreen';
-const String quranScreen = 'quranScreen';
-const String quranPageController = 'quranPageController';
+const String quranScreenScreen = 'quranScreen';
+const String quranPageControllerScreen = 'quranPageController';
 
 // Type: Route<dynamic> Function(RouteSettings)
 Route<dynamic> generateRoutes(RouteSettings settings) {
@@ -18,12 +18,16 @@ Route<dynamic> generateRoutes(RouteSettings settings) {
     case homeScreen:
       return createPageBuilder(HomeScreen());
 
-    case quranScreen:
+    case quranScreenScreen:
       return createPageBuilder(SurahsListScreen());
 
-    case quranPageController:
+    case quranPageControllerScreen:
       final args = settings.arguments as QuranArgs;
-      return createPageBuilder(QuranPageController(quranArgs: args));
+      return createPageBuilder(
+        QuranPageController(
+          quranArgs: args,
+        ),
+      );
 
     default:
       return null;
