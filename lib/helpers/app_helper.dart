@@ -2,15 +2,12 @@ import 'dart:developer';
 
 import 'package:appspector/appspector.dart';
 import 'package:fimber/fimber.dart';
-import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/app_colors.dart';
-import 'package:muslim_guide/constants/dimens.dart';
-import 'package:muslim_guide/constants/strings.dart';
-import 'package:muslim_guide/data/repository/quran_repo.dart';
-import 'package:muslim_guide/data/repository/surah_repo.dart';
+import 'package:muslim_guide/data/models/surah/surah.dart';
+import 'package:muslim_guide/data/repository/app_repo.dart';
 import 'package:muslim_guide/screens/quran_page_controller.dart';
 import 'package:muslim_guide/screens/quran_page_screen.dart';
 import 'package:muslim_guide/screens/surahs_list_screen.dart';
+import 'package:muslim_guide/widgets/surah/surah_name_title.dart';
 import 'package:muslim_guide/widgets/surah_item.dart';
 
 const isLog = true;
@@ -26,11 +23,17 @@ class AppHelper {
 
   static final AppHelper instance = AppHelper._privateConstructor();
 
-  final SurahRepo _surahRepo = SurahRepo.instance;
-  final QuranRepo _quranRepo = QuranRepo.instance;
+  final AppRepo _appRepo = AppRepo.instance;
+  // final QuranRepo _quranRepo = QuranRepo.instance;
+
+  final List<Surah> _surahHeaders = [];
 
   final _surahsItems = <SurahItem>[];
   final _quranPageScreen = <QuranPageScreen>[];
+
+  /// use it to extract numberOfAyahs and rank from [Surah] to use it in
+  /// [SurahNameTitle]
+  List<Surah> get surahHeaders => _surahHeaders;
 
   /// list of surah to display it in [SurahsListScreen]
   List<SurahItem> get surahsItems => _surahsItems;
@@ -42,11 +45,17 @@ class AppHelper {
   Future<void> prepareDataNeeded() async {
     await _prepareSurahItemsList();
     await _prepareQuranPagesList();
+    await _prepareSurahHeaders();
+  }
+
+  Future<void> _prepareSurahHeaders() async {
+    final surahHeadersList = await _appRepo.getSurahHeaders();
+    _surahHeaders.addAll(surahHeadersList);
   }
 
   Future<void> _prepareSurahItemsList() async {
     Fimber.i('-');
-    final surahList = await _surahRepo.getSurahList();
+    final surahList = await _appRepo.getSurahList();
     final surahItemList =
         surahList.map((e) => SurahItem(surah: e)).toList(growable: false);
     Fimber.i('surahItemLen= ${surahItemList.length}');
@@ -55,7 +64,7 @@ class AppHelper {
   }
 
   Future<void> _prepareQuranPagesList() async {
-    final quranPages = await _quranRepo.getQuranPages();
+    final quranPages = await _appRepo.getQuranPages();
     final pagesContentList = quranPages.map((e) => QuranPageScreen(e)).toList();
     _quranPageScreen.addAll(pagesContentList);
   }
@@ -84,78 +93,5 @@ class AppHelper {
     AppSpectorPlugin.run(config);
   }
 
-  Future<void> showMyDialog(BuildContext context) async {
-    return showDialog<String>(
-      context: context,
-      builder: (BuildContext context) => AlertDialog(
-        title: const Text('هل تريد وضع علامه علي هذة الصفحة ؟'),
-        backgroundColor: kSecondaryColor,
-        actions: <Widget>[
-          ElevatedButton(
-            onPressed: () => Navigator.pop(context, 'OK'),
-            style: ElevatedButton.styleFrom(primary: kPrimaryColor),
-            child: const Text('نعم'),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Color(0xff459a81),
-            ),
-            onPressed: () => Navigator.pop(context, 'Cancel'),
-            child: const Text('لا'),
-          ),
-        ],
-      ),
-    );
-  }
 
-  Future<dynamic> confirmationDialog(
-    BuildContext context,
-  ) {
-    return showDialog<dynamic>(
-      context: context,
-      builder: (BuildContext context) => AlertDialog(
-        title: const Text(
-          confirmBookmark,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: kSecondaryColor,
-        elevation: 0.6,
-        content: Padding(
-          padding: const EdgeInsets.all(0),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () => Navigator.pop(context, true),
-                  style: ElevatedButton.styleFrom(primary: kPrimaryColor),
-                  child: Text(
-                    yes,
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                ),
-              ),
-              SizedBox(width: 24),
-              Expanded(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Color(0xff459a81),
-                  ),
-                  onPressed: () => Navigator.pop(context, false),
-                  child: Text(
-                    no,
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 }

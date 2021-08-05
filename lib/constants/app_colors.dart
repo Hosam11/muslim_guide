@@ -12,6 +12,8 @@ const Color kSecondaryColor = Color(0xFF53C6A2);
 const Color kAccentColor = Color(0xFF5DBB64);
 const Color kSecPrimaryGradientColor = Color(0xFF587978);
 
+const Color kNegativeButtonColor = Color(0xff459a81);
+
 const Color kSecSecondaryGradientColor = Color(0xFF587978);
 
 const Color kFirSurahTitleGradientColor = Color(0xFF00FFB9);

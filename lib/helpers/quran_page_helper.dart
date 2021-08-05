@@ -7,6 +7,7 @@ import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/data/models/new_quran_pages/new_quran_page.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
+import 'package:muslim_guide/helpers/app_dialogs.dart';
 import 'package:muslim_guide/helpers/app_helper.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
 import 'package:muslim_guide/providers/quran_provider.dart';
@@ -35,7 +36,7 @@ List<Widget> quranPageContent(NewQuranPage quranPageModel) {
         pageWidgets.add(QuranTextView(quranAyahs: pageContent.ayah));
       }
       if (pageContent.header != null) {
-        pageWidgets.add(SurahNameTitle(name: pageContent.header));
+        pageWidgets.add(SurahNameTitle(surahName: pageContent.header));
       }
     }
   } else {
@@ -56,7 +57,8 @@ List<Widget> quranPageContent(NewQuranPage quranPageModel) {
                   .add(QuranTextView(quranAyahs: pageContent[index].ayah));
             }
             if (pageContent[index].header != null) {
-              pageWidgets.add(SurahNameTitle(name: pageContent[index].header));
+              pageWidgets
+                  .add(SurahNameTitle(surahName: pageContent[index].header));
             }
           }
         }
@@ -71,7 +73,7 @@ Future<void> onBookmarkPressed(
   QuranProvider quranProvider,
   BuildContext context,
 ) async {
-  final confirmDialogRes = await AppHelper.instance.confirmationDialog(context);
+  final confirmDialogRes = await confirmationDialog(context);
   Fimber.i('confirmDialogRes= $confirmDialogRes');
   if (confirmDialogRes) {
     final isSaved = await setInt(value: number, key: pageNumberKey);

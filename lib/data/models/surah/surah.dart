@@ -38,4 +38,10 @@ class Surah {
           revelationType: surah.revelationType,
           surahPageNumber: surah.surahPageNumber,
         );
+
+  @override
+  String toString() {
+    return 'Surah{number: $number, name: $name, numberOfAyahs: $numberOfAyahs,'
+        ' revelationType: $revelationType, surahPageNumber: $surahPageNumber}';
+  }
 }

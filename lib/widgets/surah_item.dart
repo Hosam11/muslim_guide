@@ -17,10 +17,9 @@ class SurahItem extends StatelessWidget {
     this.surah,
   });
 
-  QuranProvider updatedQuranProvider;
   @override
   Widget build(BuildContext context) {
-    updatedQuranProvider = Provider.of<QuranProvider>(context);
+    // final updatedQuranProvider = Provider.of<QuranProvider>(context);
 
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
@@ -58,7 +57,7 @@ class SurahItem extends StatelessWidget {
                 children: [
                   Text(ayahs, style: Theme.of(context).textTheme.subtitle1),
                   Text(
-                    surah.numberOfAyahs.toString(),
+                    convertToArabic(surah.numberOfAyahs),
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                 ],

@@ -1,798 +1,798 @@
 [
   {
     "number": 1,
-    "name": "ٱلْفَاتِحَةِ",
+    "name": "سُورَةُ ٱلْفَاتِحَةِ",
     "numberOfAyahs": 7,
     "revelationType": "meccan",
     "surahPageNumber": 1
   },
   {
     "number": 2,
-    "name": "البَقَرَةِ",
+    "name": "سُورَةُ البَقَرَةِ",
     "numberOfAyahs": 286,
     "revelationType": "median",
     "surahPageNumber": 2
   },
   {
     "number": 3,
-    "name": "آلِ عِمۡرَانَ",
+    "name": "سُورَةُ آلِ عِمۡرَانَ",
     "numberOfAyahs": 200,
     "revelationType": "median",
     "surahPageNumber": 50
   },
   {
     "number": 4,
-    "name": "النِّسَاءِ",
+    "name": "سُورَةُ النِّسَاءِ",
     "numberOfAyahs": 176,
     "revelationType": "median",
     "surahPageNumber": 77
   },
   {
     "number": 5,
-    "name": "المَائـِدَةِ",
+    "name": "سُورَةُ المَائـِدَةِ",
     "numberOfAyahs": 120,
     "revelationType": "median",
     "surahPageNumber": 106
   },
   {
     "number": 6,
-    "name": "الأَنۡعَامِ",
+    "name": "سُورَةُ الأَنۡعَامِ",
     "numberOfAyahs": 165,
     "revelationType": "meccan",
     "surahPageNumber": 128
   },
   {
     "number": 7,
-    "name": "الأَعۡرَافِ",
+    "name": "سُورَةُ الأَعۡرَافِ",
     "numberOfAyahs": 206,
     "revelationType": "meccan",
     "surahPageNumber": 151
   },
   {
     "number": 8,
-    "name": "الأَنفَالِ",
+    "name": "سُورَةُ الأَنفَالِ",
     "numberOfAyahs": 75,
     "revelationType": "median",
     "surahPageNumber": 177
   },
   {
     "number": 9,
-    "name": "التَّوۡبَةِ",
+    "name": "سُورَةُ التَّوۡبَةِ",
     "numberOfAyahs": 129,
     "revelationType": "median",
     "surahPageNumber": 187
   },
   {
     "number": 10,
-    "name": "يُونُسَ",
+    "name": "سُورَةُ يُونُسَ",
     "numberOfAyahs": 109,
     "revelationType": "meccan",
     "surahPageNumber": 208
   },
   {
     "number": 11,
-    "name": "هُودٍ",
+    "name": "سُورَةُ هُودٍ",
     "numberOfAyahs": 123,
     "revelationType": "meccan",
     "surahPageNumber": 221
   },
   {
     "number": 12,
-    "name": "يُوسُفَ",
+    "name": "سُورَةُ يُوسُفَ",
     "numberOfAyahs": 111,
     "revelationType": "meccan",
     "surahPageNumber": 235
   },
   {
     "number": 13,
-    "name": "الرَّعۡدِ",
+    "name": "سُورَةُ الرَّعۡدِ",
     "numberOfAyahs": 43,
     "revelationType": "median",
     "surahPageNumber": 249
   },
   {
     "number": 14,
-    "name": "إِبۡرَاهِيمَ",
+    "name": "سُورَةُ إِبۡرَاهِيمَ",
     "numberOfAyahs": 52,
     "revelationType": "meccan",
     "surahPageNumber": 255
   },
   {
     "number": 15,
-    "name": "الحِجۡرِ",
+    "name": "سُورَةُ الحِجۡرِ",
     "numberOfAyahs": 99,
     "revelationType": "meccan",
     "surahPageNumber": 262
   },
   {
     "number": 16,
-    "name": "النَّحۡلِ",
+    "name": "سُورَةُ النَّحۡلِ",
     "numberOfAyahs": 128,
     "revelationType": "meccan",
     "surahPageNumber": 267
   },
   {
     "number": 17,
-    "name": "الإِسۡرَاءِ",
+    "name": "سُورَةُ الإِسۡرَاءِ",
     "numberOfAyahs": 111,
     "revelationType": "meccan",
     "surahPageNumber": 282
   },
   {
     "number": 18,
-    "name": "الكَهۡفِ",
+    "name": "سُورَةُ الكَهۡفِ",
     "numberOfAyahs": 110,
     "revelationType": "meccan",
     "surahPageNumber": 293
   },
   {
     "number": 19,
-    "name": "مَرۡيَمَ",
+    "name": "سُورَةُ مَرۡيَمَ",
     "numberOfAyahs": 98,
     "revelationType": "meccan",
     "surahPageNumber": 305
   },
   {
     "number": 20,
-    "name": "طه",
+    "name": "سُورَةُ طه",
     "numberOfAyahs": 135,
     "revelationType": "meccan",
     "surahPageNumber": 312
   },
   {
     "number": 21,
-    "name": "الأَنبِيَاءِ",
+    "name": "سُورَةُ الأَنبِيَاءِ",
     "numberOfAyahs": 112,
     "revelationType": "meccan",
     "surahPageNumber": 322
   },
   {
     "number": 22,
-    "name": "الحَجِّ",
+    "name": "سُورَةُ الحَجِّ",
     "numberOfAyahs": 78,
     "revelationType": "median",
     "surahPageNumber": 332
   },
   {
     "number": 23,
-    "name": "المُؤۡمِنُونَ",
+    "name": "سُورَةُ المُؤۡمِنُونَ",
     "numberOfAyahs": 118,
     "revelationType": "meccan",
     "surahPageNumber": 342
   },
   {
     "number": 24,
-    "name": "النُّورِ",
+    "name": "سُورَةُ النُّورِ",
     "numberOfAyahs": 64,
     "revelationType": "median",
     "surahPageNumber": 350
   },
   {
     "number": 25,
-    "name": "الفُرۡقَانِ",
+    "name": "سُورَةُ الفُرۡقَانِ",
     "numberOfAyahs": 77,
     "revelationType": "meccan",
     "surahPageNumber": 359
   },
   {
     "number": 26,
-    "name": "الشُّعَرَاءِ",
+    "name": "سُورَةُ الشُّعَرَاءِ",
     "numberOfAyahs": 227,
     "revelationType": "meccan",
     "surahPageNumber": 367
   },
   {
     "number": 27,
-    "name": "النَّمۡلِ",
+    "name": "سُورَةُ النَّمۡلِ",
     "numberOfAyahs": 93,
     "revelationType": "meccan",
     "surahPageNumber": 377
   },
   {
     "number": 28,
-    "name": "القَصَصِ",
+    "name": "سُورَةُ القَصَصِ",
     "numberOfAyahs": 88,
     "revelationType": "meccan",
     "surahPageNumber": 385
   },
   {
     "number": 29,
-    "name": "العَنكَبُوتِ",
+    "name": "سُورَةُ العَنكَبُوتِ",
     "numberOfAyahs": 69,
     "revelationType": "meccan",
     "surahPageNumber": 396
   },
   {
     "number": 30,
-    "name": "الرُّومِ",
+    "name": "سُورَةُ الرُّومِ",
     "numberOfAyahs": 60,
     "revelationType": "meccan",
     "surahPageNumber": 404
   },
   {
     "number": 31,
-    "name": "لُقۡمَانَ",
+    "name": "سُورَةُ لُقۡمَانَ",
     "numberOfAyahs": 34,
     "revelationType": "meccan",
     "surahPageNumber": 411
   },
   {
     "number": 32,
-    "name": "السَّجۡدَةِ",
+    "name": "سُورَةُ السَّجۡدَةِ",
     "numberOfAyahs": 30,
     "revelationType": "meccan",
     "surahPageNumber": 415
   },
   {
     "number": 33,
-    "name": "الأَحۡزَابِ",
+    "name": "سُورَةُ الأَحۡزَابِ",
     "numberOfAyahs": 73,
     "revelationType": "median",
     "surahPageNumber": 418
   },
   {
     "number": 34,
-    "name": "سَبَإٍ",
+    "name": "سُورَةُ سَبَإٍ",
     "numberOfAyahs": 54,
     "revelationType": "meccan",
     "surahPageNumber": 428
   },
   {
     "number": 35,
-    "name": "فَاطِرٍ",
+    "name": "سُورَةُ فَاطِرٍ",
     "numberOfAyahs": 45,
     "revelationType": "meccan",
     "surahPageNumber": 434
   },
   {
     "number": 36,
-    "name": "يسٓ",
+    "name": "سُورَةُ يسٓ",
     "numberOfAyahs": 83,
     "revelationType": "meccan",
     "surahPageNumber": 440
   },
   {
     "number": 37,
-    "name": "الصَّافَّاتِ",
+    "name": "سُورَةُ الصَّافَّاتِ",
     "numberOfAyahs": 182,
     "revelationType": "meccan",
     "surahPageNumber": 446
   },
   {
     "number": 38,
-    "name": "صٓ",
+    "name": "سُورَةُ صٓ",
     "numberOfAyahs": 88,
     "revelationType": "meccan",
     "surahPageNumber": 453
   },
   {
     "number": 39,
-    "name": "الزُّمَرِ",
+    "name": "سُورَةُ الزُّمَرِ",
     "numberOfAyahs": 75,
     "revelationType": "meccan",
     "surahPageNumber": 458
   },
   {
     "number": 40,
-    "name": "غَافِرٍ",
+    "name": "سُورَةُ غَافِرٍ",
     "numberOfAyahs": 85,
     "revelationType": "meccan",
     "surahPageNumber": 467
   },
   {
     "number": 41,
-    "name": "فُصِّلَتۡ",
+    "name": "سُورَةُ فُصِّلَتۡ",
     "numberOfAyahs": 54,
     "revelationType": "meccan",
     "surahPageNumber": 477
   },
   {
     "number": 42,
-    "name": "الشُّورَىٰ",
+    "name": "سُورَةُ الشُّورَىٰ",
     "numberOfAyahs": 53,
     "revelationType": "meccan",
     "surahPageNumber": 483
   },
   {
     "number": 43,
-    "name": "الزُّخۡرُفِ",
+    "name": "سُورَةُ الزُّخۡرُفِ",
     "numberOfAyahs": 89,
     "revelationType": "meccan",
     "surahPageNumber": 489
   },
   {
     "number": 44,
-    "name": "الدُّخَانِ",
+    "name": "سُورَةُ الدُّخَانِ",
     "numberOfAyahs": 59,
     "revelationType": "meccan",
     "surahPageNumber": 496
   },
   {
     "number": 45,
-    "name": "الجَاثِيَةِ",
+    "name": "سُورَةُ الجَاثِيَةِ",
     "numberOfAyahs": 37,
     "revelationType": "meccan",
     "surahPageNumber": 499
   },
   {
     "number": 46,
-    "name": "الأَحۡقَافِ",
+    "name": "سُورَةُ الأَحۡقَافِ",
     "numberOfAyahs": 35,
     "revelationType": "meccan",
     "surahPageNumber": 502
   },
   {
     "number": 47,
-    "name": "مُحَمَّدٍ",
+    "name": "سُورَةُ مُحَمَّدٍ",
     "numberOfAyahs": 38,
     "revelationType": "median",
     "surahPageNumber": 507
   },
   {
     "number": 48,
-    "name": "الفَتۡحِ",
+    "name": "سُورَةُ الفَتۡحِ",
     "numberOfAyahs": 29,
     "revelationType": "median",
     "surahPageNumber": 511
   },
   {
     "number": 49,
-    "name": "الحُجُرَاتِ",
+    "name": "سُورَةُ الحُجُرَاتِ",
     "numberOfAyahs": 18,
     "revelationType": "median",
     "surahPageNumber": 515
   },
   {
     "number": 50,
-    "name": "قٓ",
+    "name": "سُورَةُ قٓ",
     "numberOfAyahs": 45,
     "revelationType": "meccan",
     "surahPageNumber": 518
   },
   {
     "number": 51,
-    "name": "الذَّارِيَاتِ",
+    "name": "سُورَةُ الذَّارِيَاتِ",
     "numberOfAyahs": 60,
     "revelationType": "meccan",
     "surahPageNumber": 520
   },
   {
     "number": 52,
-    "name": "الطُّورِ",
+    "name": "سُورَةُ الطُّورِ",
     "numberOfAyahs": 49,
     "revelationType": "meccan",
     "surahPageNumber": 523
   },
   {
     "number": 53,
-    "name": "النَّجۡمِ",
+    "name": "سُورَةُ النَّجۡمِ",
     "numberOfAyahs": 62,
     "revelationType": "meccan",
     "surahPageNumber": 526
   },
   {
     "number": 54,
-    "name": "القَمَرِ",
+    "name": "سُورَةُ القَمَرِ",
     "numberOfAyahs": 55,
     "revelationType": "meccan",
     "surahPageNumber": 528
   },
   {
     "number": 55,
-    "name": "الرَّحۡمَٰن",
+    "name": "سُورَةُ الرَّحۡمَٰن",
     "numberOfAyahs": 78,
     "revelationType": "median",
     "surahPageNumber": 531
   },
   {
     "number": 56,
-    "name": "الوَاقِعَةِ",
+    "name": "سُورَةُ الوَاقِعَةِ",
     "numberOfAyahs": 96,
     "revelationType": "meccan",
     "surahPageNumber": 534
   },
   {
     "number": 57,
-    "name": "الحَدِيدِ",
+    "name": "سُورَةُ الحَدِيدِ",
     "numberOfAyahs": 29,
     "revelationType": "median",
     "surahPageNumber": 537
   },
   {
     "number": 58,
-    "name": "المُجَادلَةِ",
+    "name": "سُورَةُ المُجَادلَةِ",
     "numberOfAyahs": 22,
     "revelationType": "median",
     "surahPageNumber": 542
   },
   {
     "number": 59,
-    "name": "الحَشۡرِ",
+    "name": "سُورَةُ الحَشۡرِ",
     "numberOfAyahs": 24,
     "revelationType": "median",
     "surahPageNumber": 545
   },
   {
     "number": 60,
-    "name": "المُمۡتَحنَةِ",
+    "name": "سُورَةُ المُمۡتَحنَةِ",
     "numberOfAyahs": 13,
     "revelationType": "median",
     "surahPageNumber": 549
   },
   {
     "number": 61,
-    "name": "الصَّفِّ",
+    "name": "سُورَةُ الصَّفِّ",
     "numberOfAyahs": 14,
     "revelationType": "median",
     "surahPageNumber": 551
   },
   {
     "number": 62,
-    "name": "الجُمُعَةِ",
+    "name": "سُورَةُ الجُمُعَةِ",
     "numberOfAyahs": 11,
     "revelationType": "median",
     "surahPageNumber": 553
   },
   {
     "number": 63,
-    "name": "المُنَافِقُونَ",
+    "name": "سُورَةُ المُنَافِقُونَ",
     "numberOfAyahs": 11,
     "revelationType": "median",
     "surahPageNumber": 554
   },
   {
     "number": 64,
-    "name": "التَّغَابُنِ",
+    "name": "سُورَةُ التَّغَابُنِ",
     "numberOfAyahs": 18,
     "revelationType": "median",
     "surahPageNumber": 556
   },
   {
     "number": 65,
-    "name": "الطَّلَاقِ",
+    "name": "سُورَةُ الطَّلَاقِ",
     "numberOfAyahs": 12,
     "revelationType": "median",
     "surahPageNumber": 558
   },
   {
     "number": 66,
-    "name": "التَّحۡرِيمِ",
+    "name": "سُورَةُ التَّحۡرِيمِ",
     "numberOfAyahs": 12,
     "revelationType": "median",
     "surahPageNumber": 560
   },
   {
     "number": 67,
-    "name": "المُلۡكِ",
+    "name": "سُورَةُ المُلۡكِ",
     "numberOfAyahs": 30,
     "revelationType": "meccan",
     "surahPageNumber": 562
   },
   {
     "number": 68,
-    "name": "القَلَمِ",
+    "name": "سُورَةُ القَلَمِ",
     "numberOfAyahs": 52,
     "revelationType": "meccan",
     "surahPageNumber": 564
   },
   {
     "number": 69,
-    "name": "الحَاقَّةِ",
+    "name": "سُورَةُ الحَاقَّةِ",
     "numberOfAyahs": 52,
     "revelationType": "meccan",
     "surahPageNumber": 566
   },
   {
     "number": 70,
-    "name": "المَعَارِجِ",
+    "name": "سُورَةُ المَعَارِجِ",
     "numberOfAyahs": 44,
     "revelationType": "meccan",
     "surahPageNumber": 568
   },
   {
     "number": 71,
-    "name": "نُوحٍ",
+    "name": "سُورَةُ نُوحٍ",
     "numberOfAyahs": 28,
     "revelationType": "meccan",
     "surahPageNumber": 570
   },
   {
     "number": 72,
-    "name": "الجِنِّ",
+    "name": "سُورَةُ الجِنِّ",
     "numberOfAyahs": 28,
     "revelationType": "meccan",
     "surahPageNumber": 572
   },
   {
     "number": 73,
-    "name": "المُزَّمِّلِ",
+    "name": "سُورَةُ المُزَّمِّلِ",
     "numberOfAyahs": 20,
     "revelationType": "meccan",
     "surahPageNumber": 574
   },
   {
     "number": 74,
-    "name": "المُدَّثِّرِ",
+    "name": "سُورَةُ المُدَّثِّرِ",
     "numberOfAyahs": 56,
     "revelationType": "meccan",
     "surahPageNumber": 575
   },
   {
     "number": 75,
-    "name": "القِيَامَةِ",
+    "name": "سُورَةُ القِيَامَةِ",
     "numberOfAyahs": 40,
     "revelationType": "meccan",
     "surahPageNumber": 577
   },
   {
     "number": 76,
-    "name": "الإِنسَانِ",
+    "name": "سُورَةُ الإِنسَانِ",
     "numberOfAyahs": 31,
     "revelationType": "median",
     "surahPageNumber": 578
   },
   {
     "number": 77,
-    "name": "المُرۡسَلَاتِ",
+    "name": "سُورَةُ المُرۡسَلَاتِ",
     "numberOfAyahs": 50,
     "revelationType": "meccan",
     "surahPageNumber": 580
   },
   {
     "number": 78,
-    "name": "النَّبَإِ",
+    "name": "سُورَةُ النَّبَإِ",
     "numberOfAyahs": 40,
     "revelationType": "meccan",
     "surahPageNumber": 582
   },
   {
     "number": 79,
-    "name": "النَّازِعَاتِ",
+    "name": "سُورَةُ النَّازِعَاتِ",
     "numberOfAyahs": 46,
     "revelationType": "meccan",
     "surahPageNumber": 583
   },
   {
     "number": 80,
-    "name": "عَبَسَ",
+    "name": "سُورَةُ عَبَسَ",
     "numberOfAyahs": 42,
     "revelationType": "meccan",
     "surahPageNumber": 585
   },
   {
     "number": 81,
-    "name": "التَّكۡوِيرِ",
+    "name": "سُورَةُ التَّكۡوِيرِ",
     "numberOfAyahs": 29,
     "revelationType": "meccan",
     "surahPageNumber": 586
   },
   {
     "number": 82,
-    "name": "الانفِطَارِ",
+    "name": "سُورَةُ الانفِطَارِ",
     "numberOfAyahs": 19,
     "revelationType": "meccan",
     "surahPageNumber": 587
   },
   {
     "number": 83,
-    "name": "المُطَفِّفِينَ",
+    "name": "سُورَةُ المُطَفِّفِينَ",
     "numberOfAyahs": 36,
     "revelationType": "meccan",
     "surahPageNumber": 587
   },
   {
     "number": 84,
-    "name": "الانشِقَاقِ",
+    "name": "سُورَةُ الانشِقَاقِ",
     "numberOfAyahs": 25,
     "revelationType": "meccan",
     "surahPageNumber": 589
   },
   {
     "number": 85,
-    "name": "البُرُوجِ",
+    "name": "سُورَةُ البُرُوجِ",
     "numberOfAyahs": 22,
     "revelationType": "meccan",
     "surahPageNumber": 590
   },
   {
     "number": 86,
-    "name": "الطَّارِقِ",
+    "name": "سُورَةُ الطَّارِقِ",
     "numberOfAyahs": 17,
     "revelationType": "meccan",
     "surahPageNumber": 591
   },
   {
     "number": 87,
-    "name": "الأَعۡلَىٰ",
+    "name": "سُورَةُ الأَعۡلَىٰ",
     "numberOfAyahs": 19,
     "revelationType": "meccan",
     "surahPageNumber": 591
   },
   {
     "number": 88,
-    "name": "الغَاشِيَةِ",
+    "name": "سُورَةُ الغَاشِيَةِ",
     "numberOfAyahs": 26,
     "revelationType": "meccan",
     "surahPageNumber": 592
   },
   {
     "number": 89,
-    "name": "الفَجۡرِ",
+    "name": "سُورَةُ الفَجۡرِ",
     "numberOfAyahs": 30,
     "revelationType": "meccan",
     "surahPageNumber": 593
   },
   {
     "number": 90,
-    "name": "البَلَدِ",
+    "name": "سُورَةُ البَلَدِ",
     "numberOfAyahs": 20,
     "revelationType": "meccan",
     "surahPageNumber": 594
   },
   {
     "number": 91,
-    "name": "الشَّمۡسِ",
+    "name": "سُورَةُ الشَّمۡسِ",
     "numberOfAyahs": 15,
     "revelationType": "meccan",
     "surahPageNumber": 595
   },
   {
     "number": 92,
-    "name": "اللَّيۡلِ",
+    "name": "سُورَةُ اللَّيۡلِ",
     "numberOfAyahs": 21,
     "revelationType": "meccan",
     "surahPageNumber": 595
   },
   {
     "number": 93,
-    "name": "الضُّحَىٰ",
+    "name": "سُورَةُ الضُّحَىٰ",
     "numberOfAyahs": 11,
     "revelationType": "meccan",
     "surahPageNumber": 596
   },
   {
     "number": 94,
-    "name": "الشَّرۡحِ",
+    "name": "سُورَةُ الشَّرۡحِ",
     "numberOfAyahs": 8,
     "revelationType": "meccan",
     "surahPageNumber": 596
   },
   {
     "number": 95,
-    "name": "التِّينِ",
+    "name": "سُورَةُ التِّينِ",
     "numberOfAyahs": 8,
     "revelationType": "meccan",
     "surahPageNumber": 597
   },
   {
     "number": 96,
-    "name": "العَلَقِ",
+    "name": "سُورَةُ العَلَقِ",
     "numberOfAyahs": 19,
     "revelationType": "meccan",
     "surahPageNumber": 597
   },
   {
     "number": 97,
-    "name": "القَدۡرِ",
+    "name": "سُورَةُ القَدۡرِ",
     "numberOfAyahs": 5,
     "revelationType": "meccan",
     "surahPageNumber": 598
   },
   {
     "number": 98,
-    "name": "البَيِّنَةِ",
+    "name": "سُورَةُ البَيِّنَةِ",
     "numberOfAyahs": 8,
     "revelationType": "median",
     "surahPageNumber": 598
   },
   {
     "number": 99,
-    "name": "الزَّلۡزَلَةِ",
+    "name": "سُورَةُ الزَّلۡزَلَةِ",
     "numberOfAyahs": 8,
     "revelationType": "median",
     "surahPageNumber": 599
   },
   {
     "number": 100,
-    "name": "العَادِيَاتِ",
+    "name": "سُورَةُ العَادِيَاتِ",
     "numberOfAyahs": 11,
     "revelationType": "meccan",
     "surahPageNumber": 599
   },
   {
     "number": 101,
-    "name": "القَارِعَةِ",
+    "name": "سُورَةُ القَارِعَةِ",
     "numberOfAyahs": 11,
     "revelationType": "meccan",
     "surahPageNumber": 600
   },
   {
     "number": 102,
-    "name": "التَّكَاثُرِ",
+    "name": "سُورَةُ التَّكَاثُرِ",
     "numberOfAyahs": 8,
     "revelationType": "meccan",
     "surahPageNumber": 600
   },
   {
     "number": 103,
-    "name": "العَصۡرِ",
+    "name": "سُورَةُ العَصۡرِ",
     "numberOfAyahs": 3,
     "revelationType": "meccan",
     "surahPageNumber": 601
   },
   {
     "number": 104,
-    "name": "الهُمَزَةِ",
+    "name": "سُورَةُ الهُمَزَةِ",
     "numberOfAyahs": 9,
     "revelationType": "meccan",
     "surahPageNumber": 601
   },
   {
     "number": 105,
-    "name": "الفِيلِ",
+    "name": "سُورَةُ الفِيلِ",
     "numberOfAyahs": 5,
     "revelationType": "meccan",
     "surahPageNumber": 601
   },
   {
     "number": 106,
-    "name": "قُرَيۡشٍ",
+    "name": "سُورَةُ قُرَيۡشٍ",
     "numberOfAyahs": 4,
     "revelationType": "meccan",
     "surahPageNumber": 602
   },
   {
     "number": 107,
-    "name": "المَاعُونِ",
+    "name": "سُورَةُ المَاعُونِ",
     "numberOfAyahs": 7,
     "revelationType": "meccan",
     "surahPageNumber": 602
   },
   {
     "number": 108,
-    "name": "الكَوۡثَرِ",
+    "name": "سُورَةُ الكَوۡثَرِ",
     "numberOfAyahs": 3,
     "revelationType": "meccan",
     "surahPageNumber": 602
   },
   {
     "number": 109,
-    "name": "الكَافِرُونَ",
+    "name": "سُورَةُ الكَافِرُونَ",
     "numberOfAyahs": 6,
     "revelationType": "meccan",
     "surahPageNumber": 603
   },
   {
     "number": 110,
-    "name": "النَّصۡرِ",
+    "name": "سُورَةُ النَّصۡرِ",
     "numberOfAyahs": 3,
     "revelationType": "median",
     "surahPageNumber": 603
   },
   {
     "number": 111,
-    "name": "المَسَدِ",
+    "name": "سُورَةُ المَسَدِ",
     "numberOfAyahs": 5,
     "revelationType": "meccan",
     "surahPageNumber": 603
   },
   {
     "number": 112,
-    "name": "الإِخۡلَاصِ",
+    "name": "سُورَةُ الإِخۡلَاصِ",
     "numberOfAyahs": 4,
     "revelationType": "meccan",
     "surahPageNumber": 604
   },
   {
     "number": 113,
-    "name": "الفَلَقِ",
+    "name": "سُورَةُ الفَلَقِ",
     "numberOfAyahs": 5,
     "revelationType": "meccan",
     "surahPageNumber": 604
   },
   {
     "number": 114,
-    "name": "النَّاسِ",
+    "name": "سُورَةُ النَّاسِ",
     "numberOfAyahs": 6,
     "revelationType": "meccan",
     "surahPageNumber": 604

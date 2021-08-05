@@ -28,7 +28,7 @@ const String oldQuranPagesFile =
 Future<List<Surah>> setupSurahsWithPageNumber(
   List<Map<int, int>> surahPageNumber,
 ) async {
-  final surahListStr = await File(surahsList).readAsString();
+  final surahListStr = await File(surahsListFile).readAsString();
   final surahsDataList = surahListFromJson(surahListStr);
 
   final newSurahList = <Surah>[];

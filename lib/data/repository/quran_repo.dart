@@ -1,3 +1,4 @@
+/*
 import 'dart:convert' as convert;
 import 'package:fimber/fimber.dart';
 import 'package:flutter/services.dart';
@@ -21,3 +22,4 @@ class QuranRepo {
     return quranData;
   }
 }
+*/

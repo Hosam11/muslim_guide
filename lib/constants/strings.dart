@@ -15,6 +15,7 @@ const String rosaryTitle = 'السبحة';
 const String ayahs = 'آياتها';
 const String meccan = 'مكية';
 const String median = 'مدنية';
+const String rank = 'ترتيبها';
 
 // QuranPageScreen
 const String hizbLabel = 'الحزب';

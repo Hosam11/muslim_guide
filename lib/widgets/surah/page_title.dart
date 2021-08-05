@@ -34,10 +34,7 @@ class PageTitle extends StatelessWidget {
             right is num ? right.toString() : right,
             style: textStyle,
           ),
-          Text(
-            left,
-            style: textStyle,
-          ),
+          Text(left, style: textStyle),
         ],
       ),
     );

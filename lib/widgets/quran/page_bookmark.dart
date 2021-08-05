@@ -33,14 +33,8 @@ class PageBookmark extends StatelessWidget {
                 child: ListTile(
                   horizontalTitleGap: 0,
                   dense: true,
-                  title: Text(
-                    addBookmark,
-                    style: textStyle,
-                  ),
-                  leading: Icon(
-                    Icons.bookmark,
-                    color: Colors.white,
-                  ),
+                  title: Text(addBookmark, style: textStyle),
+                  leading: Icon(Icons.bookmark, color: Colors.white),
                 ),
               ),
             ),
@@ -53,10 +47,7 @@ class PageBookmark extends StatelessWidget {
                 onTap: onRestoreBookmarkPressed,
                 child: ListTile(
                   horizontalTitleGap: 0,
-                  title: Text(
-                    restoreBookmark,
-                    style: textStyle,
-                  ),
+                  title: Text(restoreBookmark, style: textStyle),
                   leading: Icon(
                     Icons.bookmark,
                     color: quranProvider.isBookmark
