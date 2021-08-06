@@ -4,40 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/locals.dart';
 import 'package:muslim_guide/constants/strings.dart';
-import 'package:muslim_guide/helpers/after_layout.dart';
-import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
 
 import 'package:muslim_guide/routes.dart';
-import 'package:muslim_guide/data/shared_prefs/perfs.dart' as prefs;
-import 'package:muslim_guide/helpers/app_helper.dart';
-import 'package:muslim_guide/providers/quran_provider.dart';
-import 'package:provider/provider.dart';
 
-class MuslimGuideApp extends StatefulWidget {
-  @override
-  _MuslimGuideAppState createState() => _MuslimGuideAppState();
-}
-
-class _MuslimGuideAppState extends State<MuslimGuideApp> with AfterLayoutMixin {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void afterFirstLayout(BuildContext context) {
-    // TODO: implement afterFirstLayout
-    final bookmarkPageNum = prefs.getInt(key: pageNumberKey, defaultValue: -1);
-    Fimber.i('bookmarkPageNum=  $bookmarkPageNum');
-    final quranProvider = Provider.of<QuranProvider>(context, listen: false);
-    Fimber.i('quranProvider ${quranProvider.hashCode}');
-
-    if (bookmarkPageNum != -1) {
-      quranProvider.isBookmark = true;
-      quranProvider.markedPageNum = bookmarkPageNum;
-    }
-  }
-
+class MuslimGuideApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Fimber.i('headline6 = ${Theme.of(context).textTheme.headline6.fontSize}, '
@@ -83,7 +53,7 @@ class _MuslimGuideAppState extends State<MuslimGuideApp> with AfterLayoutMixin {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: homeScreen,
+      initialRoute: splashScreen,
       onGenerateRoute: generateRoutes,
     );
   }

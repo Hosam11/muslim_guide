@@ -11,3 +11,4 @@ const String azkarMorningImg = 'assets/icons/azkar_morning.png';
 const String azkarNigthImg = 'assets/icons/azkar_nigth.png';
 const String rosaryImg = 'assets/icons/rosary.png';
 const String allahNamesImg = 'assets/icons/allah_names.png';
+const String logoImg = 'assets/images/logo.png';

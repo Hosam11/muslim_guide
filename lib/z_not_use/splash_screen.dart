@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/screens/home_screen.dart';
@@ -22,3 +23,4 @@ class MySplashScreen extends StatelessWidget {
 //ayahBuffer
 
 }
+*/

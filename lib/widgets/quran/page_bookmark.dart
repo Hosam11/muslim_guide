@@ -38,10 +38,7 @@ class PageBookmark extends StatelessWidget {
                 ),
               ),
             ),
-            VerticalDivider(
-              color: Colors.white24,
-              thickness: 2,
-            ),
+            VerticalDivider(color: Colors.white24, thickness: 2),
             Expanded(
               child: InkWell(
                 onTap: onRestoreBookmarkPressed,

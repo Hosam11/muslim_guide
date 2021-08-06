@@ -28,8 +28,8 @@ class AppRepo {
     final quranPagesRes = await rootBundle.loadString(newQuranPagesFile);
     final quranData = quranDataFromJson(quranPagesRes);
     mLog('$h quranData= ${jsonEncode(quranData)}');
-    final currentFrames = StackFrame.fromStackTrace(StackTrace.current);
-    Fimber.i('currentFrames= $currentFrames  ');
+    final methodName = StackFrame.fromStackTrace(StackTrace.current)[0].method;
+    Fimber.i('methodName= $methodName  ');
     return quranData;
   }
 }

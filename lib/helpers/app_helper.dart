@@ -22,12 +22,9 @@ class AppHelper {
   AppHelper._privateConstructor();
 
   static final AppHelper instance = AppHelper._privateConstructor();
-
   final AppRepo _appRepo = AppRepo.instance;
-  // final QuranRepo _quranRepo = QuranRepo.instance;
 
   final List<Surah> _surahHeaders = [];
-
   final _surahsItems = <SurahItem>[];
   final _quranPageScreen = <QuranPageScreen>[];
 
@@ -92,6 +89,4 @@ class AppHelper {
 
     AppSpectorPlugin.run(config);
   }
-
-
 }

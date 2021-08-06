@@ -4,7 +4,7 @@ import 'package:muslim_guide/args/quran_args.dart';
 import 'package:muslim_guide/screens/home_screen.dart';
 import 'package:muslim_guide/screens/quran_page_controller.dart';
 import 'package:muslim_guide/screens/surahs_list_screen.dart';
-import 'package:muslim_guide/screens/quran_page_screen.dart';
+import 'package:muslim_guide/splash_screen.dart';
 
 const String splashScreen = 'splashScreen';
 const String homeScreen = 'homeScreen';
@@ -15,6 +15,9 @@ const String quranPageControllerScreen = 'quranPageController';
 Route<dynamic> generateRoutes(RouteSettings settings) {
   Fimber.i('build route for ${settings.name}');
   switch (settings.name) {
+    case splashScreen:
+      return createPageBuilder(MySplashScreen());
+
     case homeScreen:
       return createPageBuilder(HomeScreen());
 
