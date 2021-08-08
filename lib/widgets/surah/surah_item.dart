@@ -31,7 +31,7 @@ class SurahItem extends StatelessWidget {
           Expanded(
             flex: isPortrait ? 3 : 2,
             child: Padding(
-              padding: const EdgeInsets.all(smallPadding),
+              padding: const EdgeInsets.all(smallDimens),
               child: Center(
                 child: Text(convertToArabic(surah.number),
                     style: Theme.of(context).textTheme.headline6),
@@ -42,7 +42,7 @@ class SurahItem extends StatelessWidget {
           Expanded(
             flex: 9,
             child: Padding(
-              padding: const EdgeInsets.only(top: smallestPadding),
+              padding: const EdgeInsets.only(top: smallestDimens),
               child: Text(surah.name,
                   style: Theme.of(context).textTheme.headline6),
             ),
@@ -51,7 +51,7 @@ class SurahItem extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Padding(
-              padding: const EdgeInsets.all(smallPadding),
+              padding: const EdgeInsets.all(smallDimens),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [

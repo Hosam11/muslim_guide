@@ -16,10 +16,10 @@ class RandomAyah extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.only(
-          top: dimens.mediumPadding,
-          right: dimens.mediumPadding,
-          left: dimens.mediumPadding,
-          bottom: dimens.smallPadding,
+          top: dimens.mediumDimens,
+          right: dimens.mediumDimens,
+          left: dimens.mediumDimens,
+          bottom: dimens.smallDimens,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

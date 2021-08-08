@@ -3,12 +3,10 @@ import 'package:muslim_guide/constants/app_colors.dart' as colors;
 import 'package:muslim_guide/constants/dimens.dart' as dimens;
 import 'package:muslim_guide/constants/strings.dart' as strings;
 import 'package:muslim_guide/constants/styles.dart' as styles;
-import 'package:muslim_guide/helpers/app_helper.dart';
+import 'package:muslim_guide/data/app_data/surahs_data.dart';
 import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
 
 class SurahsListScreen extends StatelessWidget {
-  final AppHelper _appHelper = AppHelper.instance;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,23 +15,23 @@ class SurahsListScreen extends StatelessWidget {
         decoration: styles.kSecondaryBackgroundBoxDecoration,
         child: Padding(
           padding: const EdgeInsets.only(
-            left: dimens.mediumPadding,
-            right: dimens.mediumPadding,
-            top: dimens.mediumPadding,
+            left: dimens.mediumDimens,
+            right: dimens.mediumDimens,
+            top: dimens.mediumDimens,
           ),
           child: Container(
             decoration: BoxDecoration(
               color: colors.kPrimaryColor,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(dimens.smallPadding),
-                topRight: Radius.circular(dimens.smallPadding),
+                topLeft: Radius.circular(dimens.smallDimens),
+                topRight: Radius.circular(dimens.smallDimens),
               ),
             ),
             child: ListView.separated(
               physics: BouncingScrollPhysics(),
-              itemBuilder: (_, index) => _appHelper.surahsItems[index],
-              itemCount: _appHelper.surahsItems.length,
-              padding: const EdgeInsets.all(dimens.smallPadding),
+              itemBuilder: (_, index) => surahsItems[index],
+              itemCount: surahsItems.length,
+              padding: const EdgeInsets.all(dimens.smallDimens),
               shrinkWrap: true,
               separatorBuilder: (BuildContext context, int index) =>
                   const Divider(),

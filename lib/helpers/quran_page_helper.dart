@@ -8,7 +8,6 @@ import 'package:muslim_guide/data/models/new_quran_pages/new_quran_page.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
 import 'package:muslim_guide/helpers/app_dialogs.dart';
-import 'package:muslim_guide/helpers/app_helper.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
 import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:muslim_guide/routes.dart';
@@ -30,7 +29,7 @@ List<Widget> quranPageContent(NewQuranPage quranPageModel) {
 
   if (quranPageModel.sajdaType == null) {
     for (final pageContent in quranPageModel.quranPageContents) {
-      mLog('$h pageContent= ${jsonEncode(pageContent)}');
+      // mLog('$h pageContent= ${jsonEncode(pageContent)}');
 
       if (pageContent.ayah != null) {
         pageWidgets.add(QuranTextView(quranAyahs: pageContent.ayah));

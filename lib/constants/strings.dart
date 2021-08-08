@@ -6,8 +6,8 @@ const String quranScreenTitle = 'سور القرآن';
 // categories titles
 const String quranTitle = 'القرءان الكريم';
 const String allahNamesTitle = 'أسماء الله الحسني';
-const String azkarMorningTitle = 'اذكار الصباح';
-const String azkarNightTitle = 'اذكار المساء';
+const String azkarMorningTitle = 'أذكار الصباح';
+const String azkarNightTitle = 'أذكار المساء';
 const String prayerTimesTitle = 'مواقيت الصلاة';
 const String rosaryTitle = 'السبحة';
 
@@ -29,3 +29,6 @@ const String restoreBookmark = 'انتقال الي العلامة';
 const String yes = 'نعم';
 const String no = 'لا';
 const String confirmBookmark = 'هل تريد وضع علامة علي هذة الصفحة؟';
+
+// AzkarScreen
+const String count = 'التكرار';

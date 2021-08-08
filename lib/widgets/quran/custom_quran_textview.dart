@@ -15,10 +15,10 @@ class CustomQuranTextView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: smallPadding),
+      padding: const EdgeInsets.symmetric(vertical: smallDimens),
       child: Container(
         decoration: BoxDecoration(color: Theme.of(context).primaryColor),
-        padding: const EdgeInsets.all(smallPadding),
+        padding: const EdgeInsets.all(smallDimens),
         child: RichText(
           textAlign: TextAlign.justify,
           text: TextSpan(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/args/quran_args.dart';
+import 'package:muslim_guide/data/app_data/quran_data.dart';
 import 'package:muslim_guide/helpers/app_helper.dart';
 
 class QuranPageController extends StatelessWidget {
-  final AppHelper _appHelper = AppHelper.instance;
   final QuranArgs quranArgs;
 
   QuranPageController({Key key, @required this.quranArgs}) : super(key: key);
@@ -18,7 +18,7 @@ class QuranPageController extends StatelessWidget {
       body: SafeArea(
         child: PageView(
           controller: quranPageController,
-          children: _appHelper.quranPageScreen,
+          children: quranPageScreen,
         ),
       ),
     );

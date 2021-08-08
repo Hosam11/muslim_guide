@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/dimens.dart';
@@ -37,6 +36,20 @@ Future<dynamic> confirmationDialog(BuildContext context) {
             ),
           ),
         ],
+      ),
+    ),
+  );
+}
+
+Future<dynamic> showInfoDialog(BuildContext context, String msg) {
+  return showDialog(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      backgroundColor: kSecondaryColor,
+      content: Text(
+        msg,
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.headline5,
       ),
     ),
   );

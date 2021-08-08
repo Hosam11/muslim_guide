@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/app_colors.dart' as colors;
-import 'package:muslim_guide/constants/dimens.dart' as dimens;
-import 'package:muslim_guide/constants/styles.dart' as styles;
+import 'package:muslim_guide/constants/app_colors.dart';
+import 'package:muslim_guide/constants/dimens.dart';
+import 'package:muslim_guide/constants/styles.dart';
 
 class CategoryCardItem extends StatelessWidget {
   final String icon;
@@ -18,15 +18,15 @@ class CategoryCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(dimens.smallPadding),
+      padding: const EdgeInsets.all(smallDimens),
       child: Material(
-        borderRadius: styles.kSmallBorderRadius,
+        borderRadius: kSmallBorderRadius,
         child: Ink(
           decoration: BoxDecoration(
-            gradient: styles.createLinearGradient(
-                colors.kPrimaryColor, colors.kSecPrimaryGradientColor),
-            borderRadius: styles.kSmallBorderRadius,
-            border: styles.kWhiteBorder,
+            gradient:
+                createLinearGradient(kPrimaryColor, kSecPrimaryGradientColor),
+            borderRadius: kSmallBorderRadius,
+            border: kWhiteBorder,
           ),
           child: InkWell(
             onTap: onTapped,
@@ -38,8 +38,8 @@ class CategoryCardItem extends StatelessWidget {
                   flex: 2,
                   child: Padding(
                     padding: const EdgeInsets.only(
-                      top: dimens.mediumPadding,
-                      bottom: dimens.smallPadding,
+                      top: mediumDimens,
+                      bottom: smallDimens,
                     ),
                     child: Image.asset(icon, color: Colors.white),
                   ),

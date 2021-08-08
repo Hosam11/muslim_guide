@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  AppHelper.instance.runAppSpector();
+  runAppSpector();
   Fimber.plantTree(DebugTree.elapsed());
 
   runApp(

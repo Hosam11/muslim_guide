@@ -1,37 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/assets.dart' as assets;
 import 'package:muslim_guide/constants/dimens.dart' as dimens;
-import 'package:muslim_guide/constants/strings.dart' as strings;
-import 'package:muslim_guide/routes.dart' as routes;
-import 'package:muslim_guide/widgets/categories/category_card_item.dart';
-
-List<CategoryCardItem> _getGridItems(BuildContext context) => [
-      CategoryCardItem(
-        title: strings.quranTitle,
-        icon: assets.quranImg,
-        onTapped: () => Navigator.pushNamed(context, routes.quranScreenScreen),
-      ),
-      CategoryCardItem(
-        title: strings.allahNamesTitle,
-        icon: assets.allahNamesImg,
-      ),
-      CategoryCardItem(
-        title: strings.azkarMorningTitle,
-        icon: assets.azkarMorningImg,
-      ),
-      CategoryCardItem(
-        title: strings.azkarNightTitle,
-        icon: assets.azkarNigthImg,
-      ),
-      CategoryCardItem(
-        title: strings.prayerTimesTitle,
-        icon: assets.prayerTimesImg,
-      ),
-      CategoryCardItem(
-        title: strings.rosaryTitle,
-        icon: assets.rosaryImg,
-      ),
-    ];
+import 'package:muslim_guide/helpers/home_helper.dart';
 
 class CategoryList extends StatelessWidget {
   @override
@@ -40,14 +9,14 @@ class CategoryList extends StatelessWidget {
         MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Padding(
-      padding: const EdgeInsets.all(dimens.smallPadding),
+      padding: const EdgeInsets.all(dimens.smallDimens),
       child: GridView.count(
         childAspectRatio: _isPortrait ? 4 / 3 : 3 / 2,
         crossAxisCount: _isPortrait ? 2 : 3,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         shrinkWrap: true,
-        children: _getGridItems(context),
+        children: getGridItems(context),
       ),
     );
   }

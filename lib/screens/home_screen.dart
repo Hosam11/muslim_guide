@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:muslim_guide/constants/strings.dart' as strings;
 import 'package:muslim_guide/constants/styles.dart' as styles;
 import 'package:muslim_guide/data/models/custom_ayah/ayah_content.dart';
@@ -37,7 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: RandomAyah(ayah: ayah),
             ),*/
+
             Expanded(child: CategoryList()),
+
             /*Expanded(
               child: SingleChildScrollView(
                 child: CustomQuranTextView(customAyah: customPages),

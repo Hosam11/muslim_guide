@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/data/models/new_quran_pages/new_quran_page.dart';
 import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -11,9 +12,12 @@ class PageBookmark extends StatelessWidget {
     Key key,
     this.onBookmarkPressed,
     this.onRestoreBookmarkPressed,
+    this.quranPageModel,
   }) : super(key: key);
+
   final void Function() onBookmarkPressed;
   final void Function() onRestoreBookmarkPressed;
+  final NewQuranPage quranPageModel;
 
   @override
   Widget build(BuildContext context) {

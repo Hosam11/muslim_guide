@@ -30,11 +30,9 @@ class _MySplashScreenState extends State<MySplashScreen> with AfterLayoutMixin {
     MUST call it before access quranPages list in repo
     await QuranRepo.instance.getPages();
     print('len= ${QuranRepo.instance.quranPages?.length}');
-*/
+    */
+    await prepareDataNeeded();
     await prefs.init();
-
-    await AppHelper.instance.prepareDataNeeded();
-
     final bookmarkPageNum = prefs.getInt(key: pageNumberKey, defaultValue: -1);
     Fimber.i('bookmarkPageNum=  $bookmarkPageNum');
     final quranProvider = Provider.of<QuranProvider>(context, listen: false);
@@ -63,7 +61,7 @@ class _MySplashScreenState extends State<MySplashScreen> with AfterLayoutMixin {
         decoration: kSecondaryBackgroundBoxDecoration,
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(largePadding),
+            padding: const EdgeInsets.all(largeDimens),
             child: Image.asset(logoImg),
           ),
         ),

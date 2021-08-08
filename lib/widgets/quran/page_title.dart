@@ -23,8 +23,8 @@ class PageTitle extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.symmetric(
-        vertical: smallestPadding,
-        horizontal: smallPadding,
+        vertical: smallestDimens,
+        horizontal: smallDimens,
       ),
       decoration: pagePopupDecoration,
       child: Row(

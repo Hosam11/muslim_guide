@@ -4,6 +4,7 @@ import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/constants/styles.dart';
 import 'package:muslim_guide/constants/dimens.dart';
+import 'package:muslim_guide/data/app_data/surah_titles_data.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
 import 'package:muslim_guide/helpers/app_helper.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
@@ -21,19 +22,17 @@ class SurahNameTitle extends StatefulWidget {
 }
 
 class _SurahNameTitleState extends State<SurahNameTitle> {
-  final AppHelper _appHelper = AppHelper.instance;
   Surah curSurah;
   @override
   void initState() {
     super.initState();
-    curSurah =
-        _appHelper.surahHeaders.firstWhere((e) => e.name == widget.surahName);
+    curSurah = surahHeaders.firstWhere((e) => e.name == widget.surahName);
   }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: smallPadding),
+      padding: const EdgeInsets.symmetric(vertical: smallDimens),
       child: Container(
         // decoration: styles.kPrimaryBackgroundBoxDecoration.copyWith(
         decoration: BoxDecoration(
@@ -41,7 +40,7 @@ class _SurahNameTitleState extends State<SurahNameTitle> {
           color: kPrimaryColor,
           boxShadow: [shadowFromColor(kPrimaryColor)],
         ),
-        padding: EdgeInsets.all(smallPadding + 2),
+        padding: EdgeInsets.all(smallDimens + 2),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[

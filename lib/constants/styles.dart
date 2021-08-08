@@ -9,7 +9,7 @@ import 'package:muslim_guide/constants/fonts.dart';
   fontSize: 25.0,
 );*/
 
-final BorderRadius kSmallBorderRadius = BorderRadius.circular(smallPadding);
+final BorderRadius kSmallBorderRadius = BorderRadius.circular(smallDimens);
 
 final kWhiteBorder = Border.all(color: kTextColor);
 
