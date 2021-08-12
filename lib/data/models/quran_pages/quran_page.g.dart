@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'new_quran_page.dart';
+part of 'quran_page.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-NewQuranPage _$NewQuranPageFromJson(Map<String, dynamic> json) {
-  return NewQuranPage(
+QuranPage _$NewQuranPageFromJson(Map<String, dynamic> json) {
+  return QuranPage(
     pageNumber: json['pageNumber'] as int,
     juz: json['juz'] as int,
     quarter: json['quarter'] as int,
@@ -26,7 +26,7 @@ NewQuranPage _$NewQuranPageFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$NewQuranPageToJson(NewQuranPage instance) {
+Map<String, dynamic> _$NewQuranPageToJson(QuranPage instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

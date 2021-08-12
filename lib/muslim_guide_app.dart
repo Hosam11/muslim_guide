@@ -33,13 +33,14 @@ class MuslimGuideApp extends StatelessWidget {
         accentColor: kAccentColor,
         // fontFamily: GoogleFonts.tajawal,
         textTheme: GoogleFonts.tajawalTextTheme().copyWith(
-          headline5: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
-          headline6: TextStyle(color: kTextColor),
-          subtitle1: TextStyle(color: kTextColor),
-          subtitle2: TextStyle(color: kTextColor),
-          bodyText1: TextStyle(color: kTextColor),
-          bodyText2: TextStyle(color: kTextColor),
-          caption: TextStyle(color: kTextColor),
+          headline5:
+              const TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
+          headline6: const TextStyle(color: kTextColor),
+          subtitle1: const TextStyle(color: kTextColor),
+          subtitle2: const TextStyle(color: kTextColor),
+          bodyText1: const TextStyle(color: kTextColor),
+          bodyText2: const TextStyle(color: kTextColor),
+          caption: const TextStyle(color: kTextColor),
         ),
         dividerTheme: const DividerThemeData(
           space: 0,

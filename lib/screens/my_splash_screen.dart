@@ -1,5 +1,6 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/styles.dart';
@@ -62,7 +63,7 @@ class _MySplashScreenState extends State<MySplashScreen> with AfterLayoutMixin {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(largeDimens),
-            child: Image.asset(logoImg),
+            child: SvgPicture.asset(logoImg, color: Colors.white),
           ),
         ),
       ),

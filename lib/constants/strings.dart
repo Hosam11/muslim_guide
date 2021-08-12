@@ -29,6 +29,20 @@ const String restoreBookmark = 'انتقال الي العلامة';
 const String yes = 'نعم';
 const String no = 'لا';
 const String confirmBookmark = 'هل تريد وضع علامة علي هذة الصفحة؟';
+const String locationNoEnable = 'يجب تفعيل الموقع الجغرافي ';
+const String locationDeniedForEver =
+    'خدمه الوصول للموقع مغلق بشكل دائم..يجب تفعيل الموقع للاستمرار';
+const openSetting = 'الاعدادات';
+const cancel = 'إلغاء';
+const String errorHappened = 'هناك خطا حدث.. من فضلك حاول مرة اخري';
 
 // AzkarScreen
 const String count = 'التكرار';
+
+// prayer times screen
+const String fajr = 'الفجر';
+const String sunrise = 'الشروق';
+const String duher = 'الظهر';
+const String asr = 'العصر';
+const String eshaa = 'العشاء';
+const String maghreb = 'العشاء';

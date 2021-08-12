@@ -17,4 +17,5 @@ linter:
     - avoid_setters_without_getters
     - join_return_with_assignment
     - avoid_void_async
+    - prefer_const_constructors
 

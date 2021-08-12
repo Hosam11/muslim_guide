@@ -4,10 +4,9 @@ import 'dart:io';
 import 'package:http/http.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
-import 'package:muslim_guide/data/models/new_quran_pages/new_quran_page.dart';
-import 'package:muslim_guide/data/models/new_quran_pages/quran_page_content.dart';
+import 'package:muslim_guide/data/models/quran_pages/quran_page.dart';
+import 'package:muslim_guide/data/models/quran_pages/quran_page_content.dart';
 import 'package:muslim_guide/z_not_use/creates_json_files/create_quran_page_contents_file.dart';
-import 'package:muslim_guide/z_not_use/creates_json_files/create_quran_pages_file.dart';
 import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
 import 'package:muslim_guide/z_not_use/model/returned_quran_pages.dart';
 
@@ -29,10 +28,10 @@ Future<Data> _getData(int page) async {
   return pages.data;
 }
 
-Future<List<NewQuranPage>> _getNewQuranPage() async {
+Future<List<QuranPage>> _getNewQuranPage() async {
   var h = 'storeData() >>';
 
-  final newQuranPages = <NewQuranPage>[];
+  final newQuranPages = <QuranPage>[];
 
   for (var i = 1; i <= 604; i++) {
     // for (var i = 1; i <= 3; i++) {
@@ -63,7 +62,7 @@ Future<List<NewQuranPage>> _getNewQuranPage() async {
     var pageContentList = quranPageContentFromJson(quranPageContentsStr);
 
     // fixme: remove comment in order to make this method work
-    final newQuranPage = NewQuranPage().fromQuranPage(
+    final newQuranPage = QuranPage().fromQuranPage(
       quranPage: quranPage,
       quranPageContents: pageContentList,
     );
@@ -73,12 +72,12 @@ Future<List<NewQuranPage>> _getNewQuranPage() async {
   return newQuranPages;
 }
 
-extension on NewQuranPage {
-  NewQuranPage fromQuranPage({
+extension on QuranPage {
+  QuranPage fromQuranPage({
     OldQuranPage quranPage,
     List<QuranPageContent> quranPageContents,
   }) {
-    return NewQuranPage(
+    return QuranPage(
       pageNumber: quranPage.pageNumber,
       juz: quranPage.juz,
       quarter: quranPage.quarter,

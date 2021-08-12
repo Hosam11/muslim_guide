@@ -1,16 +1,17 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/styles.dart';
 
 class CategoryCardItem extends StatelessWidget {
-  final String icon;
+  final String imgName;
   final String title;
   final void Function() onTapped;
 
   const CategoryCardItem({
-    @required this.icon,
+    @required this.imgName,
     @required this.title,
     this.onTapped,
   });
@@ -23,8 +24,10 @@ class CategoryCardItem extends StatelessWidget {
         borderRadius: kSmallBorderRadius,
         child: Ink(
           decoration: BoxDecoration(
-            gradient:
-                createLinearGradient(kPrimaryColor, kSecPrimaryGradientColor),
+            gradient: createLinearGradient(
+              kPrimaryColor,
+              kSecPrimaryGradientColor,
+            ),
             borderRadius: kSmallBorderRadius,
             border: kWhiteBorder,
           ),
@@ -41,7 +44,8 @@ class CategoryCardItem extends StatelessWidget {
                       top: mediumDimens,
                       bottom: smallDimens,
                     ),
-                    child: Image.asset(icon, color: Colors.white),
+                    // child: Image.asset(imgName, color: Colors.white),
+                    child: SvgPicture.asset(imgName, color: Colors.white),
                   ),
                 ),
                 Expanded(

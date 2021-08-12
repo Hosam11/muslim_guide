@@ -1,7 +1,8 @@
+import 'package:fimber/fimber.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
-import 'package:muslim_guide/data/models/new_quran_pages/new_quran_page.dart';
+import 'package:muslim_guide/data/models/quran_pages/quran_page.dart';
 import 'package:muslim_guide/helpers/quran_page_helper.dart';
 import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:muslim_guide/widgets/quran/quran_footer.dart';
@@ -11,7 +12,8 @@ import 'package:provider/provider.dart';
 class QuranPageScreen extends StatelessWidget {
   QuranPageScreen(this.quranPageModel, [Key key]) : super(key: key);
 
-  final NewQuranPage quranPageModel;
+  final QuranPage quranPageModel;
+  final QuranPageHelper _quranPageHelper = QuranPageHelper.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +22,10 @@ class QuranPageScreen extends StatelessWidget {
 
     final quranProvider = Provider.of<QuranProvider>(context);
 
+    Fimber.i('bookmarkPageNo= ${quranProvider.markedPageNum},'
+        ' curPageNo =${quranPageModel.pageNumber}');
     return WillPopScope(
-      onWillPop: () async => await quranPagePopScope(quranProvider),
+      onWillPop: () async => await _quranPageHelper.quranPagePopScope(quranProvider),
       child: Scaffold(
         backgroundColor: kSecondaryColor,
         body: SafeArea(
@@ -38,7 +42,7 @@ class QuranPageScreen extends StatelessWidget {
                           !quranProvider.isShowDetails,
                       child: SingleChildScrollView(
                         child:
-                            Column(children: quranPageContent(quranPageModel)),
+                            Column(children: _quranPageHelper.quranPageContent(quranPageModel)),
                       ),
                     ),
                   ),

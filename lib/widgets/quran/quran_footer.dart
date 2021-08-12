@@ -1,20 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/data/models/new_quran_pages/new_quran_page.dart';
+import 'package:muslim_guide/data/models/quran_pages/quran_page.dart';
 import 'package:muslim_guide/helpers/quran_page_helper.dart';
 import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:muslim_guide/widgets/quran/page_bookmark.dart';
 import 'package:muslim_guide/widgets/quran/page_title.dart';
 
 class QuranFooter extends StatelessWidget {
-  const QuranFooter({
+  QuranFooter({
     Key key,
     @required this.quranProvider,
     @required this.quranPageModel,
   }) : super(key: key);
 
   final QuranProvider quranProvider;
-  final NewQuranPage quranPageModel;
+  final QuranPage quranPageModel;
+  final QuranPageHelper _quranPageHelper = QuranPageHelper.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +29,18 @@ class QuranFooter extends StatelessWidget {
           children: [
             PageBookmark(
               onBookmarkPressed: () => quranProvider.isShowDetails
-                  ? onBookmarkPressed(
+                  ? _quranPageHelper.onBookmarkPressed(
                       quranPageModel.pageNumber, quranProvider, context)
                   : null,
               onRestoreBookmarkPressed: () => quranProvider.isShowDetails
-                  ? onRestoreBookmarkPressed(context)
+                  ? _quranPageHelper.onRestoreBookmarkPressed(context)
                   : null,
             ),
-            Divider(
-              color: Colors.white24,
-            ),
+            const Divider(color: Colors.white24),
             PageTitle(
-              left: createPageNumber(quranPageModel.pageNumber),
-              right: createHizbQuarter(
+              left:
+                  _quranPageHelper.createPageNumber(quranPageModel.pageNumber),
+              right: _quranPageHelper.createHizbQuarter(
                 quarter: quranPageModel.quarter,
                 hizb: quranPageModel.hizb,
               ),

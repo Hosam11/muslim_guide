@@ -1,6 +1,3 @@
-// To parse this JSON data, do
-//
-//     final quranPageContent = quranPageContentFromJson(jsonString);
 import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';

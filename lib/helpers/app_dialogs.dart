@@ -4,16 +4,16 @@ import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
 
+/*
 Future<dynamic> confirmationDialog(BuildContext context) {
-  return showDialog<dynamic>(
+  return */
+/*showDialog<dynamic>(
     context: context,
     builder: (BuildContext context) => AlertDialog(
       title: const Text(
         confirmBookmark,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
+        style: TextStyle(fontWeight: FontWeight.bold),
       ),
       backgroundColor: kSecondaryColor,
       elevation: elevation,
@@ -27,12 +27,57 @@ Future<dynamic> confirmationDialog(BuildContext context) {
               child: Text(yes, style: Theme.of(context).textTheme.headline6),
             ),
           ),
-          SizedBox(width: 24),
+          const SizedBox(width: 24),
           Expanded(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(primary: kNegativeButtonColor),
               onPressed: () => Navigator.pop(context, false),
               child: Text(no, style: Theme.of(context).textTheme.headline6),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );*/
+/*
+
+}
+*/
+
+Future<dynamic> takeActionDialog({
+  @required BuildContext context,
+  @required String msg,
+  String positiveBtnStr = yes,
+  String negativeBtnStr = no,
+}) {
+  return showDialog<dynamic>(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      title: Text(
+        msg,
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontWeight: FontWeight.bold),
+      ),
+      backgroundColor: kSecondaryColor,
+      elevation: elevation,
+      content: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Expanded(
+            child: ElevatedButton(
+              onPressed: () => Navigator.pop(context, true),
+              style: ElevatedButton.styleFrom(primary: kPrimaryColor),
+              child: Text(positiveBtnStr,
+                  style: Theme.of(context).textTheme.headline6),
+            ),
+          ),
+          const SizedBox(width: 24),
+          Expanded(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: kNegativeButtonColor),
+              onPressed: () => Navigator.pop(context, false),
+              child: Text(negativeBtnStr,
+                  style: Theme.of(context).textTheme.headline6),
             ),
           ),
         ],

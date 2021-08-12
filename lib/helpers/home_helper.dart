@@ -8,30 +8,33 @@ import 'package:muslim_guide/widgets/categories/category_card_item.dart';
 List<CategoryCardItem> getGridItems(BuildContext context) => [
       CategoryCardItem(
         title: strings.quranTitle,
-        icon: assets.quranImg,
+        imgName: assets.quranImg,
         onTapped: () => Navigator.pushNamed(context, routes.quranScreen),
       ),
       CategoryCardItem(
         title: strings.allahNamesTitle,
-        icon: assets.allahNamesImg,
+        imgName: assets.allahNamesImg,
+        onTapped: () => {},
       ),
       CategoryCardItem(
         title: strings.azkarMorningTitle,
-        icon: assets.azkarMorningImg,
+        imgName: assets.azkarMorningImg,
         onTapped: () => onAzkarPressed(false, context),
       ),
       CategoryCardItem(
         title: strings.azkarNightTitle,
-        icon: assets.azkarNigthImg,
+        imgName: assets.azkarNigthImg,
         onTapped: () => onAzkarPressed(true, context),
       ),
       CategoryCardItem(
         title: strings.prayerTimesTitle,
-        icon: assets.prayerTimesImg,
+        imgName: assets.prayerTimesImg,
+        onTapped: () => Navigator.pushNamed(context, routes.prayersTimesScreen),
       ),
       CategoryCardItem(
         title: strings.rosaryTitle,
-        icon: assets.rosaryImg,
+        imgName: assets.rosaryImg,
+        onTapped: () => {},
       ),
     ];
 

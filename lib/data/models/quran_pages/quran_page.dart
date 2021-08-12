@@ -2,17 +2,17 @@ import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
 import 'package:muslim_guide/data/models/custom_ayah/ayah_content.dart';
-import 'package:muslim_guide/data/models/new_quran_pages/quran_page_content.dart';
+import 'package:muslim_guide/data/models/quran_pages/quran_page_content.dart';
 
-part 'new_quran_page.g.dart';
+part 'quran_page.g.dart';
 
-List<NewQuranPage> quranDataFromJson(String str) => List<NewQuranPage>.from(
-    jsonDecode(str).map((x) => NewQuranPage.fromJson(x)));
+List<QuranPage> quranDataFromJson(String str) =>
+    List<QuranPage>.from(jsonDecode(str).map((x) => QuranPage.fromJson(x)));
 
 enum SajdaType { normal, custom }
 
 @JsonSerializable()
-class NewQuranPage {
+class QuranPage {
   @JsonKey(includeIfNull: false)
   int pageNumber, juz, quarter, hizb, sajdaIndex;
   final String surahName;
@@ -22,7 +22,7 @@ class NewQuranPage {
   final AyahContent ayahContent;
   final SajdaType sajdaType;
 
-  NewQuranPage({
+  QuranPage({
     this.pageNumber,
     this.juz,
     this.quarter,
@@ -34,7 +34,7 @@ class NewQuranPage {
     this.sajdaIndex,
   });
 
-  factory NewQuranPage.fromJson(Map<String, dynamic> json) =>
+  factory QuranPage.fromJson(Map<String, dynamic> json) =>
       _$NewQuranPageFromJson(json);
 
   Map<String, dynamic> toJson() => _$NewQuranPageToJson(this);

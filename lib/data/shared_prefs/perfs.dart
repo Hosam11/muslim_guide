@@ -18,3 +18,13 @@ int getInt({@required String key, @required int defaultValue}) {
   Fimber.i('prefsHashed= ${_prefs.hashCode}');
   return _prefs.getInt(key) ?? defaultValue;
 }
+
+Future<bool> setString({@required String value, @required String key}) {
+  Fimber.i('prefsHashed= ${_prefs.hashCode}');
+  return _prefs.setString(key, value);
+}
+
+String getString({@required String key, @required String defaultValue}) {
+  Fimber.i('prefsHashed= ${_prefs.hashCode}');
+  return _prefs.getString(key) ?? defaultValue;
+}
