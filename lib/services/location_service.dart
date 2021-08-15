@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/helpers/app_dialogs.dart';
+import 'package:muslim_guide/helpers/app_helper.dart';
 
 enum GetLocationStatus { denied, notEnable, deniedForever, locationProblem }
 
@@ -39,10 +40,9 @@ Future<dynamic> _determineLocationStatus() async {
       Position position;
       try {
         position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high,
-        );
+            desiredAccuracy: LocationAccuracy.high);
       } catch (e) {
-        Fimber.i('e=$e');
+        Fimber.i('locationProblem exception =$e');
         return GetLocationStatus.locationProblem;
       }
       return position;
@@ -51,7 +51,7 @@ Future<dynamic> _determineLocationStatus() async {
 
 /// [Position] if we success to got location
 /// [bool] if there is problem with permission
-Future<dynamic> getUserLocation(BuildContext context) async {
+Future<dynamic> _getUserLocation(BuildContext context) async {
   final dynamic locationResult = await _determineLocationStatus();
   Fimber.i('locationResult= $locationResult');
   if (locationResult is GetLocationStatus) {
@@ -59,10 +59,10 @@ Future<dynamic> getUserLocation(BuildContext context) async {
       case GetLocationStatus.denied:
         final res = await Geolocator.requestPermission();
         if (res == LocationPermission.deniedForever) {
+          Fimber.i('res= $res');
           await locationDeniedForever(context);
         }
         return false;
-
       case GetLocationStatus.notEnable:
         // show dialog ask to open setting
         await locationNotEnable(context);
@@ -88,6 +88,7 @@ Future<void> locationNotEnable(BuildContext context) async {
     positiveBtnStr: openSetting,
     negativeBtnStr: cancel,
   );
+  Fimber.i('positive= $positive');
   if (positive != null && positive) {
     await Geolocator.openLocationSettings();
   }
@@ -100,7 +101,19 @@ Future<void> locationDeniedForever(BuildContext context) async {
     positiveBtnStr: openSetting,
     negativeBtnStr: cancel,
   );
-  if (positive) {
+  if (positive != null && positive) {
     await Geolocator.openAppSettings();
+  }
+}
+
+/// return true if location successfully got and saved tp shared prefs
+/// else return false if there is problem with location
+Future<bool> getLocationAndSaveIt(BuildContext context) async {
+  final res = await _getUserLocation(context);
+  Fimber.i('res= $res');
+  if (res is! bool) {
+    return await saveLocationToPrefs(res);
+  } else {
+    return false;
   }
 }

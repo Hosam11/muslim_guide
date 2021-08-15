@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: centerTitle,
-      iconTheme: IconThemeData(color: kTextColor),
+      iconTheme: const IconThemeData(color: kTextColor),
       flexibleSpace:
           Container(decoration: styles.kSecondaryBackgroundBoxDecoration),
       title: Text(title, style: Theme.of(context).textTheme.headline5),

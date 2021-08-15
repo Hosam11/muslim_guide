@@ -20,7 +20,7 @@ class SurahsListScreen extends StatelessWidget {
             top: mediumDimens,
           ),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: kPrimaryColor,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(smallDimens),
@@ -28,7 +28,7 @@ class SurahsListScreen extends StatelessWidget {
               ),
             ),
             child: ListView.separated(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (_, index) => surahsItems[index],
               itemCount: surahsItems.length,
               padding: const EdgeInsets.all(smallDimens),

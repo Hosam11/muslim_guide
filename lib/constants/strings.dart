@@ -31,10 +31,13 @@ const String no = 'لا';
 const String confirmBookmark = 'هل تريد وضع علامة علي هذة الصفحة؟';
 const String locationNoEnable = 'يجب تفعيل الموقع الجغرافي ';
 const String locationDeniedForEver =
-    'خدمه الوصول للموقع مغلق بشكل دائم..يجب تفعيل الموقع للاستمرار';
+    'خدمه الوصول للموقع مغلق بشكل دائم..اذهب للاعدات لتفعيلها';
 const openSetting = 'الاعدادات';
 const cancel = 'إلغاء';
 const String errorHappened = 'هناك خطا حدث.. من فضلك حاول مرة اخري';
+const String locationError =
+    'هناك مشكله في الحصول علي الموقع.. هل تريد المحاولة مره اخري؟';
+const String discard = 'تراجع';
 
 // AzkarScreen
 const String count = 'التكرار';

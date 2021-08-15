@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:muslim_guide/constants/fonts.dart' as fonts;
 import 'package:muslim_guide/constants/dimens.dart' as dimens;
 import 'package:muslim_guide/constants/styles.dart';
 

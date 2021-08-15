@@ -18,7 +18,9 @@ void mLog(String message) {
 }
 
 // const apiKey = 'android_ZmQ0NzQwNjQtMmYwNy00ZjlkLTlkZDctZTY5MTllMmE2ZWJm';
-const apiKey = 'android_NGU0MTQ4MDMtMDc2NS00NzE3LWJhYTctZTMzNGM0YWIwMDgz';
+// const apiKey = 'android_NGU0MTQ4MDMtMDc2NS00NzE3LWJhYTctZTMzNGM0YWIwMDgz';
+// const apiKey = 'android_MWM3Yzk0OTMtZDE4MC00MDMxLTg5NjUtMTFhYWM5YjRiMGQx';
+const apiKey = 'android_YmZjYWJhMGYtOGE4NS00YjA2LWExOTMtYjg0OWM3ZjQxMGQx';
 
 Future<void> prepareDataNeeded() async {
   await prepareSurahHeaders();
@@ -51,16 +53,22 @@ void runAppSpector() {
   AppSpectorPlugin.run(config);
 }
 
-Future<void> saveLocationToPrefs(Position location) async {
+Future<bool> saveLocationToPrefs(Position location) async {
   final locationJson = location.toJson();
   final locationStr = jsonEncode(locationJson);
-  await setString(value: locationStr, key: locationKey);
+
+  final saveState = await setString(value: locationStr, key: locationKey);
+  return saveState;
 }
 
 /// return [Position] or false if there is no location stored
 dynamic getLocationFromPref() {
-  final locationStr = getString(key: locationKey, defaultValue: '');
-  if (locationStr.isNotEmpty) {
+  final locationStr = getString(
+    key: locationKey,
+    defaultValue: locationDefaultKey,
+  );
+  Fimber.i('locationStr= $locationStr');
+  if (locationStr != locationDefaultKey) {
     final locationMap = jsonDecode(locationStr);
     final location = Position.fromMap(locationMap);
     return location;

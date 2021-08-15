@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
-import 'package:muslim_guide/constants/fonts.dart';
 
 /*
 final ThemeData appThemeData = ThemeData(
@@ -30,7 +29,7 @@ final ThemeData appThemeData = ThemeData(
 
 // not used only for practicing
 const _lightFillColor = Colors.black;
-final ColorScheme lightColorScheme = ColorScheme(
+final ColorScheme lightColorScheme = const ColorScheme(
   primary: Color(0xFFB93C5D),
   primaryVariant: Color(0xFF117378),
   secondary: Color(0xFFEFF3F3),

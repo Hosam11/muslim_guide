@@ -53,7 +53,7 @@ class ZekrCard extends StatelessWidget {
                       textAlign: TextAlign.justify,
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Padding(
                     padding: const EdgeInsets.only(top: smallDimens),
                     child: Row(

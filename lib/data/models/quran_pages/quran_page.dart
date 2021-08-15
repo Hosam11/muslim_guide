@@ -35,7 +35,7 @@ class QuranPage {
   });
 
   factory QuranPage.fromJson(Map<String, dynamic> json) =>
-      _$NewQuranPageFromJson(json);
+      _$QuranPageFromJson(json);
 
-  Map<String, dynamic> toJson() => _$NewQuranPageToJson(this);
+  Map<String, dynamic> toJson() => _$QuranPageToJson(this);
 }

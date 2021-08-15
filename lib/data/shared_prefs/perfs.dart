@@ -28,3 +28,5 @@ String getString({@required String key, @required String defaultValue}) {
   Fimber.i('prefsHashed= ${_prefs.hashCode}');
   return _prefs.getString(key) ?? defaultValue;
 }
+
+Future<bool> clearPrefs() async => await _prefs.clear();

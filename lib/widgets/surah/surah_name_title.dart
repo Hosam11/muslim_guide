@@ -1,4 +1,3 @@
-import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/strings.dart';
@@ -6,7 +5,6 @@ import 'package:muslim_guide/constants/styles.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/data/app_data/surah_titles_data.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
-import 'package:muslim_guide/helpers/app_helper.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
 import 'package:muslim_guide/widgets/surah/surah_name_info.dart';
 
@@ -40,7 +38,7 @@ class _SurahNameTitleState extends State<SurahNameTitle> {
           color: kPrimaryColor,
           boxShadow: [shadowFromColor(kPrimaryColor)],
         ),
-        padding: EdgeInsets.all(smallDimens + 2),
+        padding: const EdgeInsets.all(smallDimens + 2),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[

@@ -1,8 +1,9 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
-import 'package:muslim_guide/constants/strings.dart';
-import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/constants/constants_imports.dart';
+
 import 'package:muslim_guide/data/models/custom_ayah/ayah_content.dart';
+import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/helpers/after_layout.dart';
 import 'package:muslim_guide/helpers/app_helper.dart';
 import 'package:muslim_guide/services/location_service.dart';
@@ -26,10 +27,28 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     Fimber.i('');
-    await getLocation();
+    final location = getLocationFromPref();
+    // false means there is no location stored in db
+    if (location == false) {
+      await getLocationAndSaveIt(context);
+    } else {
+      Fimber.i('there is location stored= $location');
+    }
   }
 
   var customPages = AyahContent();
+
+  Future<void> test() async {
+    /* await takeActionDialog(
+      context: context,
+      msg: locationNoEnable,
+      positiveBtnStr: openSetting,
+      negativeBtnStr: cancel,
+    );
+    await testDialog(context);*/
+    final clear = await clearPrefs();
+    Fimber.i('clear= $clear');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +58,10 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
     Fimber.i('dateToday= $dateToday  ');
     return Scaffold(
       appBar: CustomAppBar(title: homeScreenTitle, centerTitle: true),
+      floatingActionButton: FloatingActionButton(
+        onPressed: test,
+        child: const Icon(Icons.clear),
+      ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -64,14 +87,11 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
     );
   }
 
-  Future<void> getLocation() async {
+/*  Future<void> getLocationAndSaveIt() async {
     final res = await getUserLocation(context);
     Fimber.i('res= $res');
     if (res is! bool) {
       await saveLocationToPrefs(res);
-    } else {
-      // error try again
-      // await getLocationPressed();
     }
-  }
+  }*/
 }

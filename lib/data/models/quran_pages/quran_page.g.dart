@@ -6,7 +6,7 @@ part of 'quran_page.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-QuranPage _$NewQuranPageFromJson(Map<String, dynamic> json) {
+QuranPage _$QuranPageFromJson(Map<String, dynamic> json) {
   return QuranPage(
     pageNumber: json['pageNumber'] as int,
     juz: json['juz'] as int,
@@ -26,7 +26,7 @@ QuranPage _$NewQuranPageFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$NewQuranPageToJson(QuranPage instance) {
+Map<String, dynamic> _$QuranPageToJson(QuranPage instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

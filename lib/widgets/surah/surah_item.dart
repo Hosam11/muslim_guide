@@ -7,9 +7,7 @@ import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
-import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:muslim_guide/routes.dart' as routes;
-import 'package:provider/provider.dart';
 
 class SurahItem extends StatelessWidget {
   final Surah surah;

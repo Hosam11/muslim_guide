@@ -30,7 +30,7 @@ class CustomQuranTextView extends StatelessWidget {
               TextSpan(
                 // text: '\u202E$sajdaWord', // real case
                 text: ' \u202E${customAyah.sajdaWords} ', // test case
-                style: TextStyle(
+                style: const TextStyle(
                   textBaseline: TextBaseline.ideographic,
                   decoration: TextDecoration.underline,
                   shadows: [Shadow(color: Colors.white, offset: Offset(0, -5))],
