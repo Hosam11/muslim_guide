@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
 
-part 'azkar.g.dart';
+// part 'azkar.g.dart';
 
-List<Azkar> azkarListFromJson(String str) => List<Azkar>.from(
-      jsonDecode(str).map((x) => Azkar.fromJson(x)),
-    );
+// List<Azkar> azkarListFromJson(String str) => List<Azkar>.from(
+//       jsonDecode(str).map((x) => Azkar.fromJson(x)),
+//     );
 
 @JsonSerializable()
 class Azkar {
@@ -23,8 +23,8 @@ class Azkar {
   final String description;
   final String reference;
   final String zekr;
-
-  factory Azkar.fromJson(Map<String, dynamic> json) => _$AzkarFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AzkarToJson(this);
+  //
+  // factory Azkar.fromJson(Map<String, dynamic> json) => _$AzkarFromJson(json);
+  //
+  // Map<String, dynamic> toJson() => _$AzkarToJson(this);
 }

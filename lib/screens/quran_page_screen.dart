@@ -25,7 +25,8 @@ class QuranPageScreen extends StatelessWidget {
     Fimber.i('bookmarkPageNo= ${quranProvider.markedPageNum},'
         ' curPageNo =${quranPageModel.pageNumber}');
     return WillPopScope(
-      onWillPop: () async => await _quranPageHelper.quranPagePopScope(quranProvider),
+      onWillPop: () async =>
+          await _quranPageHelper.quranPagePopScope(quranProvider),
       child: Scaffold(
         backgroundColor: kSecondaryColor,
         body: SafeArea(
@@ -36,13 +37,16 @@ class QuranPageScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: InkWell(
-                      splashFactory: NoSplash.splashFactory,
+                      // FIXME: m
+
+                      // splashFactory: NoSplash.splashFactory,
                       enableFeedback: false,
                       onTap: () => quranProvider.isShowDetails =
                           !quranProvider.isShowDetails,
                       child: SingleChildScrollView(
-                        child:
-                            Column(children: _quranPageHelper.quranPageContent(quranPageModel)),
+                        child: Column(
+                            children: _quranPageHelper
+                                .quranPageContent(quranPageModel)),
                       ),
                     ),
                   ),

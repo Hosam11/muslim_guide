@@ -1,3 +1,5 @@
+// FIXME: m
+
 import 'dart:convert';
 import 'dart:io';
 
@@ -29,7 +31,9 @@ Future<List<Surah>> setupSurahsWithPageNumber(
   List<Map<int, int>> surahPageNumber,
 ) async {
   final surahListStr = await File(surahsListFile).readAsString();
-  final surahsDataList = surahListFromJson(surahListStr);
+  // FIXME: m
+
+  final surahsDataList = [] /*= surahListFromJson(surahListStr)*/;
 
   final newSurahList = <Surah>[];
 
@@ -86,7 +90,8 @@ Future<Set<Map<int, int>>> surahWithPageNumber() async {
 
 Future<List<OldQuranPage>> getNewQuranPages() async {
   final quranPagesRes = await File(oldQuranPagesFile).readAsString();
-  final quranData = quranDataFromJson(quranPagesRes);
+  // FIXME: m
+  final quranData = [] /*quranDataFromJson(quranPagesRes)*/;
   // mLog('$h quranData= ${convert.jsonEncode(quranData)}');
   print('quranDataLen= ${quranData.length}');
   return quranData;

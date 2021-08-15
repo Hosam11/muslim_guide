@@ -1,3 +1,5 @@
+// FIXME: m
+
 import 'dart:convert';
 import 'dart:io';
 
@@ -59,7 +61,9 @@ Future<List<QuranPage>> _getNewQuranPage() async {
     final quranPageContents = await getQuranPageContent(quranPage);
 
     final quranPageContentsStr = jsonEncode(quranPageContents);
-    var pageContentList = quranPageContentFromJson(quranPageContentsStr);
+
+    // FIXME: m
+    /*   var pageContentList = quranPageContentFromJson(quranPageContentsStr);
 
     // fixme: remove comment in order to make this method work
     final newQuranPage = QuranPage().fromQuranPage(
@@ -67,7 +71,7 @@ Future<List<QuranPage>> _getNewQuranPage() async {
       quranPageContents: pageContentList,
     );
 
-    newQuranPages.add(newQuranPage);
+    newQuranPages.add(newQuranPage);*/
   }
   return newQuranPages;
 }

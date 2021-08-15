@@ -6,10 +6,11 @@ class PrayerTimesRepo extends _PrayerTimesRepository {
   PrayerTimesRepo._privateConstructor();
 
   static final PrayerTimesRepo instance = PrayerTimesRepo._privateConstructor();
+  // FIXME: m
 
   @override
   Future<PrayerTimesModel> getPrayerTimes(String url) async {
-    final res = await getRequest(url: url);
+ /*   final res = await getRequest(url: url);
     if (res is Response) {
       final prayerTimesModel = PrayerTimesModel.fromJson(
         res.data as Map<String, dynamic>,
@@ -18,7 +19,7 @@ class PrayerTimesRepo extends _PrayerTimesRepository {
     } else {
       final prayerTimesModel = const PrayerTimesModel(status: 'there is error');
       return prayerTimesModel;
-    }
+    }*/
   }
 }
 
