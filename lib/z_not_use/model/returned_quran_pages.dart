@@ -14,7 +14,7 @@ String quranPagesToJson(OriginalQuranPages data) => jsonEncode(data.toJson());
 class OriginalQuranPages extends Equatable {
   OriginalQuranPages({this.data});
 
-  Data data;
+  Data? data;
 
   @override
   bool get stringify => false;
@@ -25,19 +25,19 @@ class OriginalQuranPages extends Equatable {
       );
 
   Map<String, dynamic> toJson() => {
-        'data': data.toJson(),
+        'data': data!.toJson(),
       };
 
   @override
-  List<Object> get props => [data];
+  List<Object?> get props => [data];
 }
 
 class Data extends Equatable {
   Data({this.pageNumber, this.ayahs, this.surahs});
 
-  int pageNumber;
-  List<AyahModel> ayahs;
-  Map<String, SurahValue> surahs;
+  int? pageNumber;
+  List<AyahModel>? ayahs;
+  Map<String, SurahValue>? surahs;
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         pageNumber: json['number'],
@@ -52,13 +52,13 @@ class Data extends Equatable {
 
   Map<String, dynamic> toJson() => {
         'number': pageNumber,
-        'ayahs': List<dynamic>.from(ayahs.map((x) => x.toJson())),
-        'surahs': Map.from(surahs)
+        'ayahs': List<dynamic>.from(ayahs!.map((x) => x.toJson())),
+        'surahs': Map.from(surahs!)
             .map((k, v) => MapEntry<String, dynamic>(k, v.toJson())),
       };
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         pageNumber,
         ayahs,
         surahs,
@@ -78,15 +78,15 @@ class AyahModel extends Equatable {
     this.hizbQuarter,
   });
 
-  int number;
-  String text;
-  AyahSurah surah;
-  int numberInSurah;
-  int juz;
-  int manzil;
-  int page;
-  int ruku;
-  int hizbQuarter;
+  int? number;
+  String? text;
+  AyahSurah? surah;
+  int? numberInSurah;
+  int? juz;
+  int? manzil;
+  int? page;
+  int? ruku;
+  int? hizbQuarter;
 
   factory AyahModel.fromJson(Map<String, dynamic> json) => AyahModel(
         number: json['number'],
@@ -103,7 +103,7 @@ class AyahModel extends Equatable {
   Map<String, dynamic> toJson() => {
         'number': number,
         'text': text,
-        'surah': surah.toJson(),
+        'surah': surah!.toJson(),
         'numberInSurah': numberInSurah,
         'juz': juz,
         'manzil': manzil,
@@ -116,7 +116,7 @@ class AyahModel extends Equatable {
   bool get stringify => false;
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         number,
         text,
         surah,
@@ -132,8 +132,8 @@ class AyahModel extends Equatable {
 class AyahSurah extends Equatable {
   AyahSurah({this.number, this.name});
 
-  int number;
-  String name;
+  int? number;
+  String? name;
 
   @override
   bool get stringify => false;
@@ -146,14 +146,14 @@ class AyahSurah extends Equatable {
   Map<String, dynamic> toJson() => {'number': number, 'name': name};
 
   @override
-  List<Object> get props => [number, name];
+  List<Object?> get props => [number, name];
 }
 
 class SurahValue extends Equatable {
   SurahValue({this.number, this.name});
 
-  int number;
-  String name;
+  int? number;
+  String? name;
 
   factory SurahValue.fromJson(Map<String, dynamic> json) => SurahValue(
         number: json['number'],
@@ -166,7 +166,7 @@ class SurahValue extends Equatable {
       };
 
   @override
-  List<Object> get props => [number, name];
+  List<Object?> get props => [number, name];
 
   @override
   bool get stringify => false;

@@ -8,10 +8,10 @@ part of 'ayah.dart';
 
 Ayah _$AyahFromJson(Map<String, dynamic> json) {
   return Ayah(
-    ayahNumber: json['ayahNumber'] as int,
-    ayahText: json['ayahText'] as String,
-    surahName: json['surahName'] as String,
-    surahNumber: json['surahNumber'] as int,
+    ayahNumber: json['ayahNumber'] as int?,
+    ayahText: json['ayahText'] as String?,
+    surahName: json['surahName'] as String?,
+    surahNumber: json['surahNumber'] as int?,
   );
 }
 

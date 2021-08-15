@@ -17,7 +17,7 @@ const String azkarScreen = 'azkarScreen';
 const String prayersTimesScreen = 'prayersTimesScreen';
 
 // Type: Route<dynamic> Function(RouteSettings)
-Route<dynamic> generateRoutes(RouteSettings settings) {
+Route<dynamic>? generateRoutes(RouteSettings settings) {
   Fimber.i('build route for ${settings.name}');
   switch (settings.name) {
     case splashScreen:
@@ -29,7 +29,7 @@ Route<dynamic> generateRoutes(RouteSettings settings) {
     case quranScreen:
       return createPageBuilder(SurahsListScreen());
     case quranPageControllerScreen:
-      final args = settings.arguments as QuranArgs;
+      final args = settings.arguments as QuranArgs?;
       return createPageBuilder(
         QuranPageController(
           quranArgs: args,

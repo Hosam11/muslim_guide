@@ -9,9 +9,9 @@ class QuranHeader extends StatelessWidget {
   final QuranPageHelper _quranPageHelper = QuranPageHelper.instance;
 
   QuranHeader({
-    Key key,
-    @required this.quranProvider,
-    @required this.quranPageModel,
+    Key? key,
+    required this.quranProvider,
+    required this.quranPageModel,
   }) : super(key: key);
 
   final QuranProvider quranProvider;

@@ -7,7 +7,7 @@ import 'package:muslim_guide/data/models/azkar/azkar.dart';
 import 'package:muslim_guide/helpers/app_dialogs.dart';
 
 class ZekrCard extends StatelessWidget {
-  const ZekrCard({Key key, @required this.azkar}) : super(key: key);
+  const ZekrCard({Key? key, required this.azkar}) : super(key: key);
 
   final Azkar azkar;
 
@@ -48,7 +48,7 @@ class ZekrCard extends StatelessWidget {
                       '\u202E${azkar.zekr}',
                       style: Theme.of(context)
                           .textTheme
-                          .headline6
+                          .headline6!
                           .copyWith(fontWeight: FontWeight.normal),
                       textAlign: TextAlign.justify,
                     ),

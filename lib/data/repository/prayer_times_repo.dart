@@ -6,6 +6,7 @@ class PrayerTimesRepo extends _PrayerTimesRepository {
   PrayerTimesRepo._privateConstructor();
 
   static final PrayerTimesRepo instance = PrayerTimesRepo._privateConstructor();
+  // solved
 
   @override
   Future<PrayerTimesModel> getPrayerTimes(String url) async {

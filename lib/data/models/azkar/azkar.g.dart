@@ -8,11 +8,11 @@ part of 'azkar.dart';
 
 Azkar _$AzkarFromJson(Map<String, dynamic> json) {
   return Azkar(
-    category: json['category'] as String,
-    count: json['count'] as String,
-    description: json['description'] as String,
-    reference: json['reference'] as String,
-    zekr: json['zekr'] as String,
+    category: json['category'] as String?,
+    count: json['count'] as String?,
+    description: json['description'] as String?,
+    reference: json['reference'] as String?,
+    zekr: json['zekr'] as String?,
   );
 }
 

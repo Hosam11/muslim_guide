@@ -4,9 +4,9 @@ part 'ayah_content.g.dart';
 
 @JsonSerializable()
 class AyahContent {
-  String firstAyahs;
-  String sajdaWords;
-  String lastAyahs;
+  String? firstAyahs;
+  String? sajdaWords;
+  String? lastAyahs;
 
   AyahContent({
     this.firstAyahs,

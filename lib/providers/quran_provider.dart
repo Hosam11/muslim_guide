@@ -3,9 +3,9 @@ import 'package:flutter/foundation.dart';
 class QuranProvider extends ChangeNotifier {
   bool _isBookmark = false;
   bool _isShowDetails = false;
-  int _markedPage = -1;
+  int? _markedPage = -1;
 
-  int get markedPageNum => _markedPage;
+  int? get markedPageNum => _markedPage;
 
   bool get isShowDetails => _isShowDetails;
 
@@ -21,7 +21,7 @@ class QuranProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  set markedPageNum(int value) {
+  set markedPageNum(int? value) {
     _markedPage = value;
     notifyListeners();
   }

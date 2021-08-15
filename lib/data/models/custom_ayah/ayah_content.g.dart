@@ -8,9 +8,9 @@ part of 'ayah_content.dart';
 
 AyahContent _$AyahContentFromJson(Map<String, dynamic> json) {
   return AyahContent(
-    firstAyahs: json['firstAyahs'] as String,
-    sajdaWords: json['sajdaWords'] as String,
-    lastAyahs: json['lastAyahs'] as String,
+    firstAyahs: json['firstAyahs'] as String?,
+    sajdaWords: json['sajdaWords'] as String?,
+    lastAyahs: json['lastAyahs'] as String?,
   );
 }
 

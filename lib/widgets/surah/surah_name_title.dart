@@ -10,17 +10,17 @@ import 'package:muslim_guide/widgets/surah/surah_name_info.dart';
 
 class SurahNameTitle extends StatefulWidget {
   const SurahNameTitle({
-    Key key,
-    @required this.surahName,
+    Key? key,
+    required this.surahName,
   }) : super(key: key);
-  final String surahName;
+  final String? surahName;
 
   @override
   _SurahNameTitleState createState() => _SurahNameTitleState();
 }
 
 class _SurahNameTitleState extends State<SurahNameTitle> {
-  Surah curSurah;
+  late Surah curSurah;
   @override
   void initState() {
     super.initState();
@@ -48,7 +48,7 @@ class _SurahNameTitleState extends State<SurahNameTitle> {
             ),
             Center(
               child: Text(
-                widget.surahName,
+                widget.surahName!,
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),

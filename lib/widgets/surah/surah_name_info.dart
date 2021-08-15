@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class SurahNameInfo extends StatelessWidget {
   const SurahNameInfo({
-    Key key,
-    @required this.title,
-    @required this.number,
+    Key? key,
+    required this.title,
+    required this.number,
   }) : super(key: key);
 
   final String title;

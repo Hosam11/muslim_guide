@@ -4,8 +4,8 @@ part 'ayah.g.dart';
 
 @JsonSerializable()
 class Ayah {
-  final int ayahNumber, surahNumber;
-  final String ayahText, surahName;
+  final int? ayahNumber, surahNumber;
+  final String? ayahText, surahName;
 
   Ayah({
     this.ayahNumber,

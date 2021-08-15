@@ -18,20 +18,20 @@ class QuranPageHelper {
 
   static final QuranPageHelper instance = QuranPageHelper._privateConstructor();
 
-  String createHizbQuarter({@required int quarter, @required int hizb}) =>
+  String createHizbQuarter({required int? quarter, required int? hizb}) =>
       '$quarterLabel: ${convertToArabic(quarter)} - $hizbLabel: ${convertToArabic(hizb)}';
 
-  String createPageNumber(int pageNumber) =>
+  String createPageNumber(int? pageNumber) =>
       '$pageLabel: ${convertToArabic(pageNumber)}';
 
-  String createJuzNumber(int juz) => '$juzLabel ${convertToArabic(juz)}';
+  String createJuzNumber(int? juz) => '$juzLabel ${convertToArabic(juz)}';
 
   List<Widget> quranPageContent(QuranPage quranPageModel) {
     final h = '@@ quran_helper @@ quranPageContent() >>';
     final pageWidgets = <Widget>[];
 
     if (quranPageModel.sajdaType == null) {
-      for (final pageContent in quranPageModel.quranPageContents) {
+      for (final pageContent in quranPageModel.quranPageContents!) {
         // mLog('$h pageContent= ${jsonEncode(pageContent)}');
 
         if (pageContent.ayah != null) {
@@ -48,7 +48,7 @@ class QuranPageHelper {
               .add(CustomQuranTextView(customAyah: quranPageModel.ayahContent));
           break;
         case SajdaType.custom:
-          final pageContent = quranPageModel.quranPageContents;
+          final pageContent = quranPageModel.quranPageContents!;
           for (var index = 0; index < pageContent.length; index++) {
             if (index == quranPageModel.sajdaIndex) {
               pageWidgets.add(
@@ -71,7 +71,7 @@ class QuranPageHelper {
   }
 
   Future<void> onBookmarkPressed(
-    int number,
+    int? number,
     QuranProvider quranProvider,
     BuildContext context,
   ) async {
@@ -81,7 +81,7 @@ class QuranPageHelper {
     );
     Fimber.i('confirmDialogRes= $confirmDialogRes');
     if (confirmDialogRes != null && confirmDialogRes) {
-      final isSaved = await setInt(value: number, key: pageNumberKey);
+      final isSaved = await setInt(value: number!, key: pageNumberKey);
       quranProvider.markedPageNum = number;
       Fimber.i('isSaved=  $isSaved');
       quranProvider.isBookmark = true;

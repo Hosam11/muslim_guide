@@ -19,10 +19,10 @@ class QuranPageContent {
   });
 
   @JsonKey(includeIfNull: false)
-  final String header;
+  final String? header;
 
   @JsonKey(includeIfNull: false)
-  final String ayah;
+  final String? ayah;
 
   factory QuranPageContent.fromJson(Map<String, dynamic> json) =>
       _$QuranPageContentFromJson(json);

@@ -18,11 +18,11 @@ class Azkar {
     this.zekr,
   });
 
-  final String category;
-  final String count;
-  final String description;
-  final String reference;
-  final String zekr;
+  final String? category;
+  final String? count;
+  final String? description;
+  final String? reference;
+  final String? zekr;
 
   factory Azkar.fromJson(Map<String, dynamic> json) => _$AzkarFromJson(json);
 

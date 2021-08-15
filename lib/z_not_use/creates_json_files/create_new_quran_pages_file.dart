@@ -1,23 +1,26 @@
+/*
+// FIXME: m
+
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
-import 'package:muslim_guide/data/models/quran_pages/quran_page.dart';
+import 'package:muslim_guide/data/models/quran_pages/old_quran_page.dart';
 import 'package:muslim_guide/data/models/quran_pages/quran_page_content.dart';
 import 'package:muslim_guide/z_not_use/creates_json_files/create_quran_page_contents_file.dart';
-import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
+import 'package:muslim_guide/z_not_use/model/old_quran_page/old_quran_page.dart';
 import 'package:muslim_guide/z_not_use/model/returned_quran_pages.dart';
 
 /// responsible for create json object and save it in file [newQuranPagesFile]
 Future<void> main() async {
   var x = await _getNewQuranPage();
   // await _writeToFile(jsonEncode(x), 'test_file.json');
-  await _writeToFile(jsonEncode(x), newQuranPagesFile);
+  await _writeToFile(jsonEncode(x), newQuranPagesFile!);
 }
 
-Future<Data> _getData(int page) async {
+Future<Data?> _getData(int page) async {
   final dataResponse = await get(
       Uri.parse('http://api.alquran.cloud/v1/page/$page/quran-uthmani'));
 
@@ -37,29 +40,32 @@ Future<List<QuranPage>> _getNewQuranPage() async {
     // for (var i = 1; i <= 3; i++) {
     print('i= $i');
 
-    var data = await _getData(i);
-    var hizbQuarter = _hizbQuarterMap(data.ayahs.last.hizbQuarter);
+    var data = await (_getData(i) as FutureOr<Data>);
+    var hizbQuarter = _hizbQuarterMap(data.ayahs!.last.hizbQuarter!);
 
     var quranPage = OldQuranPage(
       hizb: hizbQuarter['hizb'],
-      juz: data.ayahs.last.juz,
-      pageAyahs: data.ayahs
+      juz: data.ayahs!.last.juz,
+      pageAyahs: data.ayahs!
           .map((ayah) => Ayah(
-                surahName: ayah.surah.name,
+                surahName: ayah.surah!.name,
                 ayahNumber: ayah.numberInSurah,
                 ayahText: ayah.text,
-                surahNumber: ayah.surah.number,
+                surahNumber: ayah.surah!.number,
               ))
           .toList(),
       pageNumber: data.pageNumber,
       quarter: hizbQuarter['quarter'],
-      surahName: data.surahs[data.surahs.keys.last].name,
+      surahName: data.surahs![data.surahs!.keys.last]!.name,
     );
 
     final quranPageContents = await getQuranPageContent(quranPage);
 
     final quranPageContentsStr = jsonEncode(quranPageContents);
-    var pageContentList = quranPageContentFromJson(quranPageContentsStr);
+
+    // FIXME: m
+    */
+/*   var pageContentList = quranPageContentFromJson(quranPageContentsStr);
 
     // fixme: remove comment in order to make this method work
     final newQuranPage = QuranPage().fromQuranPage(
@@ -67,15 +73,16 @@ Future<List<QuranPage>> _getNewQuranPage() async {
       quranPageContents: pageContentList,
     );
 
-    newQuranPages.add(newQuranPage);
+    newQuranPages.add(newQuranPage);*/ /*
+
   }
   return newQuranPages;
 }
 
 extension on QuranPage {
   QuranPage fromQuranPage({
-    OldQuranPage quranPage,
-    List<QuranPageContent> quranPageContents,
+    required OldQuranPage quranPage,
+    List<QuranPageContent>? quranPageContents,
   }) {
     return QuranPage(
       pageNumber: quranPage.pageNumber,
@@ -86,6 +93,7 @@ extension on QuranPage {
       quranPageContents: quranPageContents,
     );
   }
+*/
 /*  My.fromQuranPage(
       {QuranPage quranPage, List<QuranPageContent> quranPageContents})
       : this(
@@ -95,13 +103,14 @@ extension on QuranPage {
     hizb: quranPage.hizb,
     surahName: quranPage.surahName,
     quranPageContents: quranPageContents,
-  );*/
+  );*/ /*
+
 }
 
 Future<void> _writeToFile(object, String fileName) async =>
     await File(fileName).writeAsString(object);
 
-Map<String, int> _hizbQuarterMap(int num) {
+Map<String, int?> _hizbQuarterMap(int num) {
   var h = 'hizbQuarterMap() >>';
 
   // 40 / 4 >> 10.0
@@ -128,5 +137,6 @@ Map<String, int> _hizbQuarterMap(int num) {
   }
   hizb = (quarter > 0) ? hizb + 1 : hizb;
 
-  return <String, int>{'hizb': hizb, 'quarter': quarterRes};
+  return <String, int?>{'hizb': hizb, 'quarter': quarterRes};
 }
+*/

@@ -8,8 +8,8 @@ part of 'quran_page_content.dart';
 
 QuranPageContent _$QuranPageContentFromJson(Map<String, dynamic> json) {
   return QuranPageContent(
-    header: json['header'] as String,
-    ayah: json['ayah'] as String,
+    header: json['header'] as String?,
+    ayah: json['ayah'] as String?,
   );
 }
 

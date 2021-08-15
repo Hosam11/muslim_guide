@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 
-/*
 final ThemeData appThemeData = ThemeData(
   primaryColor: kPrimaryColor,
   accentColor: kAccentColor,
-  fontFamily: tajawalReg,
-  textTheme: TextTheme().copyWith(
-    headline5: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
-    headline6: TextStyle(color: kTextColor),
-    subtitle1: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
-    bodyText1: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
+// fontFamily: GoogleFonts.tajawal,
+  textTheme: GoogleFonts.tajawalTextTheme().copyWith(
+    headline5: const TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
+    headline6: const TextStyle(color: kTextColor),
+    subtitle1: const TextStyle(color: kTextColor),
+    subtitle2: const TextStyle(color: kTextColor),
+    bodyText1: const TextStyle(color: kTextColor),
+    bodyText2: const TextStyle(color: kTextColor),
+    caption: const TextStyle(color: kTextColor),
   ),
   dividerTheme: const DividerThemeData(
     space: 0,
     thickness: 1.0,
-    */
-/* endIndent: dividerIntent,
-              indent: dividerIntent, */ /*
-
+    color: kTextColor,
   ),
-  // This makes the visual density adapt to the platform that you run
-  // the app on. For desktop platforms, the controls will be smaller and
-  // closer together (more dense) than on mobile platforms.
   visualDensity: VisualDensity.adaptivePlatformDensity,
 );
-*/
 
 // not used only for practicing
 const _lightFillColor = Colors.black;

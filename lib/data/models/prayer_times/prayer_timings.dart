@@ -17,22 +17,22 @@ class PrayerTimings {
   });
 
   @JsonKey(name: 'Fajr')
-  final String fajr;
+  final String? fajr;
 
   @JsonKey(name: 'Sunrise')
-  final String sunrise;
+  final String? sunrise;
 
   @JsonKey(name: 'Dhuhr')
-  final String dhuhr;
+  final String? dhuhr;
 
   @JsonKey(name: 'Asr')
-  final String asr;
+  final String? asr;
 
   @JsonKey(name: 'Maghrib')
-  final String maghrib;
+  final String? maghrib;
 
   @JsonKey(name: 'Isha')
-  final String isha;
+  final String? isha;
 /*
   @JsonKey(name: 'Sunset')
   final String sunset;

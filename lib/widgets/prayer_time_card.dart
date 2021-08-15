@@ -5,14 +5,14 @@ import 'package:muslim_guide/constants/dimens.dart';
 
 class PrayerTimesCard extends StatelessWidget {
   const PrayerTimesCard({
-    Key key,
+    Key? key,
     this.img,
     this.prayerName,
     this.prayerTime,
   }) : super(key: key);
-  final String img;
-  final String prayerName;
-  final String prayerTime;
+  final String? img;
+  final String? prayerName;
+  final String? prayerTime;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -28,7 +28,7 @@ class PrayerTimesCard extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(smallestDimens / 2),
                   child: SvgPicture.asset(
-                    img,
+                    img!,
                     color: Colors.white,
                     height: 50,
                   ),
@@ -37,11 +37,11 @@ class PrayerTimesCard extends StatelessWidget {
               const SizedBox(width: mediumDimens),
               Expanded(
                 flex: 8,
-                child: Text(prayerName, style: const TextStyle(fontSize: 25)),
+                child: Text(prayerName!, style: const TextStyle(fontSize: 25)),
               ),
               Expanded(
                   flex: 2,
-                  child: Text(prayerTime, textAlign: TextAlign.center)),
+                  child: Text(prayerTime!, textAlign: TextAlign.center)),
             ],
           ),
         ),

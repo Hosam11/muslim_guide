@@ -10,7 +10,7 @@ import 'package:muslim_guide/widgets/quran/quran_header.dart';
 import 'package:provider/provider.dart';
 
 class QuranPageScreen extends StatelessWidget {
-  QuranPageScreen(this.quranPageModel, [Key key]) : super(key: key);
+  QuranPageScreen(this.quranPageModel, [Key? key]) : super(key: key);
 
   final QuranPage quranPageModel;
   final QuranPageHelper _quranPageHelper = QuranPageHelper.instance;
@@ -25,7 +25,8 @@ class QuranPageScreen extends StatelessWidget {
     Fimber.i('bookmarkPageNo= ${quranProvider.markedPageNum},'
         ' curPageNo =${quranPageModel.pageNumber}');
     return WillPopScope(
-      onWillPop: () async => await _quranPageHelper.quranPagePopScope(quranProvider),
+      onWillPop: () async =>
+          await _quranPageHelper.quranPagePopScope(quranProvider),
       child: Scaffold(
         backgroundColor: kSecondaryColor,
         body: SafeArea(
@@ -41,8 +42,9 @@ class QuranPageScreen extends StatelessWidget {
                       onTap: () => quranProvider.isShowDetails =
                           !quranProvider.isShowDetails,
                       child: SingleChildScrollView(
-                        child:
-                            Column(children: _quranPageHelper.quranPageContent(quranPageModel)),
+                        child: Column(
+                            children: _quranPageHelper
+                                .quranPageContent(quranPageModel)),
                       ),
                     ),
                   ),

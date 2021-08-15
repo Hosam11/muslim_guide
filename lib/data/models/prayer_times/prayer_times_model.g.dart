@@ -8,8 +8,8 @@ part of 'prayer_times_model.dart';
 
 PrayerTimesModel _$PrayerTimesModelFromJson(Map<String, dynamic> json) {
   return PrayerTimesModel(
-    code: json['code'] as int,
-    status: json['status'] as String,
+    code: json['code'] as int?,
+    status: json['status'] as String?,
     prayerTimings: json['timings'] == null
         ? null
         : PrayerTimings.fromJson(json['timings'] as Map<String, dynamic>),

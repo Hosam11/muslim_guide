@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'quran_page.dart';
+part of 'old_quran_page.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -8,15 +8,14 @@ part of 'quran_page.dart';
 
 OldQuranPage _$OldQuranPageFromJson(Map<String, dynamic> json) {
   return OldQuranPage(
-    pageNumber: json['pageNumber'] as int,
-    juz: json['juz'] as int,
-    quarter: json['quarter'] as int,
-    hizb: json['hizb'] as int,
-    surahName: json['surahName'] as String,
-    pageAyahs: (json['pageAyahs'] as List)
-        ?.map(
-            (e) => e == null ? null : Ayah.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    pageNumber: json['pageNumber'] as int?,
+    juz: json['juz'] as int?,
+    quarter: json['quarter'] as int?,
+    hizb: json['hizb'] as int?,
+    surahName: json['surahName'] as String?,
+    pageAyahs: (json['pageAyahs'] as List<dynamic>?)
+        ?.map((e) => Ayah.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

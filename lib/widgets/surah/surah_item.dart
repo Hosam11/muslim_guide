@@ -10,7 +10,7 @@ import 'package:muslim_guide/helpers/arabic_numbers.dart';
 import 'package:muslim_guide/routes.dart' as routes;
 
 class SurahItem extends StatelessWidget {
-  final Surah surah;
+  final Surah? surah;
 
   SurahItem({
     this.surah,
@@ -34,7 +34,7 @@ class SurahItem extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(smallDimens),
                 child: Center(
-                  child: Text(convertToArabic(surah.number),
+                  child: Text(convertToArabic(surah!.number),
                       style: Theme.of(context).textTheme.headline6),
                 ),
               ),
@@ -44,7 +44,7 @@ class SurahItem extends StatelessWidget {
               flex: 9,
               child: Padding(
                 padding: const EdgeInsets.only(top: smallestDimens),
-                child: Text(surah.name,
+                child: Text(surah!.name!,
                     style: Theme.of(context).textTheme.headline6),
               ),
             ),
@@ -58,7 +58,7 @@ class SurahItem extends StatelessWidget {
                   children: [
                     Text(ayahs, style: Theme.of(context).textTheme.subtitle1),
                     Text(
-                      convertToArabic(surah.numberOfAyahs),
+                      convertToArabic(surah!.numberOfAyahs),
                       style: Theme.of(context).textTheme.subtitle1,
                     ),
                   ],
@@ -69,7 +69,7 @@ class SurahItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 12.0),
               child: Text(
-                surah.revelationType == RevelationType.meccan ? meccan : median,
+                surah!.revelationType == RevelationType.meccan ? meccan : median,
                 style: Theme.of(context).textTheme.subtitle1,
               ),
             ),
@@ -86,11 +86,11 @@ class SurahItem extends StatelessWidget {
       context,
       routes.quranPageControllerScreen,
       arguments: QuranArgs(
-        surah.surahPageNumber - 1,
+        surah!.surahPageNumber! - 1,
       ),
     );
     // final quranProvider = Provider.of<QuranProvider>(context, listen: false);
     // quranProvider.quranPageNumber = surah.surahPageNumber - 1;
-    Fimber.i('surahPageNumber=  ${surah.surahPageNumber - 1}');
+    Fimber.i('surahPageNumber=  ${surah!.surahPageNumber! - 1}');
   }
 }

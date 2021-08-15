@@ -1,3 +1,4 @@
+/*
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
@@ -5,11 +6,12 @@ import 'dart:io';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
 import 'package:muslim_guide/helpers/arabic_numbers.dart';
-import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
+import 'package:muslim_guide/z_not_use/model/old_quran_page/old_quran_page.dart';
 import 'package:muslim_guide/z_not_use/network.dart';
 
 /// responsible for create json object andsave it in file [quranPagesContentFile]
 Future<void> main() async {
+*/
 /*  final pageContent = await singleQuranPageContent(206);
   var x = jsonEncode(pageContent);
   print('x= $x');
@@ -19,20 +21,21 @@ Future<void> main() async {
   final pages = jsonEncode(_quranContent.sublist(600));
   print('pages= $pages');
 
-  await writeToFile(jsonEncode(_quranContent), quranPagesContentFile);*/
+  await writeToFile(jsonEncode(_quranContent), quranPagesContentFile);*/ /*
+
 }
 
 Future<List<OldQuranPage>> testGetQuranPages() async {
   var h = '@@ estGetQuranPages @@ getQuranPages() >>';
   final quranPagesRes = await File(oldQuranPagesFile).readAsString();
 
-  final quranData = quranDataFromJson(quranPagesRes);
-  // log('$h quranData= ${jsonEncode(quranData)}');
-
-  return quranData;
+  // final quranData = quranDataFromJson(quranPagesRes);
+  // // log('$h quranData= ${jsonEncode(quranData)}');
+  //
+  // return quranData;
 }
 
-final headers = <String>[];
+final headers = <String?>[];
 
 final _quranContent = <List<Map<String, String>>>[];
 
@@ -50,18 +53,18 @@ Future<List<Map<String, String>>> getQuranPageContent(OldQuranPage page) async {
 
   print('$h');
   log('$h page= ${jsonEncode(page)}');
-  final ayahLen = page.pageAyahs.length;
+  final ayahLen = page.pageAyahs!.length;
   print('$h ayahLen= $ayahLen');
   final ayahBuffer = StringBuffer();
 
   for (var ayahIndex = 0; ayahIndex < ayahLen; ayahIndex++) {
     print('############### $h ayahIndex= [$ayahIndex] ###############');
-    final ayah = page.pageAyahs[ayahIndex];
+    final ayah = page.pageAyahs![ayahIndex];
     print('$h ayah= ${jsonEncode(ayah)}');
     final firstSurahNumber = ayah.surahNumber;
     final nextSurahNumber = ayahIndex + 1 < ayahLen
-        ? page.pageAyahs[ayahIndex + 1].surahNumber
-        : page.pageAyahs[ayahIndex].surahNumber;
+        ? page.pageAyahs![ayahIndex + 1].surahNumber
+        : page.pageAyahs![ayahIndex].surahNumber;
 
     // same surah
     if (firstSurahNumber == nextSurahNumber) {
@@ -119,18 +122,18 @@ Future<List<Map<String, String>>> singleQuranPageContent(
 
   print('$h');
   log('$h page= ${jsonEncode(page)}');
-  final ayahLen = page.pageAyahs.length;
+  final ayahLen = page.pageAyahs!.length;
   print('$h ayahLen= $ayahLen');
   final ayahBuffer = StringBuffer();
 
   for (var ayahIndex = 0; ayahIndex < ayahLen; ayahIndex++) {
     print('############### $h ayahIndex= [$ayahIndex] ###############');
-    final ayah = page.pageAyahs[ayahIndex];
+    final ayah = page.pageAyahs![ayahIndex];
     print('$h ayah= ${jsonEncode(ayah)}');
     final firstSurahNumber = ayah.surahNumber;
     final nextSurahNumber = ayahIndex + 1 < ayahLen
-        ? page.pageAyahs[ayahIndex + 1].surahNumber
-        : page.pageAyahs[ayahIndex].surahNumber;
+        ? page.pageAyahs![ayahIndex + 1].surahNumber
+        : page.pageAyahs![ayahIndex].surahNumber;
 
     // same surah
     if (firstSurahNumber == nextSurahNumber) {
@@ -179,9 +182,9 @@ Future<List<Map<String, String>>> singleQuranPageContent(
 
 // save header of ayah and ayah itself
 void saveAyahInfo({
-  List<Map<String, String>> pageContent,
-  Ayah ayah,
-  StringBuffer ayahBuffer,
+  required List<Map<String, String>> pageContent,
+  required Ayah ayah,
+  required StringBuffer ayahBuffer,
 }) {
   addHeaderToMap(pageContent, ayah);
   ayahBuffer.write(createAyahText(ayah));
@@ -194,7 +197,7 @@ String createAyahText(Ayah ayah) {
 
   var ayahNumber = convertToArabic(ayah.ayahNumber);
 
-  if (ayah.ayahNumber > 9) {
+  if (ayah.ayahNumber! > 9) {
     ayahNumber = reversInt(ayahNumber);
   }
   print('ayahNumber= $ayahNumber');
@@ -207,7 +210,7 @@ String createAyahText(Ayah ayah) {
 String reversInt(String s) => s.split('').reversed.join();
 
 void addAyahToMap(
-  List<Map<String, String>> pageContent,
+  List<Map<String?, String>> pageContent,
   String ayah,
 ) {
   final h = 'addAyahToMap() >> ';
@@ -217,7 +220,7 @@ void addAyahToMap(
 }
 
 void addHeaderToMap(
-  List<Map<String, String>> pageContent,
+  List<Map<String?, String?>> pageContent,
   Ayah ayah,
 ) {
   final h = 'addHeaderToMap() >> ';
@@ -232,7 +235,7 @@ void addHeaderToMap(
   printContentMap(pageContent);
 }
 
-void printContentMap(List<Map<String, String>> pageContent) {
+void printContentMap(List<Map<String?, String?>> pageContent) {
   var h = 'printContentMap() >> ';
   print(
       '-------------------------- start $h ---------------------------------------');
@@ -256,3 +259,4 @@ void printSampleQuranContent(int start, int end) {
     printContentMap(_quranContent[index]);
   }
 }
+*/

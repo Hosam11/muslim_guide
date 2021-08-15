@@ -8,12 +8,12 @@ part of 'prayer_timings.dart';
 
 PrayerTimings _$PrayerTimingsFromJson(Map<String, dynamic> json) {
   return PrayerTimings(
-    fajr: json['Fajr'] as String,
-    sunrise: json['Sunrise'] as String,
-    dhuhr: json['Dhuhr'] as String,
-    asr: json['Asr'] as String,
-    maghrib: json['Maghrib'] as String,
-    isha: json['Isha'] as String,
+    fajr: json['Fajr'] as String?,
+    sunrise: json['Sunrise'] as String?,
+    dhuhr: json['Dhuhr'] as String?,
+    asr: json['Asr'] as String?,
+    maghrib: json['Maghrib'] as String?,
+    isha: json['Isha'] as String?,
   );
 }
 

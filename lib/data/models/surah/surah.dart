@@ -12,11 +12,11 @@ List<Surah> surahListFromJson(String str) =>
 
 @JsonSerializable()
 class Surah {
-  final int number;
-  final String name;
-  final int numberOfAyahs;
-  final RevelationType revelationType;
-  int surahPageNumber;
+  final int? number;
+  final String? name;
+  final int? numberOfAyahs;
+  final RevelationType? revelationType;
+  int? surahPageNumber;
 
   Surah({
     this.number,

@@ -8,9 +8,9 @@ import 'package:muslim_guide/widgets/quran/page_title.dart';
 
 class QuranFooter extends StatelessWidget {
   QuranFooter({
-    Key key,
-    @required this.quranProvider,
-    @required this.quranPageModel,
+    Key? key,
+    required this.quranProvider,
+    required this.quranPageModel,
   }) : super(key: key);
 
   final QuranProvider quranProvider;

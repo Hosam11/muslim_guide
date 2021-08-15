@@ -1,10 +1,11 @@
+import 'dart:async';
+
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
 import 'package:muslim_guide/data/repository/prayer_times_repo.dart';
 import 'package:muslim_guide/helpers/after_layout.dart';
-import 'package:muslim_guide/helpers/app_dialogs.dart';
 import 'package:muslim_guide/helpers/app_helper.dart';
 import 'package:muslim_guide/services/location_service.dart';
 import 'package:muslim_guide/services/util/urls.dart';
@@ -12,7 +13,7 @@ import 'package:muslim_guide/widgets/prayer_time_card.dart';
 import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
 
 class PrayerTimesScreen extends StatefulWidget {
-  const PrayerTimesScreen({Key key}) : super(key: key);
+  const PrayerTimesScreen({Key? key}) : super(key: key);
 
   @override
   _PrayerTimesScreenState createState() => _PrayerTimesScreenState();
@@ -31,13 +32,13 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen>
     }
   }
 
-  Future<Position> getLocation() async {
+  Future<Position?> getLocation() async {
     // return Position if stored or false if empty
     final location = await getLocationFromPref();
     Fimber.i('location= $location');
     if (location is Position) {
       return location;
-    } else if (!location) {
+    } else {
       // get location
       return await locationNotExist();
     }
@@ -50,13 +51,13 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen>
     if (locationRes) {
       return await getLocationFromPref();
     } else {
-      counter++;
+      /*counter++;
       if (counter >= 2) {
         Fimber.i('counter= $counter');
-        return;
+        return false;
       } else {
-        await locationNotExist();
-      }
+      }*/
+      await locationNotExist();
       /*final res = await takeActionDialog(
         context: context,
         msg: locationError,
@@ -72,8 +73,8 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen>
   }
 
   Future<void> getPrayerTimes({
-    @required double lat,
-    @required double lng,
+    required double lat,
+    required double lng,
   }) async {
     final now = DateTime.now();
     final url = prayerTimesUrl(

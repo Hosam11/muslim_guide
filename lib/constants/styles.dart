@@ -44,7 +44,7 @@ BoxDecoration pagePopupDecoration = BoxDecoration(
 );
 
 TextStyle ayahTextStyle(context) =>
-    Theme.of(context).textTheme.headline5.copyWith(
+    Theme.of(context).textTheme.headline5!.copyWith(
           fontFamily: meQuranFont,
           fontWeight: FontWeight.normal,
           letterSpacing: 0.5,

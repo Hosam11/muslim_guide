@@ -14,13 +14,13 @@ enum SajdaType { normal, custom }
 @JsonSerializable()
 class QuranPage {
   @JsonKey(includeIfNull: false)
-  int pageNumber, juz, quarter, hizb, sajdaIndex;
-  final String surahName;
+  int? pageNumber, juz, quarter, hizb, sajdaIndex;
+  final String? surahName;
   @JsonKey(includeIfNull: false)
-  final List<QuranPageContent> quranPageContents;
+  final List<QuranPageContent>? quranPageContents;
   @JsonKey(includeIfNull: false)
-  final AyahContent ayahContent;
-  final SajdaType sajdaType;
+  final AyahContent? ayahContent;
+  final SajdaType? sajdaType;
 
   QuranPage({
     this.pageNumber,
@@ -33,7 +33,6 @@ class QuranPage {
     this.sajdaType,
     this.sajdaIndex,
   });
-
   factory QuranPage.fromJson(Map<String, dynamic> json) =>
       _$QuranPageFromJson(json);
 

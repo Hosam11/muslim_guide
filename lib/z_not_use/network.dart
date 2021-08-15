@@ -1,3 +1,6 @@
+/*
+// FIXME: m
+
 import 'dart:convert';
 import 'dart:io';
 
@@ -5,12 +8,13 @@ import 'package:http/http.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
-import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
+import 'package:muslim_guide/z_not_use/model/old_quran_page/old_quran_page.dart';
 import 'package:muslim_guide/z_not_use/model/quran_me.dart';
 import 'package:muslim_guide/z_not_use/model/returned_quran_pages.dart';
 
 Future<void> main() async {
-  /*var finalObj = await surahWithPageNumber();
+  */
+/*var finalObj = await surahWithPageNumber();
   print({'finalObj.length= ${finalObj.length}'});
   var surahPageNumber = List<Map<int, int>>.from(finalObj);
   print('surahPageNumber= $surahPageNumber');
@@ -19,7 +23,8 @@ Future<void> main() async {
   final finalSurahList = await setupSurahsWithPageNumber(surahPageNumber);
   print('first= ${jsonEncode(finalSurahList.first)}, '
       'last= ${jsonEncode(finalSurahList.last)}');
-*/
+*/ /*
+
 }
 
 const String oldQuranPagesFile =
@@ -29,7 +34,11 @@ Future<List<Surah>> setupSurahsWithPageNumber(
   List<Map<int, int>> surahPageNumber,
 ) async {
   final surahListStr = await File(surahsListFile).readAsString();
-  final surahsDataList = surahListFromJson(surahListStr);
+  // FIXME: m
+
+  final surahsDataList = [] */
+/*= surahListFromJson(surahListStr)*/ /*
+;
 
   final newSurahList = <Surah>[];
 
@@ -76,7 +85,7 @@ Future<Set<Map<int, int>>> surahWithPageNumber() async {
   var pageNumberWithSurahNumber = <Map<int, int>>{};
 
   for (var page in quranPagesList) {
-    for (var ayah in page.pageAyahs) {
+    for (var ayah in page.pageAyahs!) {
       addToSet(pageNumberWithSurahNumber, ayah, page.pageNumber);
     }
   }
@@ -86,13 +95,16 @@ Future<Set<Map<int, int>>> surahWithPageNumber() async {
 
 Future<List<OldQuranPage>> getNewQuranPages() async {
   final quranPagesRes = await File(oldQuranPagesFile).readAsString();
-  final quranData = quranDataFromJson(quranPagesRes);
+  // FIXME: m
+  final quranData = [] */
+/*quranDataFromJson(quranPagesRes)*/ /*
+;
   // mLog('$h quranData= ${convert.jsonEncode(quranData)}');
   print('quranDataLen= ${quranData.length}');
-  return quranData;
+  return quranData as FutureOr<List<OldQuranPage>>;
 }
 
-void addToSet(Set<Map<int, int>> set, Ayah ayah, int pageNumber) {
+void addToSet(Set<Map<int?, int?>> set, Ayah ayah, int? pageNumber) {
   if (set.isNotEmpty) {
     if (!set.any((e) => e.containsKey(ayah.surahNumber))) {
       final pageNumberWithSurahNumber = {ayah.surahNumber: pageNumber};
@@ -113,7 +125,7 @@ Future<void> writeObjectToFile(pages) async {
 Future<void> writeToFile(object, String fileName) async =>
     await File(fileName).writeAsString(object);
 
-Future<Data> _getData(int page) async {
+Future<Data?> _getData(int page) async {
   final dataResponse = await get(
       Uri.parse('http://api.alquran.cloud/v1/page/$page/quran-uthmani'));
 
@@ -125,7 +137,7 @@ Future<Data> _getData(int page) async {
 
 var metaLink = 'http://api.alquran.cloud/v1/meta';
 
-Future<List<SurahsReference>> _getMetaData() async {
+Future<List<SurahsReference>?> _getMetaData() async {
   print('getMetaData');
   var metaLink = 'http://api.alquran.cloud/v1/meta';
 
@@ -135,8 +147,9 @@ Future<List<SurahsReference>> _getMetaData() async {
 
   final metaModel = metaListFromJson(decodeData);
 
-  var surahResList = metaModel.data.surahs.references;
-  /* create our target object for surahList form meta endpoint
+  var surahResList = metaModel.data!.surahs!.references;
+  */
+/* create our target object for surahList form meta endpoint
   var targetSurahList = <Surah>[];
     for (var surRef in surahResList) {
       var surah = Surah(
@@ -146,7 +159,9 @@ Future<List<SurahsReference>> _getMetaData() async {
         revelationType: surRef.revelationType,
       );
       targetSurahList.add(surah);
-    }*/
+    }*/ /*
+
   // await writeToFile(jsonEncode(targetSurahList), 'surahList.json');
   return surahResList;
 }
+*/
