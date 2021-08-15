@@ -3,22 +3,22 @@ import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/styles.dart';
 
 class PageTitle extends StatelessWidget {
-  final String left;
+  final String? left;
 
   // support string and integer
   final dynamic right;
 
   const PageTitle({
-    Key key,
-    @required this.left,
-    @required this.right,
+    Key? key,
+    required this.left,
+    required this.right,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context)
         .textTheme
-        .headline6
+        .headline6!
         .copyWith(fontWeight: FontWeight.normal);
 
     return Container(
@@ -34,7 +34,7 @@ class PageTitle extends StatelessWidget {
             right is num ? right.toString() : right,
             style: textStyle,
           ),
-          Text(left, style: textStyle),
+          Text(left!, style: textStyle),
         ],
       ),
     );

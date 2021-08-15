@@ -7,8 +7,8 @@ import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
 
 class AzkarScreen extends StatelessWidget {
   const AzkarScreen({
-    Key key,
-    @required this.isNight,
+    Key? key,
+    required this.isNight,
   }) : super(key: key);
 
   final bool isNight;

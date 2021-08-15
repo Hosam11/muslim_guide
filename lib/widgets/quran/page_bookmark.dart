@@ -9,15 +9,15 @@ import 'package:provider/provider.dart';
 
 class PageBookmark extends StatelessWidget {
   const PageBookmark({
-    Key key,
+    Key? key,
     this.onBookmarkPressed,
     this.onRestoreBookmarkPressed,
     this.quranPageModel,
   }) : super(key: key);
 
-  final void Function() onBookmarkPressed;
-  final void Function() onRestoreBookmarkPressed;
-  final QuranPage quranPageModel;
+  final void Function()? onBookmarkPressed;
+  final void Function()? onRestoreBookmarkPressed;
+  final QuranPage? quranPageModel;
 
   @override
   Widget build(BuildContext context) {

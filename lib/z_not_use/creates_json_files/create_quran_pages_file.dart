@@ -1,19 +1,22 @@
+/*
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
-import 'package:muslim_guide/z_not_use/model/old_quran_page/quran_page.dart';
+import 'package:muslim_guide/z_not_use/model/old_quran_page/old_quran_page.dart';
 import 'package:muslim_guide/z_not_use/model/returned_quran_pages.dart';
 
 /// responsible for create json object and save it in file [quranPagesFile]
 
 Future<void> main() async {
+*/
 /*  final oldQuranPages = await _storeData();
-  await _writeToFile(jsonEncode(oldQuranPages), 'oldQuranPagesFile.json');*/
+  await _writeToFile(jsonEncode(oldQuranPages), 'oldQuranPagesFile.json');*/ /*
+
 }
 
-Future<Data> _getData(int page) async {
+Future<Data?> _getData(int page) async {
   final dataResponse = await get(
       Uri.parse('http://api.alquran.cloud/v1/page/$page/quran-uthmani'));
   final decodeData = jsonDecode(dataResponse.body) as Map<String, dynamic>;
@@ -32,25 +35,25 @@ Future<List<OldQuranPage>> _storeData() async {
   for (var i = 1; i <= 603; i++) {
     print('i= $i');
 
-    var data = await _getData(i);
+    var data = await (_getData(i) as FutureOr<Data>);
 //    print('$head data= $data');
-    var hizbQuarter = _hizbQuarterMap(data.ayahs.last.hizbQuarter);
+    var hizbQuarter = _hizbQuarterMap(data.ayahs!.last.hizbQuarter!);
     //   Fimber.i('hizbQuarter= $hizbQuarter');
 
     var quranPage = OldQuranPage(
       hizb: hizbQuarter['hizb'],
-      juz: data.ayahs.last.juz,
-      pageAyahs: data.ayahs
+      juz: data.ayahs!.last.juz,
+      pageAyahs: data.ayahs!
           .map((ayah) => Ayah(
-                surahName: ayah.surah.name,
+                surahName: ayah.surah!.name,
                 ayahNumber: ayah.numberInSurah,
                 ayahText: ayah.text,
-                surahNumber: ayah.surah.number,
+                surahNumber: ayah.surah!.number,
               ))
           .toList(),
       pageNumber: data.pageNumber,
       quarter: hizbQuarter['quarter'],
-      surahName: data.surahs[data.surahs.keys.last].name,
+      surahName: data.surahs![data.surahs!.keys.last]!.name,
     );
 
     quranPages.add(quranPage);
@@ -62,7 +65,7 @@ Future<List<OldQuranPage>> _storeData() async {
   return quranPages;
 }
 
-Map<String, int> _hizbQuarterMap(int num) {
+Map<String, int?> _hizbQuarterMap(int num) {
   var h = 'hizbQuarterMap() >>';
   print('$h num= $num');
   // 40 / 4 >> 10.0
@@ -90,8 +93,9 @@ Map<String, int> _hizbQuarterMap(int num) {
   }
   hizb = (quarter > 0) ? hizb + 1 : hizb;
   print('$h quarter= $quarter, hizb= $hizb, quarterRes= $quarterRes');
-  return <String, int>{'hizb': hizb, 'quarter': quarterRes};
+  return <String, int?>{'hizb': hizb, 'quarter': quarterRes};
 }
 
 Future<void> _writeToFile(object, String fileName) async =>
     await File(fileName).writeAsString(object);
+*/

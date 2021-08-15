@@ -8,9 +8,9 @@ const sajdaWord = '';
 const remainAyah = '';
 
 class CustomQuranTextView extends StatelessWidget {
-  const CustomQuranTextView({Key key, @required this.customAyah})
+  const CustomQuranTextView({Key? key, required this.customAyah})
       : super(key: key);
-  final AyahContent customAyah;
+  final AyahContent? customAyah;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +26,10 @@ class CustomQuranTextView extends StatelessWidget {
             // softWrap: true,
             children: [
               // TextSpan(text: '\u202E$ayah '), // real case
-              TextSpan(text: ' \u202E${customAyah.firstAyahs} '), // test case
+              TextSpan(text: ' \u202E${customAyah!.firstAyahs} '), // test case
               TextSpan(
                 // text: '\u202E$sajdaWord', // real case
-                text: ' \u202E${customAyah.sajdaWords} ', // test case
+                text: ' \u202E${customAyah!.sajdaWords} ', // test case
                 style: const TextStyle(
                   textBaseline: TextBaseline.ideographic,
                   decoration: TextDecoration.underline,
@@ -39,7 +39,7 @@ class CustomQuranTextView extends StatelessWidget {
                 ),
               ),
               // TextSpan(text: ' \u202E $remainAyah '), // real case
-              TextSpan(text: ' \u202E ${customAyah.lastAyahs} '), // test case
+              TextSpan(text: ' \u202E ${customAyah!.lastAyahs} '), // test case
             ],
           ),
         ),

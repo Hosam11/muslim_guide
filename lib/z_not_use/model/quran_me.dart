@@ -15,9 +15,9 @@ class MetaModel {
     this.data,
   });
 
-  final int code;
-  final String status;
-  final MetaData data;
+  final int? code;
+  final String? status;
+  final MetaData? data;
 
   factory MetaModel.fromJson(Map<String, dynamic> json) => MetaModel(
         code: json['code'],
@@ -28,7 +28,7 @@ class MetaModel {
   Map<String, dynamic> toJson() => {
         'code': code,
         'status': status,
-        'data': data.toJson(),
+        'data': data!.toJson(),
       };
 }
 
@@ -44,14 +44,14 @@ class MetaData {
     this.juzs,
   });
 
-  final Ayahs ayahs;
-  final Surahs surahs;
-  final Sajdas sajdas;
-  final HizbQuarters rukus;
-  final HizbQuarters pages;
-  final HizbQuarters manzils;
-  final HizbQuarters hizbQuarters;
-  final HizbQuarters juzs;
+  final Ayahs? ayahs;
+  final Surahs? surahs;
+  final Sajdas? sajdas;
+  final HizbQuarters? rukus;
+  final HizbQuarters? pages;
+  final HizbQuarters? manzils;
+  final HizbQuarters? hizbQuarters;
+  final HizbQuarters? juzs;
 
   factory MetaData.fromJson(Map<String, dynamic> json) => MetaData(
         ayahs: Ayahs.fromJson(json['ayahs']),
@@ -65,14 +65,14 @@ class MetaData {
       );
 
   Map<String, dynamic> toJson() => {
-        'ayahs': ayahs.toJson(),
-        'surahs': surahs.toJson(),
-        'sajdas': sajdas.toJson(),
-        'rukus': rukus.toJson(),
-        'pages': pages.toJson(),
-        'manzils': manzils.toJson(),
-        'hizbQuarters': hizbQuarters.toJson(),
-        'juzs': juzs.toJson(),
+        'ayahs': ayahs!.toJson(),
+        'surahs': surahs!.toJson(),
+        'sajdas': sajdas!.toJson(),
+        'rukus': rukus!.toJson(),
+        'pages': pages!.toJson(),
+        'manzils': manzils!.toJson(),
+        'hizbQuarters': hizbQuarters!.toJson(),
+        'juzs': juzs!.toJson(),
       };
 }
 
@@ -81,7 +81,7 @@ class Ayahs {
     this.count,
   });
 
-  final int count;
+  final int? count;
 
   factory Ayahs.fromJson(Map<String, dynamic> json) => Ayahs(
         count: json['count'],
@@ -98,8 +98,8 @@ class HizbQuarters {
     this.references,
   });
 
-  final int count;
-  final List<HizbQuartersReference> references;
+  final int? count;
+  final List<HizbQuartersReference>? references;
 
   factory HizbQuarters.fromJson(Map<String, dynamic> json) => HizbQuarters(
         count: json['count'],
@@ -109,7 +109,7 @@ class HizbQuarters {
 
   Map<String, dynamic> toJson() => {
         'count': count,
-        'references': List<dynamic>.from(references.map((x) => x.toJson())),
+        'references': List<dynamic>.from(references!.map((x) => x.toJson())),
       };
 }
 
@@ -119,8 +119,8 @@ class HizbQuartersReference {
     this.ayah,
   });
 
-  final int surah;
-  final int ayah;
+  final int? surah;
+  final int? ayah;
 
   factory HizbQuartersReference.fromJson(Map<String, dynamic> json) =>
       HizbQuartersReference(
@@ -140,8 +140,8 @@ class Sajdas {
     this.references,
   });
 
-  final int count;
-  final List<SajdasReference> references;
+  final int? count;
+  final List<SajdasReference>? references;
 
   factory Sajdas.fromJson(Map<String, dynamic> json) => Sajdas(
         count: json['count'],
@@ -151,7 +151,7 @@ class Sajdas {
 
   Map<String, dynamic> toJson() => {
         'count': count,
-        'references': List<dynamic>.from(references.map((x) => x.toJson())),
+        'references': List<dynamic>.from(references!.map((x) => x.toJson())),
       };
 }
 
@@ -163,10 +163,10 @@ class SajdasReference {
     this.obligatory,
   });
 
-  final int surah;
-  final int ayah;
-  final bool recommended;
-  final bool obligatory;
+  final int? surah;
+  final int? ayah;
+  final bool? recommended;
+  final bool? obligatory;
 
   factory SajdasReference.fromJson(Map<String, dynamic> json) =>
       SajdasReference(
@@ -190,8 +190,8 @@ class Surahs {
     this.references,
   });
 
-  final int count;
-  final List<SurahsReference> references;
+  final int? count;
+  final List<SurahsReference>? references;
 
   factory Surahs.fromJson(Map<String, dynamic> json) => Surahs(
         count: json['count'],
@@ -201,7 +201,7 @@ class Surahs {
 
   Map<String, dynamic> toJson() => {
         'count': count,
-        'references': List<dynamic>.from(references.map((x) => x.toJson())),
+        'references': List<dynamic>.from(references!.map((x) => x.toJson())),
       };
 }
 
@@ -215,12 +215,12 @@ class SurahsReference {
     this.revelationType,
   });
 
-  final int number;
-  final String name;
-  final String englishName;
-  final String englishNameTranslation;
-  final int numberOfAyahs;
-  final RevelationType revelationType;
+  final int? number;
+  final String? name;
+  final String? englishName;
+  final String? englishNameTranslation;
+  final int? numberOfAyahs;
+  final RevelationType? revelationType;
 
   factory SurahsReference.fromJson(Map<String, dynamic> json) =>
       SurahsReference(
@@ -238,7 +238,7 @@ class SurahsReference {
         'englishName': englishName,
         'englishNameTranslation': englishNameTranslation,
         'numberOfAyahs': numberOfAyahs,
-        'revelationType': revelationTypeValues.reverse[revelationType],
+        'revelationType': revelationTypeValues.reverse![revelationType!],
       };
 }
 
@@ -250,11 +250,11 @@ final revelationTypeValues = EnumValues(
 
 class EnumValues<T> {
   Map<String, T> map;
-  Map<T, String> reverseMap;
+  Map<T, String>? reverseMap;
 
   EnumValues(this.map);
 
-  Map<T, String> get reverse {
+  Map<T, String>? get reverse {
     if (reverseMap == null) {
       reverseMap = map.map((k, v) => new MapEntry(v, k));
     }

@@ -10,7 +10,7 @@ import 'package:muslim_guide/widgets/quran/quran_header.dart';
 import 'package:provider/provider.dart';
 
 class QuranPageScreen extends StatelessWidget {
-  QuranPageScreen(this.quranPageModel, [Key key]) : super(key: key);
+  QuranPageScreen(this.quranPageModel, [Key? key]) : super(key: key);
 
   final QuranPage quranPageModel;
   final QuranPageHelper _quranPageHelper = QuranPageHelper.instance;
@@ -37,9 +37,7 @@ class QuranPageScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: InkWell(
-                      // FIXME: m
-
-                      // splashFactory: NoSplash.splashFactory,
+                      splashFactory: NoSplash.splashFactory,
                       enableFeedback: false,
                       onTap: () => quranProvider.isShowDetails =
                           !quranProvider.isShowDetails,

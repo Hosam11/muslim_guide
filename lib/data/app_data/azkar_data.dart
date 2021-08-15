@@ -9,10 +9,10 @@ List<Azkar> get azkarNight => _azkarNight;
 List<Azkar> get azkarMorning => _azkarMorning;
 
 Future<void> prepareAzkarList() async {
-  // FIXME: m
+  //  solved
 
-  // final night = await getAzkar(true);
-  // final morning = await getAzkar(false);
-  // _azkarNight.addAll(night);
-  // _azkarMorning.addAll(morning);
+  final night = await getAzkar(true);
+  final morning = await getAzkar(false);
+  _azkarNight.addAll(night);
+  _azkarMorning.addAll(morning);
 }

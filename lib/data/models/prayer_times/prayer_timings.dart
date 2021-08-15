@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-// part 'prayer_timings.g.dart';
+part 'prayer_timings.g.dart';
 
 @JsonSerializable()
 class PrayerTimings {
@@ -17,22 +17,22 @@ class PrayerTimings {
   });
 
   @JsonKey(name: 'Fajr')
-  final String fajr;
+  final String? fajr;
 
   @JsonKey(name: 'Sunrise')
-  final String sunrise;
+  final String? sunrise;
 
   @JsonKey(name: 'Dhuhr')
-  final String dhuhr;
+  final String? dhuhr;
 
   @JsonKey(name: 'Asr')
-  final String asr;
+  final String? asr;
 
   @JsonKey(name: 'Maghrib')
-  final String maghrib;
+  final String? maghrib;
 
   @JsonKey(name: 'Isha')
-  final String isha;
+  final String? isha;
 /*
   @JsonKey(name: 'Sunset')
   final String sunset;
@@ -43,8 +43,8 @@ class PrayerTimings {
   @JsonKey(name: 'Midnight')
   final String midnight;*/
 
-/*  factory PrayerTimings.fromJson(Map<String, dynamic> json) =>
+  factory PrayerTimings.fromJson(Map<String, dynamic> json) =>
       _$PrayerTimingsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PrayerTimingsToJson(this);*/
+  Map<String, dynamic> toJson() => _$PrayerTimingsToJson(this);
 }

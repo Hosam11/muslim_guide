@@ -5,8 +5,8 @@ import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
 
 Future<dynamic> takeActionDialog({
-  @required BuildContext context,
-  @required String msg,
+  required BuildContext context,
+  required String msg,
   String positiveBtnStr = yes,
   String negativeBtnStr = no,
 }) {
@@ -84,13 +84,13 @@ Future<dynamic> testDialog(BuildContext context) {
   );
 }
 
-Future<dynamic> showInfoDialog(BuildContext context, String msg) {
+Future<dynamic> showInfoDialog(BuildContext context, String? msg) {
   return showDialog(
     context: context,
     builder: (BuildContext context) => AlertDialog(
       backgroundColor: kSecondaryColor,
       content: Text(
-        msg,
+        msg!,
         textAlign: TextAlign.center,
         style: Theme.of(context).textTheme.headline5,
       ),

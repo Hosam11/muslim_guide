@@ -1,11 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
-// part 'ayah.g.dart';
+part 'ayah.g.dart';
 
 @JsonSerializable()
 class Ayah {
-  final int ayahNumber, surahNumber;
-  final String ayahText, surahName;
+  final int? ayahNumber, surahNumber;
+  final String? ayahText, surahName;
 
   Ayah({
     this.ayahNumber,
@@ -14,7 +14,7 @@ class Ayah {
     this.surahNumber,
   });
 
-  // factory Ayah.fromJson(Map<String, dynamic> json) => _$AyahFromJson(json);
-  //
-  // Map<String, dynamic> toJson() => _$AyahToJson(this);
+  factory Ayah.fromJson(Map<String, dynamic> json) => _$AyahFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AyahToJson(this);
 }

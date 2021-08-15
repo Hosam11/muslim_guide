@@ -6,7 +6,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
   final bool centerTitle;
   CustomAppBar({
-    @required this.title,
+    required this.title,
     this.centerTitle = false,
   });
 

@@ -13,7 +13,7 @@ import 'package:muslim_guide/routes.dart';
 import 'package:provider/provider.dart';
 
 class MySplashScreen extends StatefulWidget {
-  const MySplashScreen({Key key}) : super(key: key);
+  const MySplashScreen({Key? key}) : super(key: key);
 
   @override
   _MySplashScreenState createState() => _MySplashScreenState();

@@ -4,7 +4,7 @@ import 'package:muslim_guide/constants/styles.dart' as styles;
 import 'package:muslim_guide/widgets/quran/quran_text_view.dart';
 
 class RandomAyah extends StatelessWidget {
-  const RandomAyah({@required this.ayah});
+  const RandomAyah({required this.ayah});
   final String ayah;
   @override
   Widget build(BuildContext context) {

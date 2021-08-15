@@ -8,11 +8,11 @@ import 'package:muslim_guide/constants/styles.dart';
 class CategoryCardItem extends StatelessWidget {
   final String imgName;
   final String title;
-  final void Function() onTapped;
+  final void Function()? onTapped;
 
   const CategoryCardItem({
-    @required this.imgName,
-    @required this.title,
+    required this.imgName,
+    required this.title,
     this.onTapped,
   });
 

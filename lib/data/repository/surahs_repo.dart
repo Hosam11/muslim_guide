@@ -4,7 +4,7 @@ import 'package:muslim_guide/data/models/surah/surah.dart';
 
 Future<List<Surah>> getSurahList() async {
   final surahsStr = await rootBundle.loadString(surahsListFile);
-  // FIXME: m
 
-  // return surahListFromJson(surahsStr);
+  // solved
+  return surahListFromJson(surahsStr);
 }

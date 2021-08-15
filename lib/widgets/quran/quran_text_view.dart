@@ -3,11 +3,11 @@ import 'package:muslim_guide/constants/dimens.dart' as dimens;
 import 'package:muslim_guide/constants/styles.dart';
 
 class QuranTextView extends StatelessWidget {
-  final String quranAyahs;
+  final String? quranAyahs;
   final bool ayahWithStyle;
 
   const QuranTextView({
-    Key key,
+    Key? key,
     this.quranAyahs,
     this.ayahWithStyle = true,
   }) : super(key: key);
@@ -30,11 +30,11 @@ class QuranTextView extends StatelessWidget {
 
 class _AyahText extends StatelessWidget {
   const _AyahText({
-    Key key,
-    @required this.quranAyahs,
+    Key? key,
+    required this.quranAyahs,
   }) : super(key: key);
 
-  final String quranAyahs;
+  final String? quranAyahs;
 
   @override
   Widget build(BuildContext context) {
