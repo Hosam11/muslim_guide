@@ -1,13 +1,16 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/styles.dart';
+import 'package:muslim_guide/data/floor/db/db_builder.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart' as prefs;
 import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
-import 'package:muslim_guide/helpers/after_layout.dart';
-import 'package:muslim_guide/helpers/app_helper.dart';
+import 'package:muslim_guide/helpers/app/after_layout.dart';
+import 'package:muslim_guide/helpers/app/app_helper.dart';
+import 'package:muslim_guide/providers/prayer_times_provider.dart';
 import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:muslim_guide/routes.dart';
 import 'package:provider/provider.dart';
@@ -32,13 +35,19 @@ class _MySplashScreenState extends State<MySplashScreen> with AfterLayoutMixin {
     await QuranRepo.instance.getPages();
     print('len= ${QuranRepo.instance.quranPages?.length}');
     */
+    await initializeDB();
+    await prefs.initSharedPrefs();
     await prepareDataNeeded();
-    await prefs.init();
     final bookmarkPageNum = prefs.getInt(key: pageNumberKey, defaultValue: -1);
     Fimber.i('bookmarkPageNum=  $bookmarkPageNum');
     final quranProvider = Provider.of<QuranProvider>(context, listen: false);
     Fimber.i('quranProvider ${quranProvider.hashCode}');
-
+    final prayerTimesProvider =
+        Provider.of<PrayerTimesProvider>(context, listen: false);
+    final location = getLocationFromPref();
+    if (location is Position) {
+      prayerTimesProvider.curLocation = location;
+    }
     if (bookmarkPageNum != -1) {
       quranProvider.isBookmark = true;
       quranProvider.markedPageNum = bookmarkPageNum;

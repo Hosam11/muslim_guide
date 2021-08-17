@@ -1,6 +1,7 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/args/azkar_args.dart';
+import 'package:muslim_guide/args/prayer_times_args.dart';
 import 'package:muslim_guide/args/quran_args.dart';
 import 'package:muslim_guide/screens/azkar_screen.dart';
 import 'package:muslim_guide/screens/home_screen.dart';
@@ -28,6 +29,7 @@ Route<dynamic>? generateRoutes(RouteSettings settings) {
 
     case quranScreen:
       return createPageBuilder(SurahsListScreen());
+
     case quranPageControllerScreen:
       final args = settings.arguments as QuranArgs?;
       return createPageBuilder(
@@ -35,9 +37,11 @@ Route<dynamic>? generateRoutes(RouteSettings settings) {
           quranArgs: args,
         ),
       );
+
     case azkarScreen:
       final args = settings.arguments as AzkarArgs;
       return createPageBuilder(AzkarScreen(isNight: args.isNight));
+
     case prayersTimesScreen:
       return createPageBuilder(const PrayerTimesScreen());
     default:

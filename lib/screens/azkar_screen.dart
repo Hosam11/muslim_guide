@@ -20,8 +20,8 @@ class AzkarScreen extends StatelessWidget {
         title: isNight ? azkarNightTitle : azkarMorningTitle,
       ),
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
+/*        height: double.infinity,
+        width: double.infinity,*/
         decoration: kSecondaryBackgroundBoxDecoration,
         child: ListView.builder(
           itemBuilder: (_, index) => ZekrCard(

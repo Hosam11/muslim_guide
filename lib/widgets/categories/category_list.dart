@@ -18,6 +18,8 @@ class CategoryList extends StatelessWidget {
         shrinkWrap: true,
         children: getGridItems(context),
       ),
+      //   },
+      // ),
     );
   }
 }

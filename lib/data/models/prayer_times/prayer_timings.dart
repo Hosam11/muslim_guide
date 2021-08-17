@@ -1,10 +1,13 @@
+import 'package:floor/floor.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'prayer_timings.g.dart';
 
 @JsonSerializable()
+@entity
 class PrayerTimings {
   PrayerTimings({
+    this.dayNumber,
     this.fajr,
     this.sunrise,
     this.dhuhr,
@@ -33,6 +36,13 @@ class PrayerTimings {
 
   @JsonKey(name: 'Isha')
   final String? isha;
+
+  @PrimaryKey(autoGenerate: true)
+  @JsonKey(ignore: true)
+  int? tableId;
+
+  @JsonKey(ignore: true)
+  int? dayNumber;
 /*
   @JsonKey(name: 'Sunset')
   final String sunset;
@@ -47,4 +57,11 @@ class PrayerTimings {
       _$PrayerTimingsFromJson(json);
 
   Map<String, dynamic> toJson() => _$PrayerTimingsToJson(this);
+
+  @override
+  String toString() {
+    return 'PrayerTimings{fajr: $fajr, sunrise: $sunrise, dhuhr: $dhuhr,'
+        ' asr: $asr, maghrib: $maghrib, isha: $isha, tableId: $tableId,'
+        ' dayNumber: $dayNumber}';
+  }
 }

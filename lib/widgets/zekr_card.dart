@@ -4,7 +4,7 @@ import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/constants/styles.dart';
 import 'package:muslim_guide/data/models/azkar/azkar.dart';
-import 'package:muslim_guide/helpers/app_dialogs.dart';
+import 'package:muslim_guide/helpers/app/app_dialogs.dart';
 
 class ZekrCard extends StatelessWidget {
   const ZekrCard({Key? key, required this.azkar}) : super(key: key);
@@ -22,8 +22,8 @@ class ZekrCard extends StatelessWidget {
             /*   gradient:
                 createLinearGradient(kPrimaryColor, kSecPrimaryGradientColor),*/
             borderRadius: kSmallBorderRadius,
-            color: kPrimaryColor,
             border: kWhiteBorder,
+            color: kPrimaryColor,
           ),
           // color: kPrimaryColor,
           child: InkWell(

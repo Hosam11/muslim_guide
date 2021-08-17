@@ -7,7 +7,7 @@
                   Container(
                     child: Image.asset('assets/images/logo.png'),
                     height: 120.0,
-                  ),
+                 t ),
                   Text(
                     appTitle,
                     style: TextStyle(

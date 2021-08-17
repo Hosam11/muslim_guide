@@ -6,7 +6,7 @@ import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
-import 'package:muslim_guide/helpers/arabic_numbers.dart';
+import 'package:muslim_guide/helpers/app/arabic_numbers.dart';
 import 'package:muslim_guide/routes.dart' as routes;
 
 class SurahItem extends StatelessWidget {
@@ -69,7 +69,9 @@ class SurahItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 12.0),
               child: Text(
-                surah!.revelationType == RevelationType.meccan ? meccan : median,
+                surah!.revelationType == RevelationType.meccan
+                    ? meccan
+                    : median,
                 style: Theme.of(context).textTheme.subtitle1,
               ),
             ),

@@ -97,3 +97,11 @@ Future<dynamic> showInfoDialog(BuildContext context, String? msg) {
     ),
   );
 }
+
+Future<dynamic> noInternetDialog(BuildContext context) =>
+    showInfoDialog(context, internetError);
+
+CircularProgressIndicator simpleProgressIndicator =
+    const CircularProgressIndicator(
+  valueColor: AlwaysStoppedAnimation<Color>(kSecondaryColor),
+);

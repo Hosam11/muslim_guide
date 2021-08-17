@@ -1,4 +1,6 @@
-// https://api.aladhan.com/v1/calendar?method=5&month=8&year=2021&adjustment=8&latitude=31.2510664&longitude=29.9879269
+/*
+ https://api.aladhan.com/v1/calendar?method=5&month=8&year=2021&adjustment=8&latitude=31.2510664&longitude=29.9879269
+*/
 // method=5&
 // month=8&
 // year=2021&

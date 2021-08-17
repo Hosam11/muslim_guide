@@ -1,7 +1,5 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/app_theme.dart';
 import 'package:muslim_guide/constants/locals.dart';
 import 'package:muslim_guide/constants/strings.dart';
@@ -28,6 +26,7 @@ class MuslimGuideApp extends StatelessWidget {
       locale: curLocal,
       title: appTitle,
       theme: appThemeData,
+
       initialRoute: splashScreen,
       onGenerateRoute: generateRoutes,
     );

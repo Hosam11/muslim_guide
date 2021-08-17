@@ -5,7 +5,7 @@ import 'package:muslim_guide/constants/styles.dart';
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/data/app_data/surah_titles_data.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
-import 'package:muslim_guide/helpers/arabic_numbers.dart';
+import 'package:muslim_guide/helpers/app/arabic_numbers.dart';
 import 'package:muslim_guide/widgets/surah/surah_name_info.dart';
 
 class SurahNameTitle extends StatefulWidget {

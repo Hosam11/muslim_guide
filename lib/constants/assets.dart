@@ -17,8 +17,24 @@ const String allahNamesImg = 'assets/icons/allah_names.svg';
 const String rosaryImg = 'assets/icons/rosary.svg';
 
 // prayer times
-const String afternoonImg = 'assets/icons/afternoon.svg';
 const String fajrImg = 'assets/icons/fajr.svg';
-const String nightImg = 'assets/icons/night.svg';
-const String noonImg = 'assets/icons/noon.svg';
 const String sunriseImg = 'assets/icons/sunrise.svg';
+const String noonImg = 'assets/icons/noon.svg';
+const String afternoonImg = 'assets/icons/afternoon.svg';
+const String nightImg = 'assets/icons/night.svg';
+
+// pnsgs
+// categories
+const String prayerTimesPng = 'assets/pngs/pray_time.png';
+const String quranPng = 'assets/pngs/quran.png';
+const String azkarMorningPng = 'assets/pngs/azkar_morning.png';
+const String azkarNigthPng = 'assets/pngs/azkar_nigth.png';
+const String allahNamesPng = 'assets/pngs/allah_names.png';
+const String rosaryPng = 'assets/pngs/rosary.png';
+
+// prayer times
+const String fajrPng = 'assets/pngs/fajr.png';
+const String sunrisePng = 'assets/pngs/sunrise.png';
+const String noonPng = 'assets/pngs/noon.png';
+const String afternoonPng = 'assets/pngs/afternoon.png';
+const String nightPng = 'assets/pngs/night.png';

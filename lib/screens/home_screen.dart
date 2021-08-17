@@ -1,14 +1,15 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
-
 import 'package:muslim_guide/data/models/custom_ayah/ayah_content.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
-import 'package:muslim_guide/helpers/after_layout.dart';
-import 'package:muslim_guide/helpers/app_helper.dart';
+import 'package:muslim_guide/helpers/app/after_layout.dart';
+import 'package:muslim_guide/providers/prayer_times_provider.dart';
 import 'package:muslim_guide/services/location_service.dart';
 import 'package:muslim_guide/widgets/categories/category_list.dart';
 import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -26,13 +27,15 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
 
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
+    final prayerProvider =
+        Provider.of<PrayerTimesProvider>(context, listen: false);
     Fimber.i('');
-    final location = getLocationFromPref();
+    // final location = getLocationFromPref();
     // false means there is no location stored in db
-    if (location == false) {
-      await getLocationAndSaveIt(context);
+    if (prayerProvider.curLocation == null) {
+      await getLocationAndSaveIt(context, prayerProvider);
     } else {
-      Fimber.i('there is location stored= $location');
+      // Fimber.i('there is location stored= $location');
     }
   }
 
@@ -46,14 +49,17 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
       negativeBtnStr: cancel,
     );
     await testDialog(context);*/
+
     final clear = await clearPrefs();
+    final prayerProvider =
+        Provider.of<PrayerTimesProvider>(context, listen: false);
+    prayerProvider.curLocation = null;
     Fimber.i('clear= $clear');
   }
 
   @override
   Widget build(BuildContext context) {
     Fimber.i('');
-
     var dateToday = DateTime.now();
     Fimber.i('dateToday= $dateToday  ');
     return Scaffold(
@@ -94,4 +100,5 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
       await saveLocationToPrefs(res);
     }
   }*/
+
 }

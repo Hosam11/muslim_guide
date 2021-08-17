@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/quran_pages/quran_page.dart';
-import 'package:muslim_guide/helpers/app_helper.dart';
+import 'package:muslim_guide/helpers/app/app_helper.dart';
 
 Future<List<QuranPage>> getQuranPages() async {
   // solved

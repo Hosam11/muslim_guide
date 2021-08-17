@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 late SharedPreferences _prefs;
 
-Future<void> init() async {
+Future<void> initSharedPrefs() async {
   _prefs = await SharedPreferences.getInstance();
   Fimber.i('_dbHash= ${_prefs.hashCode}');
 }

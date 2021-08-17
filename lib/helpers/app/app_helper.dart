@@ -10,17 +10,14 @@ import 'package:muslim_guide/data/app_data/surah_titles_data.dart';
 import 'package:muslim_guide/data/app_data/surahs_data.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
+import 'package:connectivity/connectivity.dart';
+import 'package:muslim_guide/main.dart' show apiKey;
 
 const isLog = true;
 
 void mLog(String message) {
   isLog ? log('log= ' + message) : print('else');
 }
-
-// const apiKey = 'android_ZmQ0NzQwNjQtMmYwNy00ZjlkLTlkZDctZTY5MTllMmE2ZWJm';
-// const apiKey = 'android_NGU0MTQ4MDMtMDc2NS00NzE3LWJhYTctZTMzNGM0YWIwMDgz';
-// const apiKey = 'android_MWM3Yzk0OTMtZDE4MC00MDMxLTg5NjUtMTFhYWM5YjRiMGQx';
-const apiKey = 'android_YmZjYWJhMGYtOGE4NS00YjA2LWExOTMtYjg0OWM3ZjQxMGQx';
 
 Future<void> prepareDataNeeded() async {
   await prepareSurahHeaders();
@@ -32,7 +29,8 @@ Future<void> prepareDataNeeded() async {
 // FIXME: delete #1 in production
 void runAppSpector() {
   final config = Config()..androidApiKey = apiKey;
-
+  int? x;
+  x?.isOdd;
   // If you don't want to start all monitors you can specify a list of necessary ones
   config.monitors = <Monitor>[
     Monitors.http,
@@ -61,7 +59,7 @@ Future<bool> saveLocationToPrefs(Position location) async {
   return saveState;
 }
 
-/// return [Position] or false if there is no location stored
+/// return [Position]. or false if there is no location stored
 dynamic getLocationFromPref() {
   final locationStr = getString(
     key: locationKey,
@@ -75,4 +73,12 @@ dynamic getLocationFromPref() {
   } else {
     return false;
   }
+}
+
+Future<bool> checkInternet() async {
+  final connectivityResult = await Connectivity().checkConnectivity();
+  return connectivityResult == ConnectivityResult.mobile ||
+          connectivityResult == ConnectivityResult.wifi
+      ? true
+      : false;
 }

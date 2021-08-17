@@ -18,8 +18,9 @@ class QuranTextView extends StatelessWidget {
         ? Padding(
             padding: const EdgeInsets.symmetric(vertical: dimens.smallDimens),
             child: Container(
-              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+              // decoration: BoxDecoration(color: Theme.of(context).primaryColor),
               // margin: EdgeInsets.only(bottom: 8),
+              color: Theme.of(context).primaryColor,
               padding: const EdgeInsets.all(dimens.smallDimens),
               child: _AyahText(quranAyahs: quranAyahs),
             ),

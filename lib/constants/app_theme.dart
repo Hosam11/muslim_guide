@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
+import 'package:muslim_guide/constants/constants_imports.dart';
 
 final ThemeData appThemeData = ThemeData(
   primaryColor: kPrimaryColor,
   accentColor: kAccentColor,
+  outlinedButtonTheme: OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      elevation: elevation,
+      backgroundColor: kPrimaryColor,
+      side: const BorderSide(color: kTextColor),
+    ),
+  ),
 // fontFamily: GoogleFonts.tajawal,
   textTheme: GoogleFonts.tajawalTextTheme().copyWith(
     headline5: const TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
@@ -15,6 +23,7 @@ final ThemeData appThemeData = ThemeData(
     bodyText2: const TextStyle(color: kTextColor),
     caption: const TextStyle(color: kTextColor),
   ),
+
   dividerTheme: const DividerThemeData(
     space: 0,
     thickness: 1.0,

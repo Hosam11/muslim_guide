@@ -29,7 +29,10 @@ List<CategoryCardItem> getGridItems(BuildContext context) => [
       CategoryCardItem(
         title: strings.prayerTimesTitle,
         imgName: assets.prayerTimesImg,
-        onTapped: () => Navigator.pushNamed(context, routes.prayersTimesScreen),
+        onTapped: () => Navigator.pushNamed(
+          context,
+          routes.prayersTimesScreen,
+        ),
       ),
       CategoryCardItem(
         title: strings.rosaryTitle,
@@ -40,7 +43,6 @@ List<CategoryCardItem> getGridItems(BuildContext context) => [
 
 void onAzkarPressed(bool isNight, BuildContext context) {
   // get list of azkar
-
   Navigator.pushNamed(
     context,
     routes.azkarScreen,

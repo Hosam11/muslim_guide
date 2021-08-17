@@ -38,14 +38,19 @@ const String errorHappened = 'هناك خطا حدث.. من فضلك حاول م
 const String locationError =
     'هناك مشكله في الحصول علي الموقع.. هل تريد المحاولة مره اخري؟';
 const String discard = 'تراجع';
-
+const String internetError = 'لا يوجد اتصال بالانترنت';
 // AzkarScreen
 const String count = 'التكرار';
 
 // prayer times screen
 const String fajr = 'الفجر';
 const String sunrise = 'الشروق';
-const String duher = 'الظهر';
+const String dhuhr = 'الظهر';
 const String asr = 'العصر';
-const String eshaa = 'العشاء';
-const String maghreb = 'العشاء';
+const String maghrib = 'المغرب';
+const String isha = 'العشاء';
+const String tryAgain = 'حاول مرة اخري';
+const String cantGetLocation = 'تعذر الحصول علي الموقع الجغرافي';
+
+const String morningLetter = 'ص';
+const String nightLetter = 'م';
