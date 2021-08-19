@@ -37,7 +37,7 @@ List<CategoryCardItem> categoriesList(BuildContext context) => [
       CategoryCardItem(
         title: strings.rosaryTitle,
         imgName: assets.rosaryImg,
-        onTapped: () => {},
+        onTapped: () => Navigator.of(context).pushNamed(rosaryScreen),
       ),
     ];
 

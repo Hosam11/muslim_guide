@@ -11,6 +11,7 @@ import 'package:muslim_guide/screens/azkar_screen.dart';
 import 'package:muslim_guide/screens/home_screen.dart';
 import 'package:muslim_guide/screens/prayer_times_screen.dart';
 import 'package:muslim_guide/screens/quran_page_controller.dart';
+import 'package:muslim_guide/screens/rosary_screen.dart';
 import 'package:muslim_guide/screens/surahs_list_screen.dart';
 import 'package:muslim_guide/screens/my_splash_screen.dart';
 
@@ -22,6 +23,7 @@ const String azkarScreen = 'azkarScreen';
 const String prayersTimesScreen = 'prayersTimesScreen';
 const String allahNamesScreen = 'allahNamesScreen';
 const String allahNameDetailsScreen = 'allahNameDetailsScreen';
+const String rosaryScreen = 'RosaryScreen';
 
 // Type: Route<dynamic> Function(RouteSettings)
 Route<dynamic>? generateRoutes(RouteSettings settings) {
@@ -59,6 +61,9 @@ Route<dynamic>? generateRoutes(RouteSettings settings) {
 
       return createPageBuilder(
           AllahNameDetailsScreen(allahNames: args.allahNames));
+
+    case rosaryScreen:
+      return createPageBuilder(RosaryScreen());
     default:
       return null;
   }

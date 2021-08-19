@@ -7,13 +7,13 @@ import 'package:muslim_guide/constants/dimens.dart';
 class PrayerTimesCard extends StatelessWidget {
   const PrayerTimesCard({
     Key? key,
-    this.img,
-    this.prayerName,
-    this.prayerTime,
+    required this.img,
+    required this.prayerName,
+    required this.prayerTime,
   }) : super(key: key);
-  final String? img;
-  final String? prayerName;
-  final String? prayerTime;
+  final String img;
+  final String prayerName;
+  final String prayerTime;
   @override
   Widget build(BuildContext context) {
     final isPortrait =
@@ -30,7 +30,6 @@ class PrayerTimesCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(smallDimens),
         child: InkWell(
-          onTap: () => print('tap'),
           child: Row(
             children: [
               // icon
@@ -40,7 +39,7 @@ class PrayerTimesCard extends StatelessWidget {
                   padding: const EdgeInsets.all(smallestDimens / 2),
                   child: Center(
                     child: SvgPicture.asset(
-                      img!,
+                      img,
                       color: Colors.white,
                       height: 50,
                     ),
@@ -53,8 +52,7 @@ class PrayerTimesCard extends StatelessWidget {
                 flex: 8,
                 child: Padding(
                   padding: const EdgeInsets.only(top: smallDimens),
-                  child:
-                      Text(prayerName!, style: const TextStyle(fontSize: 25)),
+                  child: Text(prayerName, style: const TextStyle(fontSize: 25)),
                 ),
               ),
               Expanded(
@@ -62,7 +60,7 @@ class PrayerTimesCard extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(top: smallDimens),
                   child: Text(
-                    prayerTime!,
+                    prayerTime,
                     style: Theme.of(context)
                         .textTheme
                         .headline6!

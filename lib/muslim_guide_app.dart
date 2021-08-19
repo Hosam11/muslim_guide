@@ -50,6 +50,7 @@ class MuslimGuideApp extends StatelessWidget {
           headline6:
               const TextStyle(color: kTextColor, fontWeight: FontWeight.normal),
           headline4: const TextStyle(color: kTextColor),
+          headline1: const TextStyle(color: kTextColor),
           headline3: const TextStyle(color: kTextColor),
           headline2: const TextStyle(color: kTextColor),
           subtitle1: const TextStyle(color: kTextColor),
