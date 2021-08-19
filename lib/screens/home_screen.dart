@@ -1,6 +1,5 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
 import 'package:muslim_guide/data/models/custom_ayah/ayah_content.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
@@ -34,8 +33,6 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
     // false means there is no location stored in db
     if (prayerProvider.curLocation == null) {
       await getLocationAndSaveIt(context, prayerProvider);
-    } else {
-      // Fimber.i('there is location stored= $location');
     }
   }
 
@@ -62,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
     Fimber.i('');
     var dateToday = DateTime.now();
     Fimber.i('dateToday= $dateToday  ');
+
     return Scaffold(
       appBar: CustomAppBar(title: homeScreenTitle, centerTitle: true),
       floatingActionButton: FloatingActionButton(

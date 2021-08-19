@@ -8,49 +8,6 @@ import 'package:muslim_guide/providers/prayer_times_provider.dart';
 
 enum GetLocationStatus { denied, notEnable, deniedForever, locationProblem }
 
-/*
-/// get current location of user
-/// return 2 option [GetLocationStatus] and [Position]
-///
-/// First: [GetLocationStatus] indicate to 3 status of [LocationPermission]
-/// [GetLocationStatus.denied], [GetLocationStatus.notEnable]
-/// and [GetLocationStatus.deniedForever] and [GetLocationStatus.locationProblem]
-/// that means exception happened wile get location
-///
-/// Second: if there is no error happened [Position] of user will return
-Future<dynamic> _determineLocationStatus() async {
-  bool serviceEnabled;
-  LocationPermission permission;
-
-  serviceEnabled = await Geolocator.isLocationServiceEnabled();
-
-  if (!serviceEnabled) {
-    return GetLocationStatus.notEnable;
-  }
-  permission = await Geolocator.checkPermission();
-  Fimber.i('permission= $permission');
-  switch (permission) {
-    case LocationPermission.denied:
-      return GetLocationStatus.denied;
-
-    case LocationPermission.deniedForever:
-      return GetLocationStatus.deniedForever;
-
-    case LocationPermission.whileInUse:
-    case LocationPermission.always:
-      Position position;
-      try {
-        position = await Geolocator.getCurrentPosition(
-            desiredAccuracy: LocationAccuracy.high);
-      } catch (e) {
-        Fimber.i('locationProblem exception =$e');
-        return GetLocationStatus.locationProblem;
-      }
-      return position;
-  }
-}
-*/
-
 Future<bool> determineLocationStatus(BuildContext context) async {
   bool serviceEnabled;
   LocationPermission permission;
@@ -80,38 +37,6 @@ Future<bool> determineLocationStatus(BuildContext context) async {
       return true;
   }
 }
-
-/*
-/// [Position] if we success to got location
-/// [bool] return false if not location
-Future<dynamic> _getUserLocation(BuildContext context) async {
-  final dynamic locationResult = await _determineLocationStatus();
-  Fimber.i('locationResult= $locationResult');
-  if (locationResult is GetLocationStatus) {
-    switch (locationResult) {
-      case GetLocationStatus.denied:
-        final res = await Geolocator.requestPermission();
-        if (res == LocationPermission.deniedForever) {
-          Fimber.i('res= $res');
-          return await locationDeniedForever(context);
-        }
-        return false;
-      case GetLocationStatus.notEnable:
-        // show dialog ask to open setting
-        return await locationNotEnable(context);
-
-      case GetLocationStatus.deniedForever:
-        return await locationDeniedForever(context);
-
-      case GetLocationStatus.locationProblem:
-        await showInfoDialog(context, errorHappened);
-        return false;
-    }
-  } else if (locationResult is Position) {
-    return locationResult;
-  }
-}
-*/
 
 Future<bool> locationNotEnable(BuildContext context) async {
   final positive = await takeActionDialog(
@@ -147,18 +72,6 @@ Future<bool> locationDeniedForever(BuildContext context) async {
   }
   return false;
 }
-
-/// return true if location successfully got and saved tp shared prefs
-/// else return false if there is problem with location
-/*Future<bool> getLocationAndSaveIt(BuildContext context) async {
-  final res = await _getUserLocation(context);
-  Fimber.i('res= $res');
-  if (res is! bool) {
-    return await saveLocationToPrefs(res);
-  } else {
-    return false;
-  }
-}*/
 
 Future<void> getLocationAndSaveIt(
   BuildContext context,

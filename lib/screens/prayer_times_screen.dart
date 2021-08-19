@@ -4,6 +4,7 @@ import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
+import 'package:muslim_guide/data/repository/allah_names_repo.dart';
 import 'package:muslim_guide/helpers/app/after_layout.dart';
 import 'package:muslim_guide/helpers/app/app_dialogs.dart';
 import 'package:muslim_guide/helpers/app/app_helper.dart';
@@ -38,7 +39,11 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen>
 
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
+    final names = await getAllahNames();
+    Fimber.i('namesLen= ${names.length}');
+
     Fimber.i('curLocation = ${_prayerProvider.curLocation}');
+
     if (_prayerProvider.curLocation != null) {
       await getPrayerTimesCall();
     } else {

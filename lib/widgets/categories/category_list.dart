@@ -16,7 +16,7 @@ class CategoryList extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         shrinkWrap: true,
-        children: getGridItems(context),
+        children: categoriesList(context),
       ),
       //   },
       // ),

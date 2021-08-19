@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
 
+/*
 final ThemeData appThemeData = ThemeData(
   primaryColor: kPrimaryColor,
   accentColor: kAccentColor,
@@ -14,15 +15,23 @@ final ThemeData appThemeData = ThemeData(
     ),
   ),
 // fontFamily: GoogleFonts.tajawal,
-  textTheme: GoogleFonts.tajawalTextTheme().copyWith(
-    headline5: const TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
-    headline6: const TextStyle(color: kTextColor),
+  textTheme: GoogleFonts.tajawalTextTheme()
+      .copyWith(
+        headline5:
+            const TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
+*/
+/*    headline6: const TextStyle(color: kTextColor),
+    headline4: const TextStyle(color: kTextColor),
+    headline3: const TextStyle(color: kTextColor),
+    headline2: const TextStyle(color: kTextColor),
     subtitle1: const TextStyle(color: kTextColor),
     subtitle2: const TextStyle(color: kTextColor),
     bodyText1: const TextStyle(color: kTextColor),
     bodyText2: const TextStyle(color: kTextColor),
-    caption: const TextStyle(color: kTextColor),
-  ),
+    caption: const TextStyle(color: kTextColor),*/ /*
+
+      )
+      .apply(bodyColor: kTextColor, displayColor: Colors.blue),
 
   dividerTheme: const DividerThemeData(
     space: 0,
@@ -31,6 +40,7 @@ final ThemeData appThemeData = ThemeData(
   ),
   visualDensity: VisualDensity.adaptivePlatformDensity,
 );
+*/
 
 // not used only for practicing
 const _lightFillColor = Colors.black;

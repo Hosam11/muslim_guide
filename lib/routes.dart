@@ -1,8 +1,12 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_guide/args/allah_name_args.dart';
 import 'package:muslim_guide/args/azkar_args.dart';
 import 'package:muslim_guide/args/prayer_times_args.dart';
 import 'package:muslim_guide/args/quran_args.dart';
+import 'package:muslim_guide/data/models/allah_names/allah_names.dart';
+import 'package:muslim_guide/screens/allah_name_details_screen.dart';
+import 'package:muslim_guide/screens/allah_names_screen.dart';
 import 'package:muslim_guide/screens/azkar_screen.dart';
 import 'package:muslim_guide/screens/home_screen.dart';
 import 'package:muslim_guide/screens/prayer_times_screen.dart';
@@ -16,6 +20,8 @@ const String quranScreen = 'quranScreen';
 const String quranPageControllerScreen = 'quranPageController';
 const String azkarScreen = 'azkarScreen';
 const String prayersTimesScreen = 'prayersTimesScreen';
+const String allahNamesScreen = 'allahNamesScreen';
+const String allahNameDetailsScreen = 'allahNameDetailsScreen';
 
 // Type: Route<dynamic> Function(RouteSettings)
 Route<dynamic>? generateRoutes(RouteSettings settings) {
@@ -44,6 +50,15 @@ Route<dynamic>? generateRoutes(RouteSettings settings) {
 
     case prayersTimesScreen:
       return createPageBuilder(const PrayerTimesScreen());
+
+    case allahNamesScreen:
+      return createPageBuilder(const AllahNamesScreen());
+
+    case allahNameDetailsScreen:
+      final args = settings.arguments as AllahNameArgs;
+
+      return createPageBuilder(
+          AllahNameDetailsScreen(allahNames: args.allahNames));
     default:
       return null;
   }

@@ -6,6 +6,7 @@ const String surahsListFile = 'assets/files/surahs_list.json';
 const String surahsTitlesFile = 'assets/files/surah_titles.json';
 const String morningZekrFile = 'assets/files/morning_zekr.json';
 const String nightZekrFile = 'assets/files/night_zekr.json';
+const String allahNamesFile = 'assets/files/names_of_allah.json';
 // images
 const String logoImg = 'assets/images/logo.svg';
 // categories

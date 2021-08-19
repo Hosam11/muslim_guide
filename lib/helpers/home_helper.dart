@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:muslim_guide/args/azkar_args.dart';
 import 'package:muslim_guide/constants/assets.dart' as assets;
 import 'package:muslim_guide/constants/strings.dart' as strings;
-import 'package:muslim_guide/routes.dart' as routes;
+import 'package:muslim_guide/routes.dart';
 import 'package:muslim_guide/widgets/categories/category_card_item.dart';
 
-List<CategoryCardItem> getGridItems(BuildContext context) => [
+List<CategoryCardItem> categoriesList(BuildContext context) => [
       CategoryCardItem(
         title: strings.quranTitle,
         imgName: assets.quranImg,
-        onTapped: () => Navigator.pushNamed(context, routes.quranScreen),
+        onTapped: () => Navigator.pushNamed(context, quranScreen),
       ),
       CategoryCardItem(
         title: strings.allahNamesTitle,
         imgName: assets.allahNamesImg,
-        onTapped: () => {},
+        onTapped: () => Navigator.of(context).pushNamed(allahNamesScreen),
       ),
       CategoryCardItem(
         title: strings.azkarMorningTitle,
@@ -31,7 +31,7 @@ List<CategoryCardItem> getGridItems(BuildContext context) => [
         imgName: assets.prayerTimesImg,
         onTapped: () => Navigator.pushNamed(
           context,
-          routes.prayersTimesScreen,
+          prayersTimesScreen,
         ),
       ),
       CategoryCardItem(
@@ -45,7 +45,7 @@ void onAzkarPressed(bool isNight, BuildContext context) {
   // get list of azkar
   Navigator.pushNamed(
     context,
-    routes.azkarScreen,
+    azkarScreen,
     arguments: AzkarArgs(isNight),
   );
 }

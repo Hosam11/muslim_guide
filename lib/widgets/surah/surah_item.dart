@@ -44,7 +44,7 @@ class SurahItem extends StatelessWidget {
               flex: 9,
               child: Padding(
                 padding: const EdgeInsets.only(top: smallestDimens),
-                child: Text(surah!.name!,
+                child: Text(surah!.name,
                     style: Theme.of(context).textTheme.headline6),
               ),
             ),
@@ -88,11 +88,11 @@ class SurahItem extends StatelessWidget {
       context,
       routes.quranPageControllerScreen,
       arguments: QuranArgs(
-        surah!.surahPageNumber! - 1,
+        surah!.surahPageNumber - 1,
       ),
     );
     // final quranProvider = Provider.of<QuranProvider>(context, listen: false);
     // quranProvider.quranPageNumber = surah.surahPageNumber - 1;
-    Fimber.i('surahPageNumber=  ${surah!.surahPageNumber! - 1}');
+    Fimber.i('surahPageNumber=  ${surah!.surahPageNumber - 1}');
   }
 }

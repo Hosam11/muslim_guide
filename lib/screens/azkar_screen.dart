@@ -16,12 +16,9 @@ class AzkarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: isNight ? azkarNightTitle : azkarMorningTitle,
-      ),
+      appBar:
+          CustomAppBar(title: isNight ? azkarNightTitle : azkarMorningTitle),
       body: Container(
-/*        height: double.infinity,
-        width: double.infinity,*/
         decoration: kSecondaryBackgroundBoxDecoration,
         child: ListView.builder(
           itemBuilder: (_, index) => ZekrCard(

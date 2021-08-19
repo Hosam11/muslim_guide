@@ -32,13 +32,7 @@ class ZekrCard extends StatelessWidget {
                 : null,
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal:
-                      /*   top: mediumDimens,
-                  left: mediumDimens,
-                  right: mediumDimens,
-                  bottom: */
-                      mediumDimens,
-                  vertical: smallDimens),
+                  horizontal: mediumDimens, vertical: smallDimens),
               child: Column(
                 children: [
                   Padding(
@@ -49,7 +43,7 @@ class ZekrCard extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
-                          .copyWith(fontWeight: FontWeight.normal),
+                          .copyWith(fontWeight: FontWeight.w600),
                       textAlign: TextAlign.justify,
                     ),
                   ),
@@ -59,8 +53,14 @@ class ZekrCard extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(azkar.reference ?? ''),
-                        Text('$count: ${azkar.count}'),
+                        Text(
+                          azkar.reference ?? '',
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          '$count: ${azkar.count}',
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
                       ],
                     ),
                   )

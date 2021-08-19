@@ -8,12 +8,12 @@ part of 'surah.dart';
 
 Surah _$SurahFromJson(Map<String, dynamic> json) {
   return Surah(
-    number: json['number'] as int?,
-    name: json['name'] as String?,
-    numberOfAyahs: json['numberOfAyahs'] as int?,
+    number: json['number'] as int,
+    name: json['name'] as String,
+    numberOfAyahs: json['numberOfAyahs'] as int,
     revelationType:
-        _$enumDecodeNullable(_$RevelationTypeEnumMap, json['revelationType']),
-    surahPageNumber: json['surahPageNumber'] as int?,
+        _$enumDecode(_$RevelationTypeEnumMap, json['revelationType']),
+    surahPageNumber: json['surahPageNumber'] as int,
   );
 }
 
@@ -49,17 +49,6 @@ K _$enumDecode<K, V>(
       return MapEntry(unknownValue, enumValues.values.first);
     },
   ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$RevelationTypeEnumMap = {
