@@ -14,6 +14,7 @@ class QuranTextView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ayahWithStyle
         ? Padding(
             padding: const EdgeInsets.symmetric(vertical: dimens.smallDimens),

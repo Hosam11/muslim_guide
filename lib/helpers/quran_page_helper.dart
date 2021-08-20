@@ -30,43 +30,43 @@ class QuranPageHelper {
     final h = '@@ quran_helper @@ quranPageContent() >>';
     final pageWidgets = <Widget>[];
 
-    if (quranPageModel.sajdaType == null) {
-      for (final pageContent in quranPageModel.quranPageContents!) {
-        // mLog('$h pageContent= ${jsonEncode(pageContent)}');
-
-        if (pageContent.ayah != null) {
-          pageWidgets.add(QuranTextView(quranAyahs: pageContent.ayah));
-        }
-        if (pageContent.header != null) {
-          pageWidgets.add(SurahNameTitle(surahName: pageContent.header));
-        }
-      }
-    } else {
-      switch (quranPageModel.sajdaType) {
-        case SajdaType.normal:
-          pageWidgets
-              .add(CustomQuranTextView(customAyah: quranPageModel.ayahContent));
-          break;
-        case SajdaType.custom:
-          final pageContent = quranPageModel.quranPageContents!;
-          for (var index = 0; index < pageContent.length; index++) {
-            if (index == quranPageModel.sajdaIndex) {
-              pageWidgets.add(
-                  CustomQuranTextView(customAyah: quranPageModel.ayahContent));
-            } else {
-              if (pageContent[index].ayah != null) {
-                pageWidgets
-                    .add(QuranTextView(quranAyahs: pageContent[index].ayah));
-              }
-              if (pageContent[index].header != null) {
-                pageWidgets
-                    .add(SurahNameTitle(surahName: pageContent[index].header));
-              }
+    switch (quranPageModel.sajdaType) {
+      case SajdaType.normal:
+        pageWidgets
+            .add(CustomQuranTextView(customAyah: quranPageModel.ayahContent));
+        break;
+      case SajdaType.custom:
+        final pageContent = quranPageModel.quranPageContents!;
+        for (var index = 0; index < pageContent.length; index++) {
+          if (index == quranPageModel.sajdaIndex) {
+            pageWidgets.add(
+                CustomQuranTextView(customAyah: quranPageModel.ayahContent));
+          } else {
+            if (pageContent[index].ayah != null) {
+              pageWidgets
+                  .add(QuranTextView(quranAyahs: pageContent[index].ayah));
+            }
+            if (pageContent[index].header != null) {
+              pageWidgets
+                  .add(SurahNameTitle(surahName: pageContent[index].header));
             }
           }
-          break;
-      }
+        }
+        break;
+      // normal page without sajda
+      case null:
+        for (final pageContent in quranPageModel.quranPageContents!) {
+          // mLog('$h pageContent= ${jsonEncode(pageContent)}');
+          if (pageContent.ayah != null) {
+            pageWidgets.add(QuranTextView(quranAyahs: pageContent.ayah));
+          }
+          if (pageContent.header != null) {
+            pageWidgets.add(SurahNameTitle(surahName: pageContent.header));
+          }
+        }
+        break;
     }
+    // }
     return pageWidgets;
   }
 
