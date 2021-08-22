@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:muslim_guide/args/quran_args.dart';
 import 'package:muslim_guide/constants/strings.dart';
 import 'package:muslim_guide/data/models/quran_pages/quran_page.dart';
+import 'package:muslim_guide/data/models/quran_pages/quran_page_content.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
 import 'package:muslim_guide/helpers/app/app_dialogs.dart';
@@ -36,38 +37,69 @@ class QuranPageHelper {
             .add(CustomQuranTextView(customAyah: quranPageModel.ayahContent));
         break;
       case SajdaType.custom:
-        final pageContent = quranPageModel.quranPageContents!;
-        for (var index = 0; index < pageContent.length; index++) {
-          if (index == quranPageModel.sajdaIndex) {
-            pageWidgets.add(
-                CustomQuranTextView(customAyah: quranPageModel.ayahContent));
+        final quranPageContents = quranPageModel.quranPageContents!;
+        for (var index = 0; index < quranPageContents.length; index++) {
+          final pageContent = quranPageContents[index];
+
+          if (pageContent.header != null) {
+            pageWidgets.add(SurahNameTitle(surahName: pageContent.header));
+            index++;
+            _addingQuranPage(
+                index, quranPageModel, pageWidgets, quranPageContents, true);
           } else {
-            if (pageContent[index].ayah != null) {
-              pageWidgets
-                  .add(QuranTextView(quranAyahs: pageContent[index].ayah));
-            }
-            if (pageContent[index].header != null) {
-              pageWidgets
-                  .add(SurahNameTitle(surahName: pageContent[index].header));
-            }
+            _addingQuranPage(
+                index, quranPageModel, pageWidgets, quranPageContents);
           }
         }
         break;
       // normal page without sajda
       case null:
-        for (final pageContent in quranPageModel.quranPageContents!) {
-          // mLog('$h pageContent= ${jsonEncode(pageContent)}');
-          if (pageContent.ayah != null) {
-            pageWidgets.add(QuranTextView(quranAyahs: pageContent.ayah));
-          }
+        final quranPageContents = quranPageModel.quranPageContents!;
+        for (var index = 0; index < quranPageContents.length; ++index) {
+          final pageContent = quranPageContents[index];
+
+          /// mean there is surah header, and for every surah header must there
+          /// be [basmallah] in next [QuranTextView]
           if (pageContent.header != null) {
+            // add header
             pageWidgets.add(SurahNameTitle(surahName: pageContent.header));
+            // increment index to get next quren text view and skip it then
+            // save it in our array
+            index++;
+            var nextQuranPageContent = quranPageContents[index];
+            pageWidgets.add(
+              QuranTextView(
+                quranAyahs: nextQuranPageContent.ayah,
+                isStartSurah: quranPageModel.pageNumber != 1 ? true : false,
+              ),
+            );
+          } else {
+            pageWidgets.add(QuranTextView(quranAyahs: pageContent.ayah));
           }
         }
         break;
     }
-    // }
+
+    Fimber.i('pageWidgets= $pageWidgets');
     return pageWidgets;
+  }
+
+  void _addingQuranPage(int index, QuranPage quranPageModel,
+      List<Widget> pageWidgets, List<QuranPageContent> quranPageContents,
+      [bool isStartSurah = false]) {
+    if (index == quranPageModel.sajdaIndex) {
+      pageWidgets.add(
+        CustomQuranTextView(
+          customAyah: quranPageModel.ayahContent,
+          isStartSurah: isStartSurah,
+        ),
+      );
+    } else {
+      pageWidgets.add(QuranTextView(
+        quranAyahs: quranPageContents[index].ayah,
+        isStartSurah: isStartSurah,
+      ));
+    }
   }
 
   Future<void> onBookmarkPressed(

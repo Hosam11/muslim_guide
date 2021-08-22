@@ -54,3 +54,4 @@ const String cantGetLocation = 'تعذر الحصول علي الموقع الج
 
 const String morningLetter = 'ص';
 const String nightLetter = 'م';
+const String basmallah = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
