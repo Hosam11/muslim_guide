@@ -8,22 +8,21 @@ import 'package:http/http.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/data/models/ayah/ayah.dart';
 import 'package:muslim_guide/data/models/surah/surah.dart';
-import 'package:muslim_guide/z_not_use/model/old_quran_page/old_quran_page.dart';
-import 'package:muslim_guide/z_not_use/model/quran_me.dart';
-import 'package:muslim_guide/z_not_use/model/returned_quran_pages.dart';
+import 'package:muslim_guide/z_prepare_app_files/model/old_quran_page/old_quran_page.dart';
+import 'package:muslim_guide/z_prepare_app_files/model/quran_me.dart';
+import 'package:muslim_guide/z_prepare_app_files/model/returned_quran_pages.dart';
 
 Future<void> main() async {
-  */
-/*var finalObj = await surahWithPageNumber();
+var finalObj = await surahWithPageNumber();
   print({'finalObj.length= ${finalObj.length}'});
   var surahPageNumber = List<Map<int, int>>.from(finalObj);
   print('surahPageNumber= $surahPageNumber');
-  var surahsReferenceList = await getMetaData();
-  print('metaListLen= ${surahsReferenceList.length}');
+  var surahsReferenceList = await _getMetaData();
+  print('metaListLen= ${surahsReferenceList?.length}');
   final finalSurahList = await setupSurahsWithPageNumber(surahPageNumber);
   print('first= ${jsonEncode(finalSurahList.first)}, '
       'last= ${jsonEncode(finalSurahList.last)}');
-*/ /*
+
 
 }
 
@@ -36,9 +35,7 @@ Future<List<Surah>> setupSurahsWithPageNumber(
   final surahListStr = await File(surahsListFile).readAsString();
   // FIXME: m
 
-  final surahsDataList = [] */
-/*= surahListFromJson(surahListStr)*/ /*
-;
+  final surahsDataList = surahListFromJson(surahListStr);
 
   final newSurahList = <Surah>[];
 
@@ -96,8 +93,8 @@ Future<Set<Map<int, int>>> surahWithPageNumber() async {
 Future<List<OldQuranPage>> getNewQuranPages() async {
   final quranPagesRes = await File(oldQuranPagesFile).readAsString();
   // FIXME: m
-  final quranData = [] */
-/*quranDataFromJson(quranPagesRes)*/ /*
+  final quranData = []
+quranDataFromJson(quranPagesRes)
 ;
   // mLog('$h quranData= ${convert.jsonEncode(quranData)}');
   print('quranDataLen= ${quranData.length}');
@@ -148,8 +145,7 @@ Future<List<SurahsReference>?> _getMetaData() async {
   final metaModel = metaListFromJson(decodeData);
 
   var surahResList = metaModel.data!.surahs!.references;
-  */
-/* create our target object for surahList form meta endpoint
+ // create our target object for surahList form meta endpoint
   var targetSurahList = <Surah>[];
     for (var surRef in surahResList) {
       var surah = Surah(
@@ -159,7 +155,7 @@ Future<List<SurahsReference>?> _getMetaData() async {
         revelationType: surRef.revelationType,
       );
       targetSurahList.add(surah);
-    }*/ /*
+    }
 
   // await writeToFile(jsonEncode(targetSurahList), 'surahList.json');
   return surahResList;

@@ -19,8 +19,8 @@ class QuranPage {
   @JsonKey(includeIfNull: false)
   final List<QuranPageContent>? quranPageContents;
   @JsonKey(includeIfNull: false)
-  final AyahContent? ayahContent;
-  final SajdaType? sajdaType;
+  AyahContent? ayahContent;
+  SajdaType? sajdaType;
 
   QuranPage({
     this.pageNumber,
@@ -37,4 +37,12 @@ class QuranPage {
       _$QuranPageFromJson(json);
 
   Map<String, dynamic> toJson() => _$QuranPageToJson(this);
+
+  @override
+  String toString() {
+    return 'QuranPage{pageNumber: $pageNumber, juz: $juz, quarter: $quarter, '
+        'hizb: $hizb, sajdaIndex: $sajdaIndex, surahName: $surahName,'
+        ' quranPageContents: $quranPageContents, ayahContent: $ayahContent,'
+        ' sajdaType: $sajdaType}';
+  }
 }

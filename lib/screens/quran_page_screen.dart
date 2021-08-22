@@ -24,6 +24,8 @@ class QuranPageScreen extends StatelessWidget {
 
     Fimber.i('bookmarkPageNo= ${quranProvider.markedPageNum},'
         ' curPageNo =${quranPageModel.pageNumber}');
+    Fimber.i('sajdaType= ${quranPageModel.sajdaType}');
+
     return WillPopScope(
       onWillPop: () async =>
           await _quranPageHelper.quranPagePopScope(quranProvider),

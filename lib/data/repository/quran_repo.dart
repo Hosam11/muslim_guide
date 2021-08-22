@@ -7,7 +7,7 @@ import 'package:muslim_guide/helpers/app/app_helper.dart';
 
 Future<List<QuranPage>> getQuranPages() async {
   var h = '@@ AppRepo @@ getQuranPages() >>';
-  final quranPagesRes = await rootBundle.loadString(newQuranPagesFile);
+  final quranPagesRes = await rootBundle.loadString(updatedQuranPages);
   final quranData = quranDataFromJson(quranPagesRes);
   mLog('$h quranData= ${jsonEncode(quranData)}');
   return quranData;
