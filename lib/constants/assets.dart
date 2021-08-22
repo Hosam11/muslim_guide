@@ -40,3 +40,5 @@ const String sunrisePng = 'assets/pngs/sunrise.png';
 const String noonPng = 'assets/pngs/noon.png';
 const String afternoonPng = 'assets/pngs/afternoon.png';
 const String nightPng = 'assets/pngs/night.png';
+
+const String clickSound = 'sound/click.wav';

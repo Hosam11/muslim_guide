@@ -1,4 +1,3 @@
-import 'package:fimber/fimber.dart';
 import 'package:muslim_guide/data/models/azkar/azkar.dart';
 import 'package:muslim_guide/data/repository/azkar_repo.dart';
 

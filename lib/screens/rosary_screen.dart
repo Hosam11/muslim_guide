@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
 import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class RosaryScreen extends StatelessWidget {
   RosaryScreen({Key? key}) : super(key: key);
 
   final counter = ValueNotifier(0);
+  final player = AudioCache();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +32,7 @@ class RosaryScreen extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             child: InkWell(
-              onTap: () => counter.value++,
+              onTap: onRosaryPressed,
               child: CircleAvatar(
                 backgroundColor: kPrimaryColor,
                 child: Center(
@@ -49,5 +52,15 @@ class RosaryScreen extends StatelessWidget {
     );
   }
 
-  void onRefreshPressed() => counter.value = 0;
+  Future<void> onRefreshPressed() async => counter.value = 0;
+
+  Future<void> onRosaryPressed() async {
+    counter.value++;
+    // await player.play(clickSound);
+    /*   final hasControl = await Vibration.hasAmplitudeControl();
+    Fimber.i('hasControl= $hasControl');
+    if (hasControl!) {
+      await Vibration.vibrate(amplitude: 128);
+    }*/
+  }
 }

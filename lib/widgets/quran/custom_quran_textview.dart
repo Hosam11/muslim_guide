@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+// <<<<<<< Updated upstream
 import 'package:muslim_guide/constants/constants_imports.dart';
+// =======
+// import 'package:muslim_guide/constants/app_colors.dart';
+// >>>>>>> Stashed changes
 import 'package:muslim_guide/constants/dimens.dart';
 import 'package:muslim_guide/constants/styles.dart';
 import 'package:muslim_guide/data/models/custom_ayah/ayah_content.dart';
@@ -24,6 +28,7 @@ class CustomQuranTextView extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(color: Theme.of(context).primaryColor),
         padding: const EdgeInsets.all(smallDimens),
+// <<<<<<< Updated upstream
         child: Column(
           children: [
             isStartSurah
@@ -55,6 +60,26 @@ class CustomQuranTextView extends StatelessWidget {
                   TextSpan(
                       text: ' \u202E ${customAyah!.lastAyahs} '), // real case
                 ],
+/*=======
+        child: RichText(
+          textAlign: TextAlign.justify,
+          text: TextSpan(
+            style: ayahTextStyle(context),
+            // softWrap: true,
+            children: [
+              // TextSpan(text: '\u202E$ayah '), // real case
+              TextSpan(text: ' \u202E${customAyah!.firstAyahs} '), // test case
+              TextSpan(
+                // text: '\u202E$sajdaWord', // real case
+                text: ' \u202E${customAyah!.sajdaWords} ', // test case
+                style: const TextStyle(
+                  textBaseline: TextBaseline.ideographic,
+                  decoration: TextDecoration.underline,
+                  shadows: [Shadow(color: kTextColor, offset: Offset(0, -5))],
+                  color: Colors.transparent,
+                  decorationColor: kTextColor,
+                ),
+>>>>>>> Stashed changes*/
               ),
             ),
           ],

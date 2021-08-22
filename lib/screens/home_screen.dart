@@ -62,10 +62,10 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
 
     return Scaffold(
       appBar: CustomAppBar(title: homeScreenTitle, centerTitle: true),
-      floatingActionButton: FloatingActionButton(
+      /*  floatingActionButton: FloatingActionButton(
         onPressed: test,
         child: const Icon(Icons.clear),
-      ),
+      ),*/
       body: Container(
         height: double.infinity,
         width: double.infinity,

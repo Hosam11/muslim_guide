@@ -84,7 +84,7 @@ class PrayerHelper {
     }
     finalHour = _addZerosToTime(finalHour);
     minutes = _addZerosToTime(minutes);
-    Fimber.i('finalHour= ${finalHour}, minutes = ${minutes}');
+    Fimber.i('finalHour= $finalHour, minutes = $minutes');
     return '${convertToArabic(finalHour)}:${convertToArabic(minutes)} $status';
   }
 

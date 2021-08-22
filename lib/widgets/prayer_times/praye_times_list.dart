@@ -11,9 +11,7 @@ class PrayerTimesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Fimber.i('times = ${prayerTimesProvider.prayerTimings}');
-    // var x = _prayerHelper.convert24To12('12:22 (EET)');
-    var x = 01;
-    Fimber.i('xxxxxxxxxxxxxxxxx= ${x}');
+
     return prayerTimesProvider.prayerTimings != null
         ? ListView.separated(
             shrinkWrap: true,

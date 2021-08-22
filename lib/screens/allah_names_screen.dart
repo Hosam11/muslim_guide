@@ -14,7 +14,10 @@ class AllahNamesScreen extends StatelessWidget {
     final _isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
-      appBar: CustomAppBar(title: allahNamesTitle),
+      appBar: CustomAppBar(
+        title: allahNamesTitle,
+        centerTitle: false,
+      ),
       body: Container(
         decoration: kSecondaryBackgroundBoxDecoration,
         child: Padding(

@@ -38,13 +38,15 @@ dependencies:
   floor: ^1.1.0
   intl: ^0.17.0
   loading_overlay: ^0.3.0
-
+  wakelock: ^0.5.3+3
+  vibration: ^1.7.4-nullsafety.0
 dev_dependencies:
   flutter_native_splash: ^1.2.1
   pedantic: ^1.11.1
   build_runner: ^2.1.1
   floor_generator: ^1.1.0
   connectivity: ^3.0.6
+  audioplayers: ^0.19.1
   flutter_test:
     sdk: flutter
 
@@ -52,7 +54,7 @@ flutter_icons:
   android: true
   ios: true
   remove_alpha_ios: true
-  image_path: "assets/images/logo3.png"
+  image_path: "assets/images/launcher_icon.png"
 
 flutter_native_splash:
 
@@ -68,6 +70,8 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/files/
+    - assets/sound/
+    - assets/sound/
     - google_fonts/
   fonts:
     - family: Me Quran
