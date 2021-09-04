@@ -1,4 +1,5 @@
 import 'package:fimber/fimber.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/muslim_guide_app.dart';
 
@@ -17,8 +18,12 @@ import 'package:wakelock/wakelock.dart';
 const apiKey = 'android_MjI5MjEyYzgtZDEyNy00ODA0LWE2MDQtNTYzZTc5NjU2MzE3';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runAppSpector();
-  Fimber.plantTree(DebugTree.elapsed());
+  print(kDebugMode ? 'debugMode' : 'releaseMode');
+
+  if (kDebugMode) {
+    runAppSpector();
+    Fimber.plantTree(DebugTree.elapsed());
+  }
   await Wakelock.enable();
   runApp(
     MultiProvider(

@@ -254,10 +254,6 @@ class EnumValues<T> {
 
   EnumValues(this.map);
 
-  Map<T, String>? get reverse {
-    if (reverseMap == null) {
-      reverseMap = map.map((k, v) => MapEntry(v, k));
-    }
-    return reverseMap;
-  }
+  Map<T, String>? get reverse =>
+      reverseMap ??= map.map((k, v) => MapEntry(v, k));
 }

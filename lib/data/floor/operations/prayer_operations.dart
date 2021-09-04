@@ -2,6 +2,7 @@ import 'package:fimber/fimber.dart';
 import 'package:muslim_guide/data/floor/dao/prayer_dao.dart';
 import 'package:muslim_guide/data/floor/db/db_builder.dart';
 import 'package:muslim_guide/data/floor/db/floor_db.dart';
+import 'package:muslim_guide/data/floor/entities/prayer_entity.dart';
 import 'package:muslim_guide/data/models/prayer_times/prayer_timings.dart';
 
 class PrayerOperations {
@@ -20,6 +21,12 @@ class PrayerOperations {
   Future<List<int>> insertPrayerTimes(
     List<PrayerTimings> prayerTimes,
   ) async {
+    // prayerEntityFromPrayerTimes(timings, timestamp)
+
+    final x = prayerTimes
+        .map((timings) => prayerEntityFromPrayerTimes(timings, ''))
+        .toList(growable: false);
+
     Fimber.i('_dbHash=${_db.hashCode} ');
     return await _prayerDao.insertPrayerTimes(prayerTimes);
   }

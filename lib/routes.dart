@@ -2,6 +2,7 @@ import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/args/allah_name_args.dart';
 import 'package:muslim_guide/args/azkar_args.dart';
+import 'package:muslim_guide/args/prayer_times_args.dart';
 import 'package:muslim_guide/args/quran_args.dart';
 import 'package:muslim_guide/screens/allah_name_details_screen.dart';
 import 'package:muslim_guide/screens/allah_names_screen.dart';

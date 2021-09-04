@@ -105,3 +105,10 @@ CircularProgressIndicator simpleProgressIndicator =
     const CircularProgressIndicator(
   valueColor: AlwaysStoppedAnimation<Color>(kSecondaryColor),
 );
+
+Future<dynamic> askExitApp(BuildContext context) {
+  return takeActionDialog(
+    context: context,
+    msg: exitMessage,
+  );
+}

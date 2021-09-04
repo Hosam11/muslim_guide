@@ -13,11 +13,10 @@ import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:muslim_guide/main.dart' show apiKey;
-
-const isLog = true;
+import 'package:flutter/foundation.dart';
 
 void mLog(String message) {
-  isLog ? log('log= ' + message) : print('else');
+  kDebugMode ? log('log= ' + message) : print('kReleaseMode mode');
 }
 
 Future<void> prepareDataNeeded() async {

@@ -39,6 +39,8 @@ const String locationError =
     'هناك مشكله في الحصول علي الموقع.. هل تريد المحاولة مره اخري؟';
 const String discard = 'تراجع';
 const String internetError = 'لا يوجد اتصال بالانترنت';
+const String exitMessage = 'هل تريد الخروج من التطبيق ؟';
+
 // AzkarScreen
 const String count = 'التكرار';
 

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/args/azkar_args.dart';
+import 'package:muslim_guide/args/prayer_times_args.dart';
 import 'package:muslim_guide/constants/assets.dart' as assets;
 import 'package:muslim_guide/constants/strings.dart' as strings;
+import 'package:muslim_guide/providers/prayer_times_provider.dart';
 import 'package:muslim_guide/routes.dart';
 import 'package:muslim_guide/widgets/categories/category_card_item.dart';
 
-List<CategoryCardItem> categoriesList(BuildContext context) => [
+List<CategoryCardItem> categoriesList(
+  BuildContext context,
+) =>
+    [
       CategoryCardItem(
         title: strings.quranTitle,
         imgName: assets.quranImg,

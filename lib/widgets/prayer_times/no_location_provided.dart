@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
 
+// TODO: NOT used
 class NoLocation extends StatelessWidget {
   const NoLocation({
     Key? key,

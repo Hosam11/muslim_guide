@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:muslim_guide/data/models/quran_pages/quran_page.dart';

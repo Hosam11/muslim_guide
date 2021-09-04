@@ -1,5 +1,4 @@
 import 'package:fimber/fimber.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/app_colors.dart';
 import 'package:muslim_guide/data/models/quran_pages/quran_page.dart';
@@ -40,6 +39,7 @@ class QuranPageScreen extends StatelessWidget {
                   Expanded(
                     child: InkWell(
                       splashFactory: NoSplash.splashFactory,
+                      // splashFactory: NoSplash.splashFactory,
                       enableFeedback: false,
                       onTap: () => quranProvider.isShowDetails =
                           !quranProvider.isShowDetails,

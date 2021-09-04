@@ -41,9 +41,10 @@ class PrayerTimings {
   @JsonKey(ignore: true)
   int? tableId;
 
+  // todo delete it after
   @JsonKey(ignore: true)
   int? dayNumber;
-/*
+  /*
   @JsonKey(name: 'Sunset')
   final String sunset;
 
@@ -51,7 +52,8 @@ class PrayerTimings {
   final String imsak;
 
   @JsonKey(name: 'Midnight')
-  final String midnight;*/
+  final String midnight;
+  */
 
   factory PrayerTimings.fromJson(Map<String, dynamic> json) =>
       _$PrayerTimingsFromJson(json);

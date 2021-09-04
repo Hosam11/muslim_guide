@@ -6,8 +6,6 @@ import 'package:muslim_guide/helpers/app/app_dialogs.dart';
 import 'package:muslim_guide/helpers/app/app_helper.dart';
 import 'package:muslim_guide/providers/prayer_times_provider.dart';
 
-enum GetLocationStatus { denied, notEnable, deniedForever, locationProblem }
-
 Future<bool> determineLocationStatus(BuildContext context) async {
   bool serviceEnabled;
   LocationPermission permission;
@@ -62,6 +60,8 @@ Future<bool> locationDeniedForever(BuildContext context) async {
     positiveBtnStr: openSetting,
     negativeBtnStr: cancel,
   );
+  Fimber.i('positive $positive');
+
   if (positive != null && positive) {
     await Geolocator.openAppSettings();
     final res = await Geolocator.checkPermission();
@@ -78,6 +78,7 @@ Future<void> getLocationAndSaveIt(
   PrayerTimesProvider prayerProvider,
 ) async {
   final locStatus = await determineLocationStatus(context);
+
   Fimber.i('locStatus= $locStatus');
   if (locStatus) {
     Position position;
@@ -92,6 +93,45 @@ Future<void> getLocationAndSaveIt(
       await showInfoDialog(context, errorHappened);
 
       return;
+    }
+  }
+}
+
+Future<void> saveLocation(
+  BuildContext context,
+  PrayerTimesProvider prayerProvider,
+) async {
+  final location = await getLoc(context);
+  if (location != null) {
+    prayerProvider.curLocation = location;
+    await saveLocationToPrefs(location);
+  }
+}
+
+Future<Position?> getLoc(BuildContext context) async {
+  try {
+    final loc = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
+    Fimber.i('loc= $loc');
+    return loc;
+  } catch (e) {
+    Fimber.i('error= $e');
+    Fimber.i('error= ${e.runtimeType}');
+    switch (e) {
+      case PermissionDeniedException:
+        Fimber.i('PermissionDeniedException case');
+        final locStatus = await locationDeniedForever(context);
+        Fimber.i('locStatus= $locStatus');
+        return await getLoc(context);
+      case LocationServiceDisabledException:
+        Fimber.i('LocationServiceDisabledException case');
+        await showInfoDialog(context, 'عفوا لا يوجد خدمه تحديد الموقع');
+        Navigator.pop(context);
+        break;
+      default:
+        Fimber.i('default ');
+        return await getLoc(context);
     }
   }
 }
