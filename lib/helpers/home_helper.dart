@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/args/azkar_args.dart';
-import 'package:muslim_guide/args/prayer_times_args.dart';
-import 'package:muslim_guide/constants/assets.dart' as assets;
-import 'package:muslim_guide/constants/strings.dart' as strings;
-import 'package:muslim_guide/providers/prayer_times_provider.dart';
+import 'package:muslim_guide/constants/constants_imports.dart';
 import 'package:muslim_guide/routes.dart';
 import 'package:muslim_guide/widgets/categories/category_card_item.dart';
 
@@ -12,36 +9,36 @@ List<CategoryCardItem> categoriesList(
 ) =>
     [
       CategoryCardItem(
-        title: strings.quranTitle,
-        imgName: assets.quranImg,
+        title: quranTitle,
+        imgName: quranImg,
         onTapped: () => Navigator.pushNamed(context, quranScreen),
       ),
       CategoryCardItem(
-        title: strings.allahNamesTitle,
-        imgName: assets.allahNamesImg,
+        title: allahNamesTitle,
+        imgName: allahNamesImg,
         onTapped: () => Navigator.of(context).pushNamed(allahNamesScreen),
       ),
       CategoryCardItem(
-        title: strings.azkarMorningTitle,
-        imgName: assets.azkarMorningImg,
+        title: azkarMorningTitle,
+        imgName: azkarMorningImg,
         onTapped: () => onAzkarPressed(false, context),
       ),
       CategoryCardItem(
-        title: strings.azkarNightTitle,
-        imgName: assets.azkarNigthImg,
+        title: azkarNightTitle,
+        imgName: azkarNigthImg,
         onTapped: () => onAzkarPressed(true, context),
       ),
       CategoryCardItem(
-        title: strings.prayerTimesTitle,
-        imgName: assets.prayerTimesImg,
+        title: prayerTimesTitle,
+        imgName: prayerTimesImg,
         onTapped: () => Navigator.pushNamed(
           context,
           prayersTimesScreen,
         ),
       ),
       CategoryCardItem(
-        title: strings.rosaryTitle,
-        imgName: assets.rosaryImg,
+        title: rosaryTitle,
+        imgName: rosaryImg,
         onTapped: () => Navigator.of(context).pushNamed(rosaryScreen),
       ),
     ];

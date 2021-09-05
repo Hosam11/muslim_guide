@@ -80,7 +80,7 @@ class _$FloorDB extends FloorDB {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `PrayerTimings` (`fajr` TEXT, `sunrise` TEXT, `dhuhr` TEXT, `asr` TEXT, `maghrib` TEXT, `isha` TEXT, `tableId` INTEGER PRIMARY KEY AUTOINCREMENT, `dayNumber` INTEGER)');
+            'CREATE TABLE IF NOT EXISTS `PrayerEntity` (`tableId` INTEGER PRIMARY KEY AUTOINCREMENT, `dayNumber` INTEGER NOT NULL, `fajr` TEXT NOT NULL, `sunrise` TEXT NOT NULL, `dhuhr` TEXT NOT NULL, `asr` TEXT NOT NULL, `maghrib` TEXT NOT NULL, `isha` TEXT NOT NULL, `timestamp` TEXT NOT NULL, `lat` REAL NOT NULL, `lng` REAL NOT NULL, `methodId` INTEGER NOT NULL, `methodName` TEXT NOT NULL)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -97,18 +97,23 @@ class _$FloorDB extends FloorDB {
 class _$PrayerDao extends PrayerDao {
   _$PrayerDao(this.database, this.changeListener)
       : _queryAdapter = QueryAdapter(database),
-        _prayerTimingsInsertionAdapter = InsertionAdapter(
+        _prayerEntityInsertionAdapter = InsertionAdapter(
             database,
-            'PrayerTimings',
-            (PrayerTimings item) => <String, Object?>{
+            'PrayerEntity',
+            (PrayerEntity item) => <String, Object?>{
+                  'tableId': item.tableId,
+                  'dayNumber': item.dayNumber,
                   'fajr': item.fajr,
                   'sunrise': item.sunrise,
                   'dhuhr': item.dhuhr,
                   'asr': item.asr,
                   'maghrib': item.maghrib,
                   'isha': item.isha,
-                  'tableId': item.tableId,
-                  'dayNumber': item.dayNumber
+                  'timestamp': item.timestamp,
+                  'lat': item.lat,
+                  'lng': item.lng,
+                  'methodId': item.methodId,
+                  'methodName': item.methodName
                 });
 
   final sqflite.DatabaseExecutor database;
@@ -117,31 +122,35 @@ class _$PrayerDao extends PrayerDao {
 
   final QueryAdapter _queryAdapter;
 
-  final InsertionAdapter<PrayerTimings> _prayerTimingsInsertionAdapter;
+  final InsertionAdapter<PrayerEntity> _prayerEntityInsertionAdapter;
 
   @override
-  Future<PrayerTimings?> getPrayerTime(int dayNumber) async {
-    return _queryAdapter.query(
-        'SELECT * FROM PrayerTimings where dayNumber= ?1',
-        mapper: (Map<String, Object?> row) => PrayerTimings(
-            dayNumber: row['dayNumber'] as int?,
-            fajr: row['fajr'] as String?,
-            sunrise: row['sunrise'] as String?,
-            dhuhr: row['dhuhr'] as String?,
-            asr: row['asr'] as String?,
-            maghrib: row['maghrib'] as String?,
-            isha: row['isha'] as String?),
+  Future<PrayerEntity?> getPrayerEntity(int dayNumber) async {
+    return _queryAdapter.query('SELECT * FROM PrayerEntity where dayNumber= ?1',
+        mapper: (Map<String, Object?> row) => PrayerEntity(
+            dayNumber: row['dayNumber'] as int,
+            fajr: row['fajr'] as String,
+            sunrise: row['sunrise'] as String,
+            dhuhr: row['dhuhr'] as String,
+            asr: row['asr'] as String,
+            maghrib: row['maghrib'] as String,
+            isha: row['isha'] as String,
+            timestamp: row['timestamp'] as String,
+            lat: row['lat'] as double,
+            lng: row['lng'] as double,
+            methodId: row['methodId'] as int,
+            methodName: row['methodName'] as String),
         arguments: [dayNumber]);
   }
 
   @override
   Future<void> deleteAllData() async {
-    await _queryAdapter.queryNoReturn('DELETE FROM PrayerTimings');
+    await _queryAdapter.queryNoReturn('DELETE FROM PrayerEntity');
   }
 
   @override
-  Future<List<int>> insertPrayerTimes(List<PrayerTimings> prayerTimes) {
-    return _prayerTimingsInsertionAdapter.insertListAndReturnIds(
-        prayerTimes, OnConflictStrategy.abort);
+  Future<List<int>> insertPrayerTimes(List<PrayerEntity> prayerEntities) {
+    return _prayerEntityInsertionAdapter.insertListAndReturnIds(
+        prayerEntities, OnConflictStrategy.abort);
   }
 }

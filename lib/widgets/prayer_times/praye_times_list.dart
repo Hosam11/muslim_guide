@@ -10,9 +10,9 @@ class PrayerTimesList extends StatelessWidget {
   final PrayerTimesProvider prayerTimesProvider;
   @override
   Widget build(BuildContext context) {
-    Fimber.i('times = ${prayerTimesProvider.prayerTimings}');
-
-    return prayerTimesProvider.prayerTimings != null
+    Fimber.i('times = ${prayerTimesProvider.prayerEntity}');
+    Fimber.i('prayerEntity= ${prayerTimesProvider.prayerEntity}');
+    return prayerTimesProvider.prayerEntity != null
         ? ListView.separated(
             shrinkWrap: true,
             padding: const EdgeInsets.all(smallDimens),

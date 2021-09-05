@@ -1,49 +1,39 @@
-import 'package:floor/floor.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'prayer_timings.g.dart';
 
 @JsonSerializable()
-@entity
 class PrayerTimings {
   PrayerTimings({
-    this.dayNumber,
-    this.fajr,
-    this.sunrise,
-    this.dhuhr,
-    this.asr,
-    this.maghrib,
-    this.isha,
+    required this.fajr,
+    required this.sunrise,
+    required this.dhuhr,
+    required this.asr,
+    required this.maghrib,
+    required this.isha,
 /*    this.sunset,
     this.imsak,
     this.midnight,*/
   });
 
   @JsonKey(name: 'Fajr')
-  final String? fajr;
+  final String fajr;
 
   @JsonKey(name: 'Sunrise')
-  final String? sunrise;
+  final String sunrise;
 
   @JsonKey(name: 'Dhuhr')
-  final String? dhuhr;
+  final String dhuhr;
 
   @JsonKey(name: 'Asr')
-  final String? asr;
+  final String asr;
 
   @JsonKey(name: 'Maghrib')
-  final String? maghrib;
+  final String maghrib;
 
   @JsonKey(name: 'Isha')
-  final String? isha;
+  final String isha;
 
-  @PrimaryKey(autoGenerate: true)
-  @JsonKey(ignore: true)
-  int? tableId;
-
-  // todo delete it after
-  @JsonKey(ignore: true)
-  int? dayNumber;
   /*
   @JsonKey(name: 'Sunset')
   final String sunset;
@@ -63,7 +53,6 @@ class PrayerTimings {
   @override
   String toString() {
     return 'PrayerTimings{fajr: $fajr, sunrise: $sunrise, dhuhr: $dhuhr,'
-        ' asr: $asr, maghrib: $maghrib, isha: $isha, tableId: $tableId,'
-        ' dayNumber: $dayNumber}';
+        ' asr: $asr, maghrib: $maghrib, isha: $isha}';
   }
 }

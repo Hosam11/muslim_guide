@@ -5,17 +5,17 @@ part 'prayer_times_model.g.dart';
 
 @JsonSerializable()
 class PrayerTimesModel {
-  @JsonKey(name: 'data')
-  final List<PrayerTimesData>? prayerDataList;
-
-  final int? code;
-  final String? status;
-
   const PrayerTimesModel({
-    this.prayerDataList,
-    this.code,
-    this.status,
+    required this.prayerDataList,
+    required this.code,
+    required this.status,
   });
+
+  @JsonKey(name: 'data')
+  final List<PrayerTimesData> prayerDataList;
+
+  final int code;
+  final String status;
 
   factory PrayerTimesModel.fromJson(Map<String, dynamic> json) =>
       _$PrayerTimesModelFromJson(json);

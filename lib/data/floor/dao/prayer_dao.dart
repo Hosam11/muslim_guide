@@ -1,14 +1,14 @@
 import 'package:floor/floor.dart';
-import 'package:muslim_guide/data/models/prayer_times/prayer_timings.dart';
+import 'package:muslim_guide/data/floor/entities/prayer_entity.dart';
 
 @dao
 abstract class PrayerDao {
   @insert
-  Future<List<int>> insertPrayerTimes(List<PrayerTimings> prayerTimes);
+  Future<List<int>> insertPrayerTimes(List<PrayerEntity> prayerEntities);
 
-  @Query('SELECT * FROM PrayerTimings where dayNumber= :dayNumber')
-  Future<PrayerTimings?> getPrayerTime(int dayNumber);
+  @Query('SELECT * FROM PrayerEntity where dayNumber= :dayNumber')
+  Future<PrayerEntity?> getPrayerEntity(int dayNumber);
 
-  @Query('DELETE FROM PrayerTimings')
+  @Query('DELETE FROM PrayerEntity')
   Future<void> deleteAllData();
 }

@@ -28,7 +28,7 @@ class QuranPageHelper {
   String createJuzNumber(int? juz) => '$juzLabel ${convertToArabic(juz)}';
 
   List<Widget> quranPageContent(QuranPage quranPageModel) {
-    final h = '@@ quran_helper @@ quranPageContent() >>';
+    // final h = '@@ quran_helper @@ quranPageContent() >>';
     final pageWidgets = <Widget>[];
 
     switch (quranPageModel.sajdaType) {

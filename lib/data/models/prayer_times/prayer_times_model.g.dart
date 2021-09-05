@@ -8,11 +8,11 @@ part of 'prayer_times_model.dart';
 
 PrayerTimesModel _$PrayerTimesModelFromJson(Map<String, dynamic> json) {
   return PrayerTimesModel(
-    prayerDataList: (json['data'] as List<dynamic>?)
-        ?.map((e) => PrayerTimesData.fromJson(e as Map<String, dynamic>))
+    prayerDataList: (json['data'] as List<dynamic>)
+        .map((e) => PrayerTimesData.fromJson(e as Map<String, dynamic>))
         .toList(),
-    code: json['code'] as int?,
-    status: json['status'] as String?,
+    code: json['code'] as int,
+    status: json['status'] as String,
   );
 }
 

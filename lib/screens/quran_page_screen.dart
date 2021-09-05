@@ -16,7 +16,7 @@ class QuranPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final h = '@@ $runtimeType @@ build() >> ';
+    // final h = '@@ $runtimeType @@ build() >> ';
     // mLog('$h quranPageContents= \n${jsonEncode(quranPageModel)} ');
 
     final quranProvider = Provider.of<QuranProvider>(context);

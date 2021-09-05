@@ -38,31 +38,33 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen>
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     Fimber.i('curLocation = ${_prayerProvider.curLocation}');
-
     _updatedPrayerProvider.isLoading = true;
-    await saveLocation(context, _prayerProvider);
-    await getPrayerTimesCall();
+    // save today prayer times
+    await _prayerHelper.savePrayerEntity(_prayerProvider);
+    if (_prayerProvider.prayerEntity == null) {
+      if (_prayerProvider.curLocation == null) {
+        await saveLocation(context, _prayerProvider);
+      }
+      await getPrayerTimesCall();
+    } else {
+      Fimber.i('prayerEntity != null');
+    }
     _updatedPrayerProvider.isLoading = false;
   }
 
   Future<void> getPrayerTimesCall() async {
     Fimber.i('-');
-
     final isInternet = await checkInternet();
     if (isInternet) {
-      if (_prayerProvider.curLocation != null) {
-        // todo: not good, leave it for now
-        if (_prayerProvider.prayerTimings == null) {
-          Fimber.i(
-              '_prayerProvider.prayerTimings  = ${_prayerProvider.prayerTimings}');
-          await _prayerHelper.getPrayerTimes(
-            provider: _prayerProvider,
-            context: context,
-          );
-        }
-      }
+      Fimber.i(
+          '_prayerProvider.prayerEntity  = ${_prayerProvider.prayerEntity}');
+      await _prayerHelper.getPrayerTimes(
+        provider: _prayerProvider,
+        context: context,
+      );
     } else {
       await noInternetDialog(context);
+      Navigator.pop(context);
     }
   }
 
@@ -77,17 +79,16 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen>
         progressIndicator: simpleProgressIndicator,
         color: kModalProgressColor,
         child: Container(
-          // height: double.infinity,
           width: double.infinity,
           decoration: kSecondaryBackgroundBoxDecoration,
           child: Column(
             children: [
-              _updatedPrayerProvider.curLocation != null
+              _updatedPrayerProvider.prayerEntity != null
                   ? Expanded(
                       child: PrayerTimesList(
-                          prayerTimesProvider: _updatedPrayerProvider),
+                        prayerTimesProvider: _updatedPrayerProvider,
+                      ),
                     )
-                  // : NoLocation(onTryAgainPress: tryGetLocation),
                   : const SizedBox(),
             ],
           ),

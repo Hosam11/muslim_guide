@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/dimens.dart' as dimens;
 import 'package:muslim_guide/helpers/home_helper.dart';
-import 'package:muslim_guide/providers/prayer_times_provider.dart';
-import 'package:provider/provider.dart';
 
 class CategoryList extends StatelessWidget {
   @override

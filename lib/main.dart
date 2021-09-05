@@ -30,7 +30,8 @@ Future<void> main() async {
       providers: [
         ChangeNotifierProvider<QuranProvider>(create: (_) => QuranProvider()),
         ChangeNotifierProvider<PrayerTimesProvider>(
-            create: (_) => PrayerTimesProvider()),
+          create: (_) => PrayerTimesProvider(),
+        ),
       ],
       child: MuslimGuideApp(),
     ),

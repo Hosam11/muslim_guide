@@ -16,7 +16,11 @@ class PrayerTimesRepo extends _PrayerTimesRepository {
       );
       return prayerTimesModel;
     } else {
-      final prayerTimesModel = const PrayerTimesModel(status: 'there is error');
+      final prayerTimesModel = const PrayerTimesModel(
+        status: 'there is error',
+        prayerDataList: [],
+        code: 500,
+      );
       return prayerTimesModel;
     }
   }

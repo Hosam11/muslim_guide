@@ -1,5 +1,5 @@
 import 'package:floor/floor.dart';
-import 'package:muslim_guide/data/models/prayer_times/prayer_timings.dart';
+import 'package:muslim_guide/data/models/prayer_times/prayer_times_data.dart';
 
 @entity
 class PrayerEntity {
@@ -42,7 +42,31 @@ class PrayerEntity {
 
   final int methodId;
   final String methodName;
+
+  @override
+  String toString() {
+    return 'PrayerEntity{tableId: $tableId, dayNumber: $dayNumber, fajr: $fajr, '
+        'sunrise: $sunrise, dhuhr: $dhuhr, asr: $asr, maghrib: $maghrib,'
+        ' isha: $isha, timestamp: $timestamp, lat: $lat, lng: $lng,'
+        ' methodId: $methodId, methodName: $methodName}';
+  }
 }
 
-PrayerEntity prayerEntityFromPrayerTimes(PrayerTimings timings, timestamp) =>
-    PrayerEntity();
+PrayerEntity prayerEntityFromPrayerData({
+  required PrayerTimesData data,
+  required int dayNumber,
+}) =>
+    PrayerEntity(
+      dayNumber: dayNumber,
+      fajr: data.prayerTimes.fajr,
+      sunrise: data.prayerTimes.sunrise,
+      dhuhr: data.prayerTimes.dhuhr,
+      asr: data.prayerTimes.asr,
+      maghrib: data.prayerTimes.maghrib,
+      isha: data.prayerTimes.isha,
+      timestamp: data.prayerDate.timestamp,
+      lat: data.prayerMeta.latitude,
+      lng: data.prayerMeta.longitude,
+      methodId: data.prayerMeta.prayerMethod.id,
+      methodName: data.prayerMeta.prayerMethod.name,
+    );

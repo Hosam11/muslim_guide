@@ -1,24 +1,24 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:muslim_guide/data/models/prayer_times/prayer_timings.dart';
+import 'package:muslim_guide/data/floor/entities/prayer_entity.dart';
 import 'package:muslim_guide/helpers/prayer_helper.dart';
 import 'package:muslim_guide/widgets/prayer_time_card.dart';
 
 class PrayerTimesProvider extends ChangeNotifier {
   bool _isLoading = false;
   Position? _curLocation;
-  PrayerTimings? _prayerTimings;
+  PrayerEntity? _prayerEntity;
   late List<PrayerTimesCard> _prayersCardWidget;
 
   bool get isLoading => _isLoading;
   Position? get curLocation => _curLocation;
-  PrayerTimings? get prayerTimings => _prayerTimings;
+  PrayerEntity? get prayerEntity => _prayerEntity;
   List<PrayerTimesCard> get prayersCardWidget => _prayersCardWidget;
 
-  set prayerTimings(PrayerTimings? times) {
-    _prayerTimings = times;
-    Fimber.i('prayerTimings= $times');
+  set prayerEntity(PrayerEntity? prayerEnities) {
+    _prayerEntity = prayerEnities;
+    Fimber.i('prayerEnities= $prayerEnities');
     _setupPrayerTimesCards();
     notifyListeners();
   }
@@ -36,13 +36,13 @@ class PrayerTimesProvider extends ChangeNotifier {
   }
 
   void _setupPrayerTimesCards() {
-    _prayersCardWidget = PrayerHelper.instance.prayerList(prayerTimings!);
+    _prayersCardWidget = PrayerHelper.instance.prayerList(prayerEntity);
     Fimber.i('_prayersCardWidgetLen= ${_prayersCardWidget.length}');
   }
 
   void resetData() {
     _isLoading = false;
-    _prayerTimings = null;
+    // _prayerEntity = null;
     _prayersCardWidget.clear();
     notifyListeners();
   }
