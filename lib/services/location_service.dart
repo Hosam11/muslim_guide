@@ -101,7 +101,9 @@ Future<void> saveLocation(
   BuildContext context,
   PrayerTimesProvider prayerProvider,
 ) async {
+  Fimber.i('- ');
   final location = await getLoc(context);
+  Fimber.i('location= $location');
   if (location != null) {
     prayerProvider.curLocation = location;
     await saveLocationToPrefs(location);
@@ -109,9 +111,11 @@ Future<void> saveLocation(
 }
 
 Future<Position?> getLoc(BuildContext context) async {
+  Fimber.i('-');
   try {
     final loc = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high,
+      timeLimit: const Duration(minutes: 1),
     );
     Fimber.i('loc= $loc');
     return loc;
@@ -130,7 +134,7 @@ Future<Position?> getLoc(BuildContext context) async {
         Navigator.pop(context);
         break;
       default:
-        Fimber.i('default ');
+        Fimber.e('default exception = $e ');
         return await getLoc(context);
     }
   }

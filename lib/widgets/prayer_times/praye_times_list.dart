@@ -4,7 +4,7 @@ import 'package:muslim_guide/constants/constants_imports.dart';
 import 'package:muslim_guide/providers/prayer_times_provider.dart';
 
 class PrayerTimesList extends StatelessWidget {
-  PrayerTimesList({Key? key, required this.prayerTimesProvider})
+  const PrayerTimesList({Key? key, required this.prayerTimesProvider})
       : super(key: key);
 
   final PrayerTimesProvider prayerTimesProvider;
@@ -12,6 +12,8 @@ class PrayerTimesList extends StatelessWidget {
   Widget build(BuildContext context) {
     Fimber.i('times = ${prayerTimesProvider.prayerEntity}');
     Fimber.i('prayerEntity= ${prayerTimesProvider.prayerEntity}');
+    // getHijriDate
+
     return prayerTimesProvider.prayerEntity != null
         ? ListView.separated(
             shrinkWrap: true,

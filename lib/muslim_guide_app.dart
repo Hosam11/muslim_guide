@@ -1,12 +1,15 @@
+import 'dart:ui';
+
 import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
 import 'package:muslim_guide/constants/locals.dart';
 import 'package:muslim_guide/constants/strings.dart';
-
 import 'package:muslim_guide/routes.dart';
 
 class MuslimGuideApp extends StatelessWidget {
+  const MuslimGuideApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Fimber.i('headline6 = ${Theme.of(context).textTheme.headline6!.fontSize}, '
@@ -24,6 +27,7 @@ class MuslimGuideApp extends StatelessWidget {
         'button = ${Theme.of(context).textTheme.button!.fontSize} ');
 
     return MaterialApp(
+      scrollBehavior: CustomScrollBehavior(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationsDelegates,
       supportedLocales: supportedLocals,
@@ -34,4 +38,14 @@ class MuslimGuideApp extends StatelessWidget {
       onGenerateRoute: generateRoutes,
     );
   }
+}
+
+// for "vysor" to enable scrolling
+class CustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.unknown,
+      };
 }

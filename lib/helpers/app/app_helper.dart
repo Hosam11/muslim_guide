@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:appspector/appspector.dart';
+import 'package:connectivity/connectivity.dart';
 import 'package:fimber/fimber.dart';
+import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:muslim_guide/data/app_data/allah_names_data.dart';
 import 'package:muslim_guide/data/app_data/azkar_data.dart';
@@ -11,9 +13,7 @@ import 'package:muslim_guide/data/app_data/surah_titles_data.dart';
 import 'package:muslim_guide/data/app_data/surahs_data.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
-import 'package:connectivity/connectivity.dart';
 import 'package:muslim_guide/main.dart' show apiKey;
-import 'package:flutter/foundation.dart';
 
 void mLog(String message) {
   kDebugMode ? log('log= ' + message) : print('kReleaseMode mode');
@@ -62,8 +62,6 @@ Future<bool> checkInternet() async {
 // FIXME: delete #1 in production
 void runAppSpector() {
   final config = Config()..androidApiKey = apiKey;
-  int? x;
-  x?.isOdd;
   // If you don't want to start all monitors you can specify a list of necessary ones
   config.monitors = <Monitor>[
     Monitors.http,

@@ -1,7 +1,7 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
 import 'package:muslim_guide/widgets/shared/custom_appbar.dart';
-import 'package:audioplayers/audioplayers.dart';
 
 class RosaryScreen extends StatelessWidget {
   RosaryScreen({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class RosaryScreen extends StatelessWidget {
         decoration: kSecondaryBackgroundBoxDecoration,
         child: Padding(
           padding: const EdgeInsets.all(mediumDimens),
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: double.infinity,
             child: InkWell(

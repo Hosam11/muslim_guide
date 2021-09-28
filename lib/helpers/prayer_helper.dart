@@ -1,6 +1,7 @@
 import 'package:fimber/fimber.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hijri/hijri_calendar.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
 import 'package:muslim_guide/data/floor/entities/prayer_entity.dart';
 import 'package:muslim_guide/data/floor/operations/prayer_operations.dart';
@@ -79,9 +80,9 @@ class PrayerHelper {
         await _prayerOperations.getPrayerEntity(nowDate.day);
     if (curPrayerEntity != null) {
       provider.prayerEntity = curPrayerEntity;
-      final intTimestamp = int.parse(curPrayerEntity.timestamp) * 1000;
-      final dbDate = DateTime.fromMillisecondsSinceEpoch(intTimestamp);
-      Fimber.i('intTimestamp= $intTimestamp');
+
+      final dbDate = dateFromTimeStamp(curPrayerEntity.timestamp);
+
       Fimber.i('dbDate= $dbDate');
       Fimber.i('dbDate.month = ${dbDate.month}');
       Fimber.i('nowDate.month= ${nowDate.month}');
@@ -91,6 +92,7 @@ class PrayerHelper {
 
         /// clean data base so in [PrayerTimesScreen] get data again from api
         await _prayerOperations.deleteAllData();
+        provider.resetData();
       }
       Fimber.i('curPrayerEntity= $curPrayerEntity');
     } else {
@@ -98,11 +100,17 @@ class PrayerHelper {
     }
   }
 
+  DateTime dateFromTimeStamp(String timestamp) {
+    final intTimestamp = int.parse(timestamp) * 1000;
+    final date = DateTime.fromMillisecondsSinceEpoch(intTimestamp);
+    return date;
+  }
+
   String _convert24To12(String s) {
     // 20:22 (EET)
     final timeStr = s.split(' ')[0];
     // 20:22
-    final status;
+    final String status;
     var finalHour;
     final hour = int.parse(timeStr.split(':')[0]);
     dynamic minutes = int.parse(timeStr.split(':')[1]);
@@ -158,5 +166,12 @@ class PrayerHelper {
     final maghrib = _convert24To12(prayerTimings.maghrib);
     final isha = _convert24To12(prayerTimings.isha);
     return [fajr, sunrise, dhuhr, asr, maghrib, isha];
+  }
+
+  String getHijriDate(DateTime date) {
+    final hijri = HijriCalendar.fromDate(date);
+    final strDate = hijri.toFormat('dd MMMM yyyy');
+    Fimber.i('strDate= $strDate');
+    return strDate;
   }
 }

@@ -5,7 +5,6 @@ import 'package:muslim_guide/constants/constants_imports.dart';
 
 final ThemeData appThemeData = ThemeData(
   primaryColor: kPrimaryColor,
-  accentColor: kAccentColor,
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: elevation,
@@ -33,11 +32,12 @@ final ThemeData appThemeData = ThemeData(
     color: kTextColor,
   ),
   visualDensity: VisualDensity.adaptivePlatformDensity,
+  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kAccentColor),
 );
 
 // not used only for practicing
 const _lightFillColor = Colors.black;
-final ColorScheme lightColorScheme = const ColorScheme(
+const ColorScheme lightColorScheme = ColorScheme(
   primary: Color(0xFFB93C5D),
   primaryVariant: Color(0xFF117378),
   secondary: Color(0xFFEFF3F3),

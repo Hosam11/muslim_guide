@@ -31,7 +31,7 @@ Route<dynamic>? generateRoutes(RouteSettings settings) {
       return createPageBuilder(const MySplashScreen());
 
     case homeScreen:
-      return createPageBuilder(HomeScreen());
+      return createPageBuilder(const HomeScreen());
 
     case quranScreen:
       return createPageBuilder(SurahsListScreen());

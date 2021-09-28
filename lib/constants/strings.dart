@@ -40,7 +40,7 @@ const String locationError =
 const String discard = 'تراجع';
 const String internetError = 'لا يوجد اتصال بالانترنت';
 const String exitMessage = 'هل تريد الخروج من التطبيق ؟';
-
+const String locationChangeConfirm = 'متأكد من تغير الموقع الحالي ؟';
 // AzkarScreen
 const String count = 'التكرار';
 

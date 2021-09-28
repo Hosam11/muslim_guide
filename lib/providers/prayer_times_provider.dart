@@ -42,7 +42,8 @@ class PrayerTimesProvider extends ChangeNotifier {
 
   void resetData() {
     _isLoading = false;
-    // _prayerEntity = null;
+    _prayerEntity = null;
+    _curLocation = null;
     _prayersCardWidget.clear();
     notifyListeners();
   }

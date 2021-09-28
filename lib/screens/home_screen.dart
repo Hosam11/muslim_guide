@@ -2,6 +2,7 @@ import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:muslim_guide/constants/constants_imports.dart';
+import 'package:muslim_guide/data/floor/operations/prayer_operations.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/helpers/app/app_dialogs.dart';
 import 'package:muslim_guide/providers/prayer_times_provider.dart';
@@ -12,11 +13,15 @@ import 'package:provider/provider.dart';
 class HomeScreen extends StatelessWidget {
   final String ayah = 'أُو۟لَـٰٓئِكَ عَلَىٰ هُدًى مِّن ربهم والئك هم المفلحون';
 
+  const HomeScreen({Key? key}) : super(key: key);
+
   Future<void> test(BuildContext context) async {
     final clear = await clearPrefs();
     final prayerProvider =
         Provider.of<PrayerTimesProvider>(context, listen: false);
     prayerProvider.curLocation = null;
+    await PrayerOperations.instance.deleteAllData();
+    prayerProvider.resetData();
     Fimber.i('clear= $clear');
   }
 
@@ -37,10 +42,10 @@ class HomeScreen extends StatelessWidget {
       },
       child: Scaffold(
         appBar: CustomAppBar(title: homeScreenTitle, centerTitle: true),
-        floatingActionButton: FloatingActionButton(
+        /*  floatingActionButton: FloatingActionButton(
           onPressed: () => test(context),
           child: const Icon(Icons.clear),
-        ),
+        ),*/
         body: Container(
           height: double.infinity,
           width: double.infinity,

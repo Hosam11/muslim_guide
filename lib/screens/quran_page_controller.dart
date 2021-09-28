@@ -5,7 +5,8 @@ import 'package:muslim_guide/data/app_data/quran_page_data.dart';
 class QuranPageController extends StatelessWidget {
   final QuranArgs? quranArgs;
 
-  QuranPageController({Key? key, required this.quranArgs}) : super(key: key);
+  const QuranPageController({Key? key, required this.quranArgs})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
