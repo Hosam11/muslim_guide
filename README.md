@@ -8,8 +8,8 @@
 - Provide you a rosary so you can praise Allah
 
 ## Screenshots:
-| ![splash](https://user-images.githubusercontent.com/18370055/130337275-7944357b-7a32-4bf0-a716-e6a375b4587f.jpg) | ![home](https://user-images.githubusercontent.com/18370055/130337269-2c37ed31-2332-4203-8970-4f4211ce1555.jpg)  | ![surah list](https://user-images.githubusercontent.com/18370055/130337277-37bb168d-f733-4891-b2bd-3515b687eaaf.jpg) | 
+| ![splash](https://user-images.githubusercontent.com/18370055/136090493-42667196-c609-4613-b812-754377ebc541.jpg) | ![home2](https://user-images.githubusercontent.com/18370055/136090084-3c23a023-b33d-4a90-9087-6374142cb874.jpg)  | ![surah list](https://user-images.githubusercontent.com/18370055/136090108-e50c4bc1-af13-4727-a351-0571b34a0ab9.jpg) | 
 | :---: |:---:| :---:| 
-| ![quran page](https://user-images.githubusercontent.com/18370055/130337271-fa59433b-0fee-464a-be5e-66a9a5dad86e.jpg) | ![quran page with info](https://user-images.githubusercontent.com/18370055/130337270-4c110164-0be1-47f3-a96a-166cbd7b7344.jpg) | ![prayer times](https://user-images.githubusercontent.com/18370055/136088284-b9bb13c5-5639-4c4d-bdd6-1993e7b4ec92.jpg) | 
-| ![allah names](https://user-images.githubusercontent.com/18370055/130337266-614c253a-aa9a-45d2-9866-e22fd9e7d032.jpg) | ![allah name details](https://user-images.githubusercontent.com/18370055/130337265-9c986c82-060f-42ba-add0-e628fffe04c0.jpg) |![azkar](https://user-images.githubusercontent.com/18370055/130337267-50b6acad-943f-4fe7-899e-5e870a689193.jpg)  |
-|![rosary](https://user-images.githubusercontent.com/18370055/130337273-cf0615ab-d5ec-40bb-bf5d-82792daeab57.jpg) |
+| ![quran page](https://user-images.githubusercontent.com/18370055/136090096-bdb85e56-c5f4-4942-967f-c30771faba47.jpg) | ![quran page with info](https://user-images.githubusercontent.com/18370055/136090094-bd3c985e-7d88-4d1a-9eba-aa1d3457e198.jpg) | ![prayer times](https://user-images.githubusercontent.com/18370055/136090086-561e2c4d-57f0-4459-b5c9-bab03044bafc.jpg) | 
+| ![allah names](https://user-images.githubusercontent.com/18370055/136090074-ba1b572a-07b5-424a-85be-87ea921a72c6.jpg) | ![allah name details](https://user-images.githubusercontent.com/18370055/136090071-52b31201-9c11-4f85-b8d7-27fe0c9370d9.jpg) | ![azkar](https://user-images.githubusercontent.com/18370055/136090080-22394926-27b7-4843-9939-3d01858da22e.jpg) |
+| ![rosary](https://user-images.githubusercontent.com/18370055/136090103-1f08572f-0cd2-474e-99d4-5bf9f1719ddc.jpg) |
