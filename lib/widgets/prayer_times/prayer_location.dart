@@ -38,17 +38,17 @@ class _PrayerLocationState extends State<PrayerLocation> with AfterLayoutMixin {
 
   @override
   Widget build(BuildContext context) {
-    return loc.value.isEmpty
-        ? const SizedBox()
-        : PrayerDetails(
-            mChild: ValueListenableBuilder(
-              valueListenable: loc,
-              builder: (_, String loc, __) => Text(
+    return ValueListenableBuilder(
+      valueListenable: loc,
+      builder: (_, String loc, __) => loc.isEmpty
+          ? const SizedBox()
+          : PrayerDetails(
+              mChild: Text(
                 loc,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline6?.copyWith(),
               ),
             ),
-          );
+    );
   }
 }
