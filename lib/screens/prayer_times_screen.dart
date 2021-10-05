@@ -107,7 +107,12 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen>
                       ),
                     ),
                     // _updatedPrayerProvider.prayerEntity?.lng != null
-                    PrayerLocation(prayerTimesProvider: _updatedPrayerProvider)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 70.0),
+                      child: PrayerLocation(
+                        prayerTimesProvider: _updatedPrayerProvider,
+                      ),
+                    )
                     // : const SizedBox(),
                   ],
                 )

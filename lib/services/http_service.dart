@@ -1,23 +1,36 @@
+import 'dart:io';
+
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
-import 'package:fimber/fimber.dart';
 import 'package:muslim_guide/services/util/api_exception.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 Future<dynamic> getRequest({required String url}) async {
-  Fimber.i('-');
-
   try {
-    Fimber.i('url= $url');
-    var res = await Dio().get(url);
+    final dio = Dio();
+    dio.interceptors.add(
+      PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseHeader: true,
+      ),
+    );
+    // fixme: remove it at production
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+      return client;
+    };
+    var res = await dio.get(url);
+
     return _networkStatus(res);
   } catch (e) {
-    Fimber.i('HttpException => $e');
     return HttpException();
   }
 }
 
 dynamic _networkStatus(Response res) {
-  Fimber.i('res= ${res.statusCode}, resLen= ${res.data.length}');
-  Fimber.i('res= $res');
   if (res.statusCode == 200) {
     return res;
   } else {

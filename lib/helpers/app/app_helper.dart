@@ -14,10 +14,15 @@ import 'package:muslim_guide/data/app_data/surahs_data.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
 import 'package:muslim_guide/main.dart' show apiKey;
+import 'package:upgrader/upgrader.dart';
 
 void mLog(String message) {
   kDebugMode ? log('log= ' + message) : print('kReleaseMode mode');
 }
+
+const appcastURL =
+    'https://github.com/Hosam11/muslim_guide/blob/main/appcast.xml';
+final cfg = AppcastConfiguration(url: appcastURL, supportedOS: ['android']);
 
 Future<void> prepareDataNeeded() async {
   await prepareSurahHeaders();

@@ -16,9 +16,9 @@ class PrayerTimesProvider extends ChangeNotifier {
   PrayerEntity? get prayerEntity => _prayerEntity;
   List<PrayerTimesCard> get prayersCardWidget => _prayersCardWidget;
 
-  set prayerEntity(PrayerEntity? prayerEnities) {
-    _prayerEntity = prayerEnities;
-    Fimber.i('prayerEnities= $prayerEnities');
+  set prayerEntity(PrayerEntity? prayerEntities) {
+    _prayerEntity = prayerEntities;
+    Fimber.i('prayerEntities= $prayerEntities');
     _setupPrayerTimesCards();
     notifyListeners();
   }
@@ -41,9 +41,10 @@ class PrayerTimesProvider extends ChangeNotifier {
   }
 
   void resetData() {
-    _isLoading = false;
+    // _isLoading = false;
     _prayerEntity = null;
     _curLocation = null;
+
     _prayersCardWidget.clear();
     notifyListeners();
   }

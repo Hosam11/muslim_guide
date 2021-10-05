@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:fimber/fimber.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hijri/hijri_calendar.dart';
+import 'package:muslim_guide/constants/locals.dart';
 import 'package:muslim_guide/helpers/app/app_helper.dart';
 import 'package:muslim_guide/muslim_guide_app.dart';
 import 'package:muslim_guide/providers/prayer_times_provider.dart';
@@ -18,8 +21,8 @@ const apiKey = 'android_MWM3Yzk0OTMtZDE4MC00MDMxLTg5NjUtMTFhYWM5YjRiMGQx';
 // const apiKey = 'android_MjI5MjEyYzgtZDEyNy00ODA0LWE2MDQtNTYzZTc5NjU2MzE3';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  print(kDebugMode ? 'debugMode' : 'releaseMode');
-  HijriCalendar.setLocal('ar');
+  log(kDebugMode ? 'debugMode' : 'releaseMode');
+  HijriCalendar.setLocal(curLocal.languageCode);
 
   if (kDebugMode) {
     runAppSpector();

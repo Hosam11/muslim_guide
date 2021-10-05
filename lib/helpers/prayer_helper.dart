@@ -7,8 +7,6 @@ import 'package:muslim_guide/data/floor/entities/prayer_entity.dart';
 import 'package:muslim_guide/data/floor/operations/prayer_operations.dart';
 import 'package:muslim_guide/data/models/prayer_times/prayer_times_model.dart';
 import 'package:muslim_guide/data/repository/prayer_times_repo.dart';
-import 'package:muslim_guide/data/shared_prefs/perfs.dart';
-import 'package:muslim_guide/data/shared_prefs/perfs_keys.dart';
 import 'package:muslim_guide/helpers/app/app_dialogs.dart';
 import 'package:muslim_guide/helpers/app/arabic_numbers.dart';
 import 'package:muslim_guide/providers/prayer_times_provider.dart';
@@ -18,15 +16,16 @@ import 'package:muslim_guide/widgets/prayer_time_card.dart';
 class PrayerHelper {
   PrayerHelper._privateConstructor();
 
-  final now = DateTime.now();
-
   static final PrayerHelper instance = PrayerHelper._privateConstructor();
   final PrayerOperations _prayerOperations = PrayerOperations.instance;
 
+  ///
   Future<void> getPrayerTimes({
     required PrayerTimesProvider provider,
     required BuildContext context,
   }) async {
+    final now = DateTime.now();
+
     final url = prayerTimesUrl(
       lat: provider.curLocation!.latitude,
       lng: provider.curLocation!.longitude,
@@ -35,26 +34,25 @@ class PrayerHelper {
     );
     final timesModel = await PrayerTimesRepo.instance.getPrayerTimes(url);
     if (timesModel.code == 200) {
-      final saveMonthNum = await setInt(value: now.day, key: monthNumberKey);
-      Fimber.i('saveMonthNum= $saveMonthNum');
+      // final saveMonthNum = await setInt(value: now.month, key: monthNumberKey);
+      Fimber.i('monthNum= ${now.month}');
       // save it in provider
       // save it in db
-      await saveDate(timesModel, provider);
+      await saveDateInDB(timesModel, provider);
     } else {
       // display error pop screen
-      provider.resetData();
+      // provider.resetData();
       await showInfoDialog(context, errorHappened);
       Navigator.pop(context);
     }
     Fimber.i('timesModel = $timesModel');
   }
 
-  Future<void> saveDate(
+  Future<void> saveDateInDB(
     PrayerTimesModel timesModel,
     PrayerTimesProvider provider,
   ) async {
     Fimber.i('-');
-
     // save it in db
     final prayerTimes = timesModel.prayerDataList;
     Fimber.i(' prayerTimesLen= ${prayerTimes.length}');
@@ -62,12 +60,15 @@ class PrayerHelper {
     for (var index = 0; index < prayerTimes.length; index++) {
       final prayerTimesData = prayerTimes[index];
       final prayerEntity = prayerEntityFromPrayerData(
-          data: prayerTimesData, dayNumber: index + 1);
+        data: prayerTimesData,
+        dayNumber: index + 1,
+      );
       prayerEntities.add(prayerEntity);
     }
+    final now = DateTime.now();
+
     // get prayer of current day and save it in provider
     provider.prayerEntity = prayerEntities[now.day - 1];
-
     await _prayerOperations.insertPrayerEntities(prayerEntities);
   }
 
@@ -75,9 +76,11 @@ class PrayerHelper {
     PrayerTimesProvider provider,
   ) async {
     /// check current month with month in db
+
     final nowDate = DateTime.now();
     final curPrayerEntity =
         await _prayerOperations.getPrayerEntity(nowDate.day);
+    Fimber.i('curPrayerEntity= $curPrayerEntity');
     if (curPrayerEntity != null) {
       provider.prayerEntity = curPrayerEntity;
 
@@ -99,35 +102,6 @@ class PrayerHelper {
       Fimber.i('curPrayerEntity is null');
     }
   }
-
-  DateTime dateFromTimeStamp(String timestamp) {
-    final intTimestamp = int.parse(timestamp) * 1000;
-    final date = DateTime.fromMillisecondsSinceEpoch(intTimestamp);
-    return date;
-  }
-
-  String _convert24To12(String s) {
-    // 20:22 (EET)
-    final timeStr = s.split(' ')[0];
-    // 20:22
-    final String status;
-    var finalHour;
-    final hour = int.parse(timeStr.split(':')[0]);
-    dynamic minutes = int.parse(timeStr.split(':')[1]);
-    if (hour > 12) {
-      status = nightLetter;
-      finalHour = hour - 12;
-    } else {
-      status = nightLetter;
-      finalHour = hour;
-    }
-    finalHour = _addZerosToTime(finalHour);
-    minutes = _addZerosToTime(minutes);
-    Fimber.i('finalHour= $finalHour, minutes = $minutes');
-    return '${convertToArabic(finalHour)}:${convertToArabic(minutes)} $status';
-  }
-
-  String _addZerosToTime(int i) => i <= 9 ? '0$i' : i.toString();
 
   List<PrayerTimesCard> prayerList(PrayerEntity? prayerTimings) {
     if (prayerTimings == null) {
@@ -158,6 +132,19 @@ class PrayerHelper {
     return timesWidgets;
   }
 
+  DateTime dateFromTimeStamp(String timestamp) {
+    final intTimestamp = int.parse(timestamp) * 1000;
+    final date = DateTime.fromMillisecondsSinceEpoch(intTimestamp);
+    return date;
+  }
+
+  String getHijriDate(DateTime date) {
+    final hijri = HijriCalendar.fromDate(date);
+    final strDate = hijri.toFormat('dd MMMM yyyy');
+    Fimber.i('strDate= $strDate');
+    return strDate;
+  }
+
   List<String> _formattedTimes(PrayerEntity prayerTimings) {
     final fajr = _convert24To12(prayerTimings.fajr);
     final sunrise = _convert24To12(prayerTimings.sunrise);
@@ -168,10 +155,26 @@ class PrayerHelper {
     return [fajr, sunrise, dhuhr, asr, maghrib, isha];
   }
 
-  String getHijriDate(DateTime date) {
-    final hijri = HijriCalendar.fromDate(date);
-    final strDate = hijri.toFormat('dd MMMM yyyy');
-    Fimber.i('strDate= $strDate');
-    return strDate;
+  String _convert24To12(String s) {
+    // 20:22 (EET)
+    final timeStr = s.split(' ')[0];
+    // 20:22
+    final String status;
+    var finalHour;
+    final hour = int.parse(timeStr.split(':')[0]);
+    dynamic minutes = int.parse(timeStr.split(':')[1]);
+    if (hour > 12) {
+      status = nightLetter;
+      finalHour = hour - 12;
+    } else {
+      status = nightLetter;
+      finalHour = hour;
+    }
+    finalHour = _addZerosToTime(finalHour);
+    minutes = _addZerosToTime(minutes);
+    Fimber.i('finalHour= $finalHour, minutes = $minutes');
+    return '${convertToArabic(finalHour)}:${convertToArabic(minutes)} $status';
   }
+
+  String _addZerosToTime(int i) => i <= 9 ? '0$i' : i.toString();
 }

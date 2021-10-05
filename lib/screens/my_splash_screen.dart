@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:muslim_guide/constants/assets.dart';
 import 'package:muslim_guide/constants/dimens.dart';
+import 'package:muslim_guide/constants/locals.dart';
 import 'package:muslim_guide/constants/styles.dart';
 import 'package:muslim_guide/data/floor/db/db_builder.dart';
 import 'package:muslim_guide/data/shared_prefs/perfs.dart' as prefs;
@@ -14,6 +15,7 @@ import 'package:muslim_guide/providers/prayer_times_provider.dart';
 import 'package:muslim_guide/providers/quran_provider.dart';
 import 'package:muslim_guide/routes.dart';
 import 'package:provider/provider.dart';
+import 'package:upgrader/upgrader.dart';
 
 class MySplashScreen extends StatefulWidget {
   const MySplashScreen({Key? key}) : super(key: key);
@@ -35,6 +37,10 @@ class _MySplashScreenState extends State<MySplashScreen> with AfterLayoutMixin {
     await QuranRepo.instance.getPages();
     print('len= ${QuranRepo.instance.quranPages?.length}');
     */
+    final appcast = Appcast();
+    final items = await appcast.parseAppcastItemsFromUri(appcastURL);
+    final bestItem = appcast.bestItem();
+    Fimber.i('items= $items, bestItem= $bestItem  ');
     await initializeDB();
     await prefs.initSharedPrefs();
     await prepareDataNeeded();
@@ -64,6 +70,7 @@ class _MySplashScreenState extends State<MySplashScreen> with AfterLayoutMixin {
 
   @override
   Widget build(BuildContext context) {
+    Fimber.i('curCountryCode= ${curLocal.countryCode}');
     return Scaffold(
       body: Container(
         height: double.infinity,
